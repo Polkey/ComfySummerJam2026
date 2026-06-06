@@ -3,7 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .utmp/
-/[Ll]ibrary/
+/library
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -98,3 +98,14 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 .vsconfig
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json
+
+# Change per use
+ComfySummerJam2026.slnx
+
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/ShaderGraphSettings.asset
