@@ -33,11 +33,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines.ExtrusionShapes;
 
-
-#if UNITY_EDITOR // only required if using the Menu Item function at the end of this script
-using UnityEditor;
-#endif
-
 [RequireComponent(typeof(CharacterController))]
 public class BasicFPCC : MonoBehaviour {
     [Header("Layer Mask")]
@@ -547,80 +542,3 @@ public class BasicFPCC : MonoBehaviour {
     }
 #endif
 }
-
-
-// =======================================================================================================================================
-
-// ** DELETE from here down, if menu item and auto configuration is NOT Required **
-
-// this section adds create BasicFPCC object to the menu : New -> GameObject -> 3D Object
-// then configures the gameobject
-// demo layer used : Ignore Raycast
-// also finds the main camera, attaches and sets position
-// and creates capsule gfx object (for visual while editing)
-
-// A using clause must precede all other elements defined in the namespace except extern alias declarations
-//#if UNITY_EDITOR
-//using UnityEditor;
-//#endif
-
-public class BasicFPCC_Setup : MonoBehaviour {
-#if UNITY_EDITOR
-
-    private static int playerLayer = 2; // default to the Ignore Raycast Layer (to demonstrate configuration)
-
-    [MenuItem("GameObject/3D Object/BasicFPCC", false, 0)]
-    public static void CreateBasicFPCC() {
-        GameObject go = new GameObject("Player");
-
-        CharacterController controller = go.AddComponent<CharacterController>();
-        controller.center = new Vector3(0, 1, 0);
-
-        BasicFPCC basicFPCC = go.AddComponent<BasicFPCC>();
-
-        // Layer Mask
-        go.layer = playerLayer;
-        basicFPCC.castingMask = ~(1 << playerLayer);
-        Debug.LogError("** SET the LAYER of the PLAYER Object, and the LAYERMASK of the BasicFPCC castingMask **");
-        Debug.LogWarning(
-            "Assign the BasicFPCC Player object to its own Layer, then assign the Layer Mask to ignore the BasicFPCC Player object Layer. Currently using layer "
-            + playerLayer.ToString() + ": " + LayerMask.LayerToName(playerLayer)
-        );
-
-        // Main Camera
-        GameObject mainCamObject = GameObject.Find("Main Camera");
-        if (mainCamObject) {
-            mainCamObject.transform.parent = go.transform;
-            mainCamObject.transform.localPosition = new Vector3(0, 1.7f, 0);
-            mainCamObject.transform.localRotation = Quaternion.identity;
-
-            basicFPCC.cameraTx = mainCamObject.transform;
-        }
-        else // create example camera
-        {
-            Debug.LogError("** Main Camera NOT FOUND ** \nA new Camera has been created and assigned. Please replace this with the Main Camera (and associated AudioListener).");
-
-            GameObject camGo = new GameObject("BasicFPCC Camera");
-            camGo.AddComponent<Camera>();
-
-            camGo.transform.parent = go.transform;
-            camGo.transform.localPosition = new Vector3(0, 1.7f, 0);
-            camGo.transform.localRotation = Quaternion.identity;
-
-            basicFPCC.cameraTx = camGo.transform;
-        }
-
-        // GFX
-        GameObject gfx = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        Collider cc = gfx.GetComponent<Collider>();
-        DestroyImmediate(cc);
-        gfx.transform.parent = go.transform;
-        gfx.transform.localPosition = new Vector3(0, 1, 0);
-        gfx.name = "GFX";
-        gfx.layer = playerLayer;
-        basicFPCC.playerGFX = gfx.transform;
-    }
-#endif
-}
-
-// =======================================================================================================================================
