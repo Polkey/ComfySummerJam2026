@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5915019039649067200
+--- !u!114 &-3195308509091938293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Footsteps
+  m_Name: event:/TestEvents/Ambience/Wind
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/Player/Footsteps
+  Path: event:/TestEvents/Ambience/Wind
   Guid:
-    Data1: 294646194
-    Data2: 1152060613
-    Data3: -1269459057
-    Data4: -1663659233
+    Data1: -1947151969
+    Data2: 1250786830
+    Data3: -694700160
+    Data4: -27145715
   Banks:
-  - {fileID: 8753539020627539865}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
+  - {fileID: 3308997377828729524}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 350
+  Length: 120061
 --- !u!114 &-2542134216140554695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639166513241503751
+  lastModified: 639167070504558773
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -62,28 +62,32 @@ MonoBehaviour:
   - {fileID: 4370118712702691625}
   - {fileID: -2542134216140554695}
   - {fileID: 8753539020627539865}
+  - {fileID: 3308997377828729524}
   EditorEvents:
-  - {fileID: 2060101399012652836}
-  - {fileID: 4379075518119882682}
-  - {fileID: 4213172330946975548}
-  - {fileID: -5915019039649067200}
+  - {fileID: -3195308509091938293}
+  - {fileID: 1124279234548824695}
+  - {fileID: 1685116375410342423}
+  - {fileID: 4069983016642320200}
+  - {fileID: 5348007096201386841}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2542134216140554695}
   StringsBanks:
   - {fileID: 6507828076462829723}
   cacheVersion: 131859
-  cacheTime: 639166513241518758
+  cacheTime: 639167078779243527
   SerializableEventsDict:
-  - key: event:/Ambience/Wind
+  - key: event:/TestEvents/Ambience/Wind
     index: 0
-  - key: event:/SFX/Pickup/IdleHum
+  - key: event:/TestEvents/SFX/Pickup/IdleHum
     index: 1
-  - key: event:/SFX/Pickup/TestPickup
+  - key: event:/TestEvents/SFX/Pickup/TestPickup
     index: 2
-  - key: event:/SFX/Player/Footsteps
+  - key: event:/TestEvents/SFX/Player/Footsteps
     index: 3
---- !u!114 &2060101399012652836
+  - key: event:/Ambience/BeachAmbience
+    index: 4
+--- !u!114 &1124279234548824695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,24 +97,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Wind
+  m_Name: event:/TestEvents/SFX/Pickup/IdleHum
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Ambience/Wind
+  Path: event:/TestEvents/SFX/Pickup/IdleHum
   Guid:
-    Data1: -1947151969
-    Data2: 1250786830
-    Data3: -694700160
-    Data4: -27145715
+    Data1: -396886975
+    Data2: 1114346721
+    Data3: 1008470711
+    Data4: 834064374
   Banks:
-  - {fileID: 4370118712702691625}
-  IsStream: 1
+  - {fileID: 3308997377828729524}
+  IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 120061
---- !u!114 &4213172330946975548
+  Length: 56
+--- !u!114 &1685116375410342423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,16 +124,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Pickup/TestPickup
+  m_Name: event:/TestEvents/SFX/Pickup/TestPickup
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/Pickup/TestPickup
+  Path: event:/TestEvents/SFX/Pickup/TestPickup
   Guid:
     Data1: -1005835872
     Data2: 1197116170
     Data3: -1009173602
     Data4: -1962158374
   Banks:
-  - {fileID: 8753539020627539865}
+  - {fileID: 3308997377828729524}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -137,6 +141,75 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3083370986150881135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BeachAmbience/DistanceToWater
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: DistanceToWater
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3788613912
+    data2: 487147627
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3308997377828729524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Testing.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: FMOD/Desktop/Testing.bank
+  Name: Testing
+  StudioPath: bank:/Testing
+  lastModified: 639167069524496543
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4069983016642320200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TestEvents/SFX/Player/Footsteps
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/TestEvents/SFX/Player/Footsteps
+  Guid:
+    Data1: 294646194
+    Data2: 1152060613
+    Data3: -1269459057
+    Data4: -1663659233
+  Banks:
+  - {fileID: 3308997377828729524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 350
 --- !u!114 &4370118712702691625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,10 +225,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639166513241498755
+  lastModified: 639167078778902255
   FileSizes: []
   Exists: 1
---- !u!114 &4379075518119882682
+--- !u!114 &5348007096201386841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,23 +238,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Pickup/IdleHum
+  m_Name: event:/Ambience/BeachAmbience
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/Pickup/IdleHum
+  Path: event:/Ambience/BeachAmbience
   Guid:
-    Data1: -396886975
-    Data2: 1114346721
-    Data3: 1008470711
-    Data4: 834064374
+    Data1: 874398132
+    Data2: 1079256610
+    Data3: -1816819318
+    Data4: 1059192900
   Banks:
   - {fileID: 8753539020627539865}
-  IsStream: 0
-  Is3D: 1
+  IsStream: 1
+  Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 3083370986150881135}
   MinDistance: 1
   MaxDistance: 20
-  Length: 56
+  Length: 189352
 --- !u!114 &6507828076462829723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +271,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639166513241508758
+  lastModified: 639167070504563776
   FileSizes:
   - Name: 
-    Value: 1032
+    Value: 1482
   Exists: 1
 --- !u!114 &8753539020627539865
 MonoBehaviour:
@@ -217,6 +291,6 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639166513241518758
+  lastModified: 639167078779243527
   FileSizes: []
   Exists: 1
