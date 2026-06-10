@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 7951176d71837454db2ba40301504ea5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SKY_SCENARIO_NIGHT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -100,9 +101,9 @@ Material:
     - _ClearCoatSmoothness: 0
     - _CloudScale: 9.06
     - _Cloud_Fade_Top: 0.652
-    - _Cloud_Island_Size: 0.492
-    - _Cloud_Noise_Scale: 7.7
-    - _Cloud_Puff_Scale: 23.78
+    - _Cloud_Island_Size: 0.424
+    - _Cloud_Noise_Scale: 9.6
+    - _Cloud_Puff_Scale: 15.06
     - _Cloud_Scale: 10.94
     - _Cloud_Size: 1
     - _Cloud_Squish: 0.66
@@ -117,7 +118,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Light_Wrap: 0.39
+    - _Light_Wrap: -0.44
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -126,6 +127,7 @@ Material:
     - _ReceiveShadows: 1
     - _Rim_Light_Strength: 0.435
     - _Rim_Light_Threshold: 0.598
+    - _SKY_SCENARIO: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -140,7 +142,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Light_Color: {r: 1, g: 0.9150298, b: 0.6556604, a: 1}
+    - _Light_Color: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Wind_Direction: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

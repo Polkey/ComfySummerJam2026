@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_SkyDay
+  m_Name: M_SkyNight
   m_Shader: {fileID: -6465566751694194690, guid: 4e63692865053464e9331484efcf6a48, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _INVERT_DIRECTION
-  - _SKY_SCENARIO_DAWN
+  - _SKY_SCENARIO_NIGHT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -115,20 +115,15 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SKY_SCENARIO: 0
+    - _SKY_SCENARIO: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Sun_Image_Scale: 1
-<<<<<<< HEAD
-    - _Sun_Size: 0
-    - _Sun_Softness: 0
-=======
     - _Sun_Size: 0.309
     - _Sun_Softness: 0.08
->>>>>>> 8858383 (Support for 'lighting scenarios' and other tweaks to skybox and cloud shaders)
     - _Surface: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1

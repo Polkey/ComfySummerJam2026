@@ -7,18 +7,17 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_SkyDay
-  m_Shader: {fileID: -6465566751694194690, guid: 4e63692865053464e9331484efcf6a48, type: 3}
+  m_Name: M_Ocean
+  m_Shader: {fileID: -6465566751694194690, guid: f70b09fadbb46b84fa19e34e2c15dfb2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _INVERT_DIRECTION
-  - _SKY_SCENARIO_DAWN
+  - _LIGHTING_SCENARIO_NIGHT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -66,11 +65,47 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_b9f8f44be5a44e57846d28f9656e04c2_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 71c4b1bb0adf8b94f9170395573af2ed, type: 3}
+    - _SampleTexture2DLOD_11229e80849b45bb802431aeb91a3d1b_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: c11278a8053edc04496fe3766815c650, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2DLOD_94f01f6e35ac4041a3b8465ce64c9b95_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: c11278a8053edc04496fe3766815c650, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_22f1316f8000487e87df27452f144e49_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: c11278a8053edc04496fe3766815c650, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_85891e0543e944caae3ca06839a8e5ab_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: c11278a8053edc04496fe3766815c650, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9543d7447a654d869d1ac9ddda0aa56d_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 948129e9f847e4a49a41e11e541fa609, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_fe23cbed59384ac0961605fe00cd98b8_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: c11278a8053edc04496fe3766815c650, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaveMapLarge:
+        m_Texture: {fileID: 2800000, guid: c11278a8053edc04496fe3766815c650, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaveMapSmall:
+        m_Texture: {fileID: 2800000, guid: 39e745ea7aba5ca4486e16cd225500db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WavesLarge:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WavesSmall:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -91,8 +126,6 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _BUILTIN_QueueControl: -1
-    - _BUILTIN_QueueOffset: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -105,43 +138,49 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Foam_Coverage: 0.79
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _INVERT_DIRECTION: 1
+    - _HeightMult: 0.72
+    - _LIGHTING_SCENARIO: 1
+    - _Large_Wave_Normal_Strength: 0.18
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SKY_SCENARIO: 0
+    - _Small_Wave_Circle_Radius: 2.2
+    - _Small_Wave_Normal_Strength: 0.03
+    - _Small_Wave_Scale: 68.8
+    - _Small_Wave_Speed: 0.2
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _Sun_Image_Scale: 1
-<<<<<<< HEAD
-    - _Sun_Size: 0
-    - _Sun_Softness: 0
-=======
-    - _Sun_Size: 0.309
-    - _Sun_Softness: 0.08
->>>>>>> 8858383 (Support for 'lighting scenarios' and other tweaks to skybox and cloud shaders)
     - _Surface: 0
+    - _Tessellation: 26.6
+    - _WaveScale: 89.9
+    - _WaveSpeed: 4.9
+    - _Wave_Scale: 39
+    - _Wave_Speed: 0.05
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
+    - _foam_cutoff: 0.569
+    - _maxTessellationDistance: 82.13
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_Deep: {r: 0.075694196, g: 0.111498766, b: 0.254717, a: 1}
+    - _Color_Shallow: {r: 0.12941177, g: 0.3281727, b: 0.39607844, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Sun_Tint: {r: 1, g: 0.9681348, b: 0.7216981, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &2749351090713529097
+--- !u!114 &1268644341897927604
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
