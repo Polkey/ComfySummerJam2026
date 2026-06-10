@@ -4286,8 +4286,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199773197}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1208989956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4503,7 +4501,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
->>>>>>> 2f1909f (Tweaks to layout, first pass at night lighting)
 --- !u!1 &1236041879
 GameObject:
   m_ObjectHideFlags: 0
@@ -7283,11 +7280,6 @@ SceneRoots:
   - {fileID: 201477383}
   - {fileID: 1163858600}
   - {fileID: 1087667098}
-<<<<<<< HEAD
-  - {fileID: 1912025488}
-  - {fileID: 1066183701}
-  - {fileID: 1185511213}
-=======
   - {fileID: 2074004170}
   - {fileID: 1789554624}
   - {fileID: 1663760277}
@@ -7296,4 +7288,3 @@ SceneRoots:
   - {fileID: 424135590}
   - {fileID: 247058242}
   - {fileID: 1291471582}
->>>>>>> 2f1909f (Tweaks to layout, first pass at night lighting)
