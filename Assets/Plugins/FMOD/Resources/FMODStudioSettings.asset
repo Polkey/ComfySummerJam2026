@@ -480,6 +480,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Ambience
+  - Music
   - SFX
   - Testing
   BanksToLoad: []
