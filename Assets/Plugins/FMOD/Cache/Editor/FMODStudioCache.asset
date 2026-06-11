@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8736829448125498417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/OccasionalCliffRockfall
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/OccasionalCliffRockfall
+  Guid:
+    Data1: 1123463909
+    Data2: 1252384333
+    Data3: -484496197
+    Data4: 378188953
+  Banks:
+  - {fileID: 4370118712702691625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 124538
+--- !u!114 &-5591803374218858286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/FoxSounds
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/FoxSounds
+  Guid:
+    Data1: -321838973
+    Data2: 1240767987
+    Data3: -1376642669
+    Data4: -1222538176
+  Banks:
+  - {fileID: 8753539020627539865}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 100526
 --- !u!114 &-3195308509091938293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +96,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639167070504558773
+  lastModified: 639167878870843418
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -69,13 +123,17 @@ MonoBehaviour:
   - {fileID: 1685116375410342423}
   - {fileID: 4069983016642320200}
   - {fileID: 5348007096201386841}
+  - {fileID: -8736829448125498417}
+  - {fileID: -5591803374218858286}
+  - {fileID: 8827577964045506540}
+  - {fileID: 189993910611393599}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2542134216140554695}
   StringsBanks:
   - {fileID: 6507828076462829723}
   cacheVersion: 131859
-  cacheTime: 639167078779243527
+  cacheTime: 639167887637058061
   SerializableEventsDict:
   - key: event:/TestEvents/Ambience/Wind
     index: 0
@@ -87,6 +145,41 @@ MonoBehaviour:
     index: 3
   - key: event:/Ambience/BeachAmbience
     index: 4
+  - key: event:/Ambience/OccasionalCliffRockfall
+    index: 5
+  - key: event:/Ambience/FoxSounds
+    index: 6
+  - key: event:/Ambience/WavesLapping
+    index: 7
+  - key: event:/Ambience/BushBugs
+    index: 8
+--- !u!114 &189993910611393599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/BushBugs
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/BushBugs
+  Guid:
+    Data1: -380124965
+    Data2: 1298954610
+    Data3: -421454148
+    Data4: -1254314991
+  Banks:
+  - {fileID: 8753539020627539865}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 57000
 --- !u!114 &1124279234548824695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +318,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639167078778902255
+  lastModified: 639167887637058061
   FileSizes: []
   Exists: 1
 --- !u!114 &5348007096201386841
@@ -271,10 +364,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639167070504563776
+  lastModified: 639167878870853483
   FileSizes:
   - Name: 
-    Value: 1482
+    Value: 1680
   Exists: 1
 --- !u!114 &8753539020627539865
 MonoBehaviour:
@@ -291,6 +384,33 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639167078779243527
+  lastModified: 639167884797296343
   FileSizes: []
   Exists: 1
+--- !u!114 &8827577964045506540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/WavesLapping
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/WavesLapping
+  Guid:
+    Data1: -1473759591
+    Data2: 1173132962
+    Data3: -1121652819
+    Data4: -869032324
+  Banks:
+  - {fileID: 8753539020627539865}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 99000
