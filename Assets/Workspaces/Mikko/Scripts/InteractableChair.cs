@@ -27,7 +27,6 @@ public class InteractableChair : MonoBehaviour, IInteractable {
     }
     public void Interact() {
         if (!seated) {
-            BasicFPCC.movementLocked = true;
             mCollider.enabled = false;
             StartCoroutine(movePlayer());
             StartCoroutine(playerLook());
@@ -60,6 +59,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             player.transform.position = Vector3.Lerp(startPos, positionTarget.position, t * moveSpeed);
             yield return null;
         }
+        BasicFPCC.movementLocked = true;
     }
     IEnumerator exitPlayer() {
 
@@ -85,7 +85,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             float targetY = Quaternion.LookRotation(direction).eulerAngles.y;
 
             float timer = 0f;
-            float duration = 1f;
+            float duration = 0.7f;
 
             while (timer < duration) {
                 timer += Time.deltaTime;

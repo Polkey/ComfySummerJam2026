@@ -41,6 +41,8 @@ public class BasicFPCC : MonoBehaviour {
 
     // - Components -
     public bool movementLocked = false;
+    public bool yUpdated = false;
+
     private CharacterController controller;                    // CharacterController component
     private Transform playerTx;                                // this player object
 
@@ -85,6 +87,10 @@ public class BasicFPCC : MonoBehaviour {
     public float mouseSnappiness = 20f;              // default was 10f; larger values of this cause less filtering, more responsiveness
     public bool invertLookY = false;                 // toggle invert look Y
     public float clampLookY = 90f;                   // maximum look up/down angle
+    public float clampLookX = 110;
+    //public float clampLookXL = 110f;
+    //public float clampLookXR = 110f;
+
 
     [Header("Move Settings")]
     public float crouchSpeed = 3f;                   // crouching movement speed
@@ -121,7 +127,9 @@ public class BasicFPCC : MonoBehaviour {
     private float cameraStartY = 0;                  // reference to move camera with crouch
 
     [Header("- reference variables -")]
-    public float xRotation = 0f;                     // the up/down angle the player is looking
+    public float xRotation = 0f;                    // the up/down angle the player is looking
+    public float yRotation = 0f;                    // The L/R angle the player is looking, only used when movementlocked = true
+    public float yRotationStart = 0f;
     private float lastSpeed = 0;                     // reference for calculating speed
     private Vector3 fauxGravity = Vector3.zero;      // calculated gravity
     private float accMouseX = 0;                     // reference for mouse look smoothing
@@ -150,7 +158,32 @@ public class BasicFPCC : MonoBehaviour {
 
     void Update() {
         ProcessInputs();
-        ProcessLook();
+        if (movementLocked) {
+            if (!yUpdated) {
+
+                yRotationStart = playerTx.eulerAngles.y;
+                yRotation = 0f;
+                //if (yRotation - clampLookXL < -180f) clampLookXL = yRotation - clampLookXL + 360f;
+                //else clampLookXL -= yRotation;
+                //if (yRotation + clampLookXR > 180f) clampLookXR = yRotation + clampLookXR - 360f;
+                //else clampLookXR += yRotation;
+
+                //if (clampLookXL > clampLookXR) {
+                //    var saved = clampLookXL;
+                //    clampLookXL = clampLookXR;
+                //    clampLookXR = saved;
+                //}
+                //Debug.Log(yRotation+" "+clampLookXL+ " " +clampLookXR); AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+                yUpdated = true;
+            }
+            ProcessLookLocked();
+        }
+        else {
+            yUpdated = false;
+            ProcessLook();
+        }
+        
         if (!movementLocked) {
             ProcessMovement();
         }
@@ -209,6 +242,27 @@ public class BasicFPCC : MonoBehaviour {
 
         // rotate player Y
         playerTx.Rotate(Vector3.up * mouseX);
+    }
+    void ProcessLookLocked() {
+
+            accMouseX = Mathf.Lerp(accMouseX, inputLookX, mouseSnappiness * Time.deltaTime);
+            accMouseY = Mathf.Lerp(accMouseY, inputLookY, mouseSnappiness * Time.deltaTime);
+
+            float mouseX = accMouseX * mouseSensitivityX * 100f * Time.deltaTime;
+            float mouseY = accMouseY * mouseSensitivityY * 100f * Time.deltaTime;
+
+            // rotate camera X
+            xRotation += (invertLookY == true ? mouseY : -mouseY);
+            xRotation = Mathf.Clamp(xRotation, -clampLookY, clampLookY);
+
+            cameraTx.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+            // rotate player Y
+            yRotation += mouseX;
+            yRotation = Mathf.Clamp(yRotation, -clampLookX, clampLookX);
+
+            playerTx.localRotation = Quaternion.Euler(0f, yRotationStart + yRotation, 0f);
+
     }
 
     void ProcessMovement() {
