@@ -40,6 +40,7 @@ public class BasicFPCC : MonoBehaviour {
     public LayerMask castingMask;                              // Layer mask for casts. You'll want to ignore the player.
 
     // - Components -
+    public bool movementLocked = false;
     private CharacterController controller;                    // CharacterController component
     private Transform playerTx;                                // this player object
 
@@ -150,7 +151,9 @@ public class BasicFPCC : MonoBehaviour {
     void Update() {
         ProcessInputs();
         ProcessLook();
-        ProcessMovement();
+        if (!movementLocked) {
+            ProcessMovement();
+        }
     }
 
     void Initialize() {
