@@ -61,21 +61,27 @@ void vert(inout PackedVaryings IN)
     
     float2 waveUV1 =    (IN.positionWS.xz *
                         float2(1., 3.) +
-                        (_Time * _WaveSpeed * 
+                        (_Time * 1 * _WaveSpeed * 
                         normalize(float2(-.2, -1.)))) / 
                         _WaveScale;
     
     float2 waveUV2 =    (IN.positionWS.xz *
                         float2(1., 3.) + 
-                        (_Time * _WaveSpeed * 
-                        normalize(float2(1, -.6)))) / 
+                        (_Time * 1 * _WaveSpeed * 
+                        normalize(float2(0, -.6)))) / 
                         (_WaveScale * 1.3);
     
     float4 largeWaves1 = SAMPLE_TEXTURE2D_LOD(_WaveMapLarge, sampler_WaveMapLarge, waveUV1, 0);
     float4 largeWaves2 = SAMPLE_TEXTURE2D_LOD(_WaveMapLarge, sampler_WaveMapLarge, waveUV2, 0);
-    float waves = (largeWaves1.z * 2. - 1.) + (largeWaves2.z * 2. - 1.);
+    float waves = ((largeWaves1.z * 2. - 1.) + (largeWaves2.z * 2. - 1.)) / 2.;
+    //float waves = (largeWaves2.z * 2. - 1.);
     
-    IN.positionWS += waves * _HeightMult * float3(0., 1., 0.);
+    // Tesselation Distance fade calc
+    const float minDist = 2;
+    float dist = distance(IN.positionWS, _WorldSpaceCameraPos);
+    float factor = clamp(1 - (dist - minDist) / (_maxTessellationDistance - minDist), 0.01, 1);
+    
+    IN.positionWS += waves * _HeightMult * float3(0., 1., 0.) * factor;
     
     float3 objectPos = TransformWorldToObject(IN.positionWS);
 
