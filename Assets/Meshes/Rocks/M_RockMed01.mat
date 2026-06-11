@@ -170,7 +170,11 @@ Material:
     - _ReceiveShadows: 1
     - _Rock_Cavities_Influence: 0.827
     - _Rock_Cavities_Roughness: 1
+<<<<<<< HEAD
     - _Rock_Edges_Influence: 0.297
+=======
+    - _Rock_Edges_Influence: 0.81
+>>>>>>> 1d7816d (Initial commit of rock kit)
     - _Rock_Edges_Roughness: 1
     - _Rock_Noise_Influence: 0.281
     - _Rock_Noise_Roughness: 1
