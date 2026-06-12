@@ -77,6 +77,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Dir_ORMH:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -95,6 +99,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: 6afa82325e60f7b4cb6b10bcaeda2ebc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ORMH:
+        m_Texture: {fileID: 2800000, guid: 7ec1a685fc4ff4d4b8461c9f5980389a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -194,7 +202,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Dir_UV_Scale: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Gradient_Tint: {r: 0.54901963, g: 0.09019608, b: 0.09019608, a: 1}
+    - _Gradient_Tint: {r: 0.54901963, g: 0.45490196, b: 0.38039216, a: 1}
     - _Rock_Cavities: {r: 0.6306938, g: 0.6320754, b: 0.48598254, a: 1}
     - _Rock_Edges: {r: 0.7921569, g: 0.7921569, b: 0.7921569, a: 1}
     - _Rock_Noise: {r: 0.31764707, g: 0.4952892, b: 0.59607846, a: 1}

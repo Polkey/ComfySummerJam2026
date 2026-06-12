@@ -26,6 +26,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _IS_ROCK
+  - _USE_DIRECTIONAL_MASK
   - _USE_TRIPLANAR
   - _USE_WORLD_SPACE_GRADIENT
   - _UV_SCALING_NO_SCALING
@@ -66,15 +67,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dir_Base_Color:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c8f4287f20cef6642b73764bea1b295b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dir_MROH:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: aba6dc9b256871d4ca84a16b5673c54b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dir_Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0b0d170d791cd854a9194f5ec05ee13f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dir_ORMH:
+        m_Texture: {fileID: 2800000, guid: aba6dc9b256871d4ca84a16b5673c54b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -95,6 +100,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: 6afa82325e60f7b4cb6b10bcaeda2ebc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ORMH:
+        m_Texture: {fileID: 2800000, guid: 7ec1a685fc4ff4d4b8461c9f5980389a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -152,9 +161,9 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dir_Triplanar_Blending: 0.5
-    - _Dir_Triplanar_Scale: 1
-    - _Directional_Mask_Coverage: 0.92
-    - _Directional_Mask_Hardness: 0.5
+    - _Dir_Triplanar_Scale: 0.58
+    - _Directional_Mask_Coverage: 1
+    - _Directional_Mask_Hardness: 0.784
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -182,7 +191,7 @@ Material:
     - _Surface: 0
     - _Triplanar_Blending: 5.35
     - _Triplanar_Scale: 0.25
-    - _USE_DIRECTIONAL_MASK: 0
+    - _USE_DIRECTIONAL_MASK: 1
     - _USE_TRIPLANAR: 1
     - _USE_WORLD_SPACE_GRADIENT: 1
     - _UV_SCALING: 0
@@ -194,7 +203,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Dir_UV_Scale: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Gradient_Tint: {r: 0.5471698, g: 0.090334624, b: 0.090334624, a: 1}
+    - _Gradient_Tint: {r: 0.54901963, g: 0.4530043, b: 0.38156864, a: 1}
     - _Rock_Cavities: {r: 0.6306938, g: 0.6320754, b: 0.48598254, a: 1}
     - _Rock_Edges: {r: 0.7921569, g: 0.7921569, b: 0.7921569, a: 1}
     - _Rock_Noise: {r: 0.31764707, g: 0.4952892, b: 0.59607846, a: 1}
