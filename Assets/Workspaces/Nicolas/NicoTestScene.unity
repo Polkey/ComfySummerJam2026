@@ -820,26 +820,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1530995580042559653, guid: 5c75f37f3921b6d46a4d3458a0f6337e, type: 3}
-      propertyPath: <music>k__BackingField.Path
-      value: event:/Music/MainTheme
-      objectReference: {fileID: 0}
-    - target: {fileID: 1530995580042559653, guid: 5c75f37f3921b6d46a4d3458a0f6337e, type: 3}
-      propertyPath: <music>k__BackingField.Guid.Data1
-      value: -281438827
-      objectReference: {fileID: 0}
-    - target: {fileID: 1530995580042559653, guid: 5c75f37f3921b6d46a4d3458a0f6337e, type: 3}
-      propertyPath: <music>k__BackingField.Guid.Data2
-      value: 1155091356
-      objectReference: {fileID: 0}
-    - target: {fileID: 1530995580042559653, guid: 5c75f37f3921b6d46a4d3458a0f6337e, type: 3}
-      propertyPath: <music>k__BackingField.Guid.Data3
-      value: -2114810193
-      objectReference: {fileID: 0}
-    - target: {fileID: 1530995580042559653, guid: 5c75f37f3921b6d46a4d3458a0f6337e, type: 3}
-      propertyPath: <music>k__BackingField.Guid.Data4
-      value: -1027438014
-      objectReference: {fileID: 0}
     - target: {fileID: 7403176475841845813, guid: 5c75f37f3921b6d46a4d3458a0f6337e, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -997,10 +977,6 @@ PrefabInstance:
     - target: {fileID: 6826860862908951464, guid: 34a5d0acda7d577438d2192e305059dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7834877864909612349, guid: 34a5d0acda7d577438d2192e305059dc, type: 3}
-      propertyPath: OverrideMaxDistance
-      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1234,6 +1210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6121952134099421629, guid: b2e95c94f89c1194aba37298542bd862, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6121952134099421629, guid: b2e95c94f89c1194aba37298542bd862, type: 3}
       propertyPath: m_Name
       value: DistanceToWater

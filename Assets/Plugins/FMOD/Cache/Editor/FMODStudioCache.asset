@@ -53,7 +53,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 98000
+  Length: 184500
 --- !u!114 &-5591803374218858286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 6507828076462829723}
   cacheVersion: 131859
-  cacheTime: 639167972293825008
+  cacheTime: 639168724015717337
   SerializableEventsDict:
   - key: event:/TestEvents/Ambience/Wind
     index: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Testing.bank
   Name: Testing
   StudioPath: bank:/Testing
-  lastModified: 639167069524496543
+  lastModified: 639168724015717337
   FileSizes: []
   Exists: 1
 --- !u!114 &4069983016642320200
@@ -349,7 +349,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639167887637058061
+  lastModified: 639168718325080257
   FileSizes: []
   Exists: 1
 --- !u!114 &4593369199619963413
@@ -367,7 +367,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639167972293825008
+  lastModified: 639168718325381320
   FileSizes: []
   Exists: 1
 --- !u!114 &5348007096201386841
@@ -433,7 +433,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639167884797296343
+  lastModified: 639168718326709060
   FileSizes: []
   Exists: 1
 --- !u!114 &8827577964045506540

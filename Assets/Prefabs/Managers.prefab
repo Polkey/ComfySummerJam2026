@@ -51,6 +51,13 @@ MonoBehaviour:
       Data3: -1816819318
       Data4: 1059192900
     Path: event:/Ambience/BeachAmbience
+  <music>k__BackingField:
+    Guid:
+      Data1: -281438827
+      Data2: 1155091356
+      Data3: -2114810193
+      Data4: -1027438014
+    Path: event:/Music/MainTheme
   <playerFootsteps>k__BackingField:
     Guid:
       Data1: 294646194
