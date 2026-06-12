@@ -30,8 +30,9 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.Splines.ExtrusionShapes;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class BasicFPCC : MonoBehaviour {
@@ -151,6 +152,9 @@ public class BasicFPCC : MonoBehaviour {
     [Space(5)]
     public bool cursorActive = false;                // cursor state
 
+    public Image canvasImage;
+    public Image endingImage;
+    public Image endingImageThanks;
 
     void Start() {
         Initialize();
@@ -176,6 +180,7 @@ public class BasicFPCC : MonoBehaviour {
                 //Debug.Log(yRotation+" "+clampLookXL+ " " +clampLookXR); AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
                 yUpdated = true;
+                StartCoroutine(fadeImage());
             }
             ProcessLookLocked();
         }
@@ -187,6 +192,77 @@ public class BasicFPCC : MonoBehaviour {
         if (!movementLocked) {
             ProcessMovement();
         }
+    }
+
+    public void fadeOut() {
+        StartCoroutine(fadeImageOut());
+    }
+    public void playEnding() {
+        StartCoroutine(fadeEnding());
+    }
+
+    IEnumerator fadeImage() {
+        float timer = 0f;
+        float duration = 2f;
+
+        while (timer < duration) {
+            timer += Time.deltaTime;
+            float t = Mathf.Clamp01(timer / duration);
+
+            canvasImage.color = new Color(canvasImage.color.r, canvasImage.color.g, canvasImage.color.b, Mathf.Lerp(0, 1, t));
+
+            yield return null;
+        }
+        yield return null;
+    }
+
+    IEnumerator fadeImageOut() {
+        float timer = 0f;
+        float duration = 1f;
+
+        while (timer < duration) {
+            timer += Time.deltaTime;
+            float t = Mathf.Clamp01(timer / duration);
+
+            canvasImage.color = new Color(canvasImage.color.r, canvasImage.color.g, canvasImage.color.b, Mathf.Lerp(1, 0, t));
+
+            yield return null;
+        }
+        yield return null;
+    }
+    IEnumerator fadeEnding() {
+        float timer = 0f;
+        float duration = 2f;
+
+        while (timer < duration) {
+            timer += Time.deltaTime;
+            float t = Mathf.Clamp01(timer / duration);
+
+            endingImage.color = new Color(endingImage.color.r, endingImage.color.g, endingImage.color.b, Mathf.Lerp(0, 1, t));
+
+            yield return null;
+        }
+        var cam = GetComponentInChildren<CinemachineCamera>();
+        cam.enabled = false;
+        StartCoroutine(fadeEndingOut());
+        yield return null;
+    }
+    IEnumerator fadeEndingOut() {
+        yield return new WaitForSeconds(2);
+        float timer = 0f;
+        float duration = 2f;
+
+        while (timer < duration) {
+            timer += Time.deltaTime;
+            float t = Mathf.Clamp01(timer / duration);
+
+            endingImage.color = new Color(endingImage.color.r, endingImage.color.g, endingImage.color.b, Mathf.Lerp(1, 0, t));
+            endingImageThanks.color = new Color(endingImageThanks.color.r, endingImageThanks.color.g, endingImageThanks.color.b, Mathf.Lerp(0, 1, t));
+
+            yield return null;
+        }
+        SetLockCursor(false);
+        yield return null;
     }
 
     void Initialize() {

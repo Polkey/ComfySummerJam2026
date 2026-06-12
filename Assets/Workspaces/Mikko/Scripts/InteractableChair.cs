@@ -117,8 +117,13 @@ public class InteractableChair : MonoBehaviour, IInteractable {
     }
     private void Update() {
        
-        if (seated == true && Input.GetKeyDown(KeyCode.Space)) {
+        if (seated == true && Input.GetKeyDown(KeyCode.Mouse1)) {
             StartCoroutine(exitPlayer());
+            BasicFPCC.fadeOut();
+        }
+        if (seated == true && Input.GetKeyDown(KeyCode.Mouse0)) {
+            BasicFPCC.fadeOut();
+            BasicFPCC.playEnding();
         }
     }
 }
