@@ -145,6 +145,10 @@ Material:
     - _HeightMult: 2.6
     - _LIGHTING_SCENARIO: 1
     - _Large_Wave_Normal_Strength: 0.2
+    - _Large_Wave_Normal_Strength_Max: 2.8
+    - _Large_Wave_Normal_Strength_Min: 0.2
+    - _Large_Wave_Range_End: 300
+    - _Large_Wave_Range_Start: 100
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005

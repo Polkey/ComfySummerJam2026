@@ -74,6 +74,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Starmap:
+        m_Texture: {fileID: 2800000, guid: f16880fb5392b4848a374a1d0343bf4c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Sun_Texture:
+        m_Texture: {fileID: 2800000, guid: 4d7bf590f09f87f4aad1f87db9ffa341, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -110,6 +118,8 @@ Material:
     - _GlossyReflections: 0
     - _INVERT_DIRECTION: 1
     - _Metallic: 0
+    - _Moon_Cutoff: 0.855
+    - _Moon_Cutoff_Hardness: 0.141
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -121,9 +131,14 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
+    - _Star_Brightness: 14
+    - _Star_Brightness_Variance: 1
+    - _Star_Scale: 0.038
+    - _Star_Variance: 0.252
+    - _Sun_Brightness: 3.96
     - _Sun_Image_Scale: 1
-    - _Sun_Size: 0.588
-    - _Sun_Softness: 0.023
+    - _Sun_Size: 0.695
+    - _Sun_Softness: 0.076
     - _Surface: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
@@ -132,9 +147,11 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Height_Fog_Color: {r: 0.3611321, g: 0.4749147, b: 0.5660378, a: 1}
+    - _Height_Fog_Color: {r: 0.14228402, g: 0.3575136, b: 0.501, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Sun_Tint: {r: 1, g: 0.9681348, b: 0.7216981, a: 1}
+    - _Star_Color_1: {r: 1, g: 0.4470588, b: 0.77091765, a: 1}
+    - _Star_Color_2: {r: 0, g: 0.9167563, b: 0.94509804, a: 1}
+    - _Sun_Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2749351090713529097
