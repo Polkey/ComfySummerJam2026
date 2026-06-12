@@ -26,6 +26,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _IS_ROCK
+  - _USE_DIRECTIONAL_MASK
   - _USE_TRIPLANAR
   - _USE_WORLD_SPACE_GRADIENT
   - _UV_SCALING_NO_SCALING
@@ -66,7 +67,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dir_Base_Color:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c8f4287f20cef6642b73764bea1b295b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dir_MROH:
@@ -74,11 +75,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dir_Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0b0d170d791cd854a9194f5ec05ee13f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dir_ORMH:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: aba6dc9b256871d4ca84a16b5673c54b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -190,7 +191,7 @@ Material:
     - _Surface: 0
     - _Triplanar_Blending: 5.35
     - _Triplanar_Scale: 0.25
-    - _USE_DIRECTIONAL_MASK: 0
+    - _USE_DIRECTIONAL_MASK: 1
     - _USE_TRIPLANAR: 1
     - _USE_WORLD_SPACE_GRADIENT: 1
     - _UV_SCALING: 0
