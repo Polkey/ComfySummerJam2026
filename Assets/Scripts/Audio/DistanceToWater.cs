@@ -44,15 +44,11 @@ public class DistanceToWater : MonoBehaviour
             
         Vector3 nearestWorldPosition = splineContainer.transform.TransformPoint(nearestPoint);
 
-        Debug.Log(nearestWorldPosition);
-
         transform.position = nearestWorldPosition;
 
-        // transform.position = new Vector3(playerPos.position.x, transform.position.y, transform.position.z);
         var distanceToWater = Mathf.Abs(Vector3.Distance(player.position, transform.position));
 
         parameterValue = Mathf.InverseLerp(40, 0, distanceToWater);
-        // Debug.Log(parameterValue);
 
         AudioManager.instance.SetAmbienceParameter(parameterName, parameterValue);
     }
