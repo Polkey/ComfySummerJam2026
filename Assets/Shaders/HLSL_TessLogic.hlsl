@@ -99,10 +99,10 @@ PackedVaryings domain(TessellationFactors factors, OutputPatch<PackedVaryings, 3
     PackedVaryings data;
     ZERO_INITIALIZE(PackedVaryings, data);
     
+    INTERPOLATE(tangentWS)
     INTERPOLATE(positionWS)
     INTERPOLATE(positionCS)
     INTERPOLATE(normalWS)
-    INTERPOLATE(tangentWS)
     INTERPOLATE(texCoord0)
     
     vert(data);
