@@ -1,0 +1,93 @@
+using System.Linq;
+using System.Reflection;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UIController : MonoBehaviour
+{
+    private List<IUIComponent> m_uiComponents = new List<IUIComponent>();
+    private HashSet<IUIComponent> m_visibleComponents = new HashSet<IUIComponent>();
+
+    private void Awake()
+    {
+        Initialize();
+    }
+    private void OnDestroy()
+    {
+        Dispose();
+    }
+    public void Initialize()
+    {
+        DontDestroyOnLoad(this);
+
+        BuildModules();
+        InitializeModules();
+    }
+    public void Dispose()
+    {
+
+    }
+    public bool IsVisible<T>() where T : IUIComponent
+    {
+        var comp = m_uiComponents.OfType<T>().FirstOrDefault();
+        if (comp != null)
+        {
+            return comp.IsVisible();
+        }
+        return false;
+
+    }
+    public void ShowComponent<T>(bool show) where T : IUIComponent
+    {
+        var comp = m_uiComponents.OfType<T>().FirstOrDefault();
+        if (comp != null)
+        {
+            comp.Toggle(show);
+            if (show)
+            {
+                m_visibleComponents.Add(comp);
+            }
+            else m_visibleComponents.Remove(comp);
+        }
+    }
+    void BuildModules()
+    {
+        var groups = FindObjectsByType<UIViewGroup>()
+            .ToDictionary(g => g.ComponentType, g => g);
+
+        var uiTypes = Assembly.GetExecutingAssembly()
+            .GetTypes()
+            .Where(t => !t.IsAbstract && typeof(IUIComponent).IsAssignableFrom(t));
+
+        foreach (var type in uiTypes)
+        {
+            if (!groups.TryGetValue(type, out var group))
+            {
+                Debug.LogWarning($"No UIViewGroup found for {type.Name}");
+                continue;
+            }
+
+            var ctor = type.GetConstructors()
+                .FirstOrDefault(c =>
+                {
+                    var p = c.GetParameters();
+                    return p.Length == 1 &&
+                    p[0].ParameterType.IsAssignableFrom(group.GetType());
+                });
+            if (ctor == null)
+            {
+                Debug.LogWarning($"No valid constructor for {type.Name}");
+                continue;
+            }
+            var instance = ctor.Invoke(new object[] { group }) as IUIComponent;
+
+            if (instance != null)
+                m_uiComponents.Add(instance);
+        }
+    }
+    void InitializeModules()
+    {
+        foreach (var comp in m_uiComponents)
+            comp.Initialize();
+    }
+}
