@@ -160,8 +160,8 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Dir_Triplanar_Blending: 0.5
-    - _Dir_Triplanar_Scale: 1
+    - _Dir_Triplanar_Blending: 3.59
+    - _Dir_Triplanar_Scale: 0.34
     - _Directional_Mask_Coverage: 0.92
     - _Directional_Mask_Hardness: 0.5
     - _DstBlend: 0
@@ -191,6 +191,7 @@ Material:
     - _Surface: 0
     - _Triplanar_Blending: 5.35
     - _Triplanar_Scale: 0.25
+    - _USE_BAKED_GRADIENT: 0
     - _USE_DIRECTIONAL_MASK: 1
     - _USE_TRIPLANAR: 1
     - _USE_WORLD_SPACE_GRADIENT: 1
