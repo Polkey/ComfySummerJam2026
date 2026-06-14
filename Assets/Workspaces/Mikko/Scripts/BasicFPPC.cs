@@ -44,6 +44,7 @@ public class BasicFPCC : MonoBehaviour {
     public bool movementLocked = false;
     public bool yUpdated = false;
 
+    public GameObject endCam;
     private CharacterController controller;                    // CharacterController component
     private Transform playerTx;                                // this player object
 
@@ -244,6 +245,7 @@ public class BasicFPCC : MonoBehaviour {
         }
         var cam = GetComponentInChildren<CinemachineCamera>();
         cam.enabled = false;
+        endCam.SetActive(true);
         StartCoroutine(fadeEndingOut());
         yield return null;
     }

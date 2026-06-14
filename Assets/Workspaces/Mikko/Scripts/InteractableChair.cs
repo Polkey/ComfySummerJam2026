@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Multiplayer.Center.Common.Analytics;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
     private MeshCollider mCollider;
     private bool highlighted = false;
     private bool seated = false;
+    public bool interacted = false;
 
     public Material mat;
     public int indexOfMat = 1;
@@ -26,7 +28,8 @@ public class InteractableChair : MonoBehaviour, IInteractable {
         mCollider = GetComponent<MeshCollider>();
     }
     public void Interact() {
-        if (!seated) {
+        if (!seated && !interacted) {
+            interacted = true;
             mCollider.enabled = false;
             StartCoroutine(movePlayer());
             StartCoroutine(playerLook());
@@ -104,6 +107,8 @@ public class InteractableChair : MonoBehaviour, IInteractable {
     private void OnTriggerExit(Collider collision) {
         if (collision.gameObject.name == "Player") {
             mCollider.enabled = true;
+            seated = false;
+            interacted = false;
         }
     }
     private void OnTriggerStay(Collider collision) {
@@ -117,13 +122,15 @@ public class InteractableChair : MonoBehaviour, IInteractable {
     }
     private void Update() {
        
-        if (seated == true && Input.GetKeyDown(KeyCode.Mouse1)) {
+        if (seated == true && interacted == true && Input.GetKeyDown(KeyCode.Mouse1)) {
             StartCoroutine(exitPlayer());
             BasicFPCC.fadeOut();
+            interacted = false;
         }
-        if (seated == true && Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (seated == true && interacted == true && Input.GetKeyDown(KeyCode.Mouse0)) {
             BasicFPCC.fadeOut();
             BasicFPCC.playEnding();
+            interacted = false;
         }
     }
 }
