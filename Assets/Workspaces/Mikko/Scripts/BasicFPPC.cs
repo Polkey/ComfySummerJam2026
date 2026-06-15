@@ -32,6 +32,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
@@ -166,6 +167,7 @@ public class BasicFPCC : MonoBehaviour {
 
     void Start() {
         Initialize();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Update() {
@@ -369,9 +371,11 @@ public class BasicFPCC : MonoBehaviour {
 
             yield return null;
         }
+        //GAME ENDING LOGIC HERE LOTS OF STUFF HAPPENS
         var cam = GetComponentInChildren<CinemachineCamera>();
         cam.enabled = false;
         endCam.SetActive(true);
+        SceneManager.LoadScene("BakeScene_Dawn", LoadSceneMode.Single);
         StartCoroutine(fadeEndingOut());
         yield return null;
     }

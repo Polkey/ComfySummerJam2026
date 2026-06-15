@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 132d78dcc3e32d64688e623c5b19719e, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 12eefa74cb6c37c448ff1ee2cf1ef3cf, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 1af1a06416ee7014ebde20e066283529, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 1066183699}
   - component: {fileID: 1066183698}
   - component: {fileID: 1066183702}
+  - component: {fileID: 1066183703}
   m_Layer: 0
   m_Name: CinemachineBrain
   m_TagString: MainCamera
@@ -470,6 +471,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 1185511214}
+--- !u!114 &1066183703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066183697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c2e9cee784c504c9aad9d6dcbc01ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
 --- !u!1001 &1185511213
 PrefabInstance:
   m_ObjectHideFlags: 0
