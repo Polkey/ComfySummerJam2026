@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
 
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
+    private EventInstance footstepsEventInstance;
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
 
@@ -75,6 +76,11 @@ public class AudioManager : MonoBehaviour
     public void SetAmbienceParameter(string parameterName, float parameterValue)
     {
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
+    }
+
+    public void SetFootstepParameter(string parameterName, float parameterValue)
+    {
+        footstepsEventInstance.setParameterByName(parameterName, parameterValue);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
