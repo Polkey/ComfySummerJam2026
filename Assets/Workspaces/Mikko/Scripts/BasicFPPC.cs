@@ -153,7 +153,14 @@ public class BasicFPCC : MonoBehaviour {
     [Space(5)]
     public bool cursorActive = false;                // cursor state
 
+
+    public bool coldObjective = false;
+    public bool noisyObjective = false;
     public Image canvasImage;
+    public Image missingObjectives;
+    public Image coldImage;
+    public Image noisyImage;
+
     public Image endingImage;
     public Image endingImageThanks;
 
@@ -181,6 +188,9 @@ public class BasicFPCC : MonoBehaviour {
                 //Debug.Log(yRotation+" "+clampLookXL+ " " +clampLookXR); AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
                 yUpdated = true;
+                if (!coldObjective || !noisyObjective) {
+                    StartCoroutine(fadeObjectivesIn());
+                }
                 StartCoroutine(fadeImage());
             }
             ProcessLookLocked();
@@ -197,39 +207,155 @@ public class BasicFPCC : MonoBehaviour {
 
     public void fadeOut() {
         StartCoroutine(fadeImageOut());
+        StartCoroutine(fadeObjectivesOut());
+
     }
     public void playEnding() {
         StartCoroutine(fadeEnding());
     }
+    IEnumerator fadeObjectivesIn() {
+        if (!coldObjective && noisyObjective) {
+        float timer = 0f;
+        float duration = 2f;
 
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
+
+                coldImage.color = new Color(coldImage.color.r, coldImage.color.g, coldImage.color.b, Mathf.Lerp(0, 1, t));
+
+                yield return null;
+            }
+            yield return null;
+        }
+        if (!noisyObjective && coldObjective) {
+            float timer = 0f;
+            float duration = 2f;
+
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
+
+                noisyImage.color = new Color(noisyImage.color.r, noisyImage.color.g, noisyImage.color.b, Mathf.Lerp(0, 1, t));
+
+                yield return null;
+            }
+            yield return null;
+        }
+        if (!noisyObjective && !coldObjective) {
+       
+                float timer = 0f;
+                float duration = 2f;
+
+                while (timer < duration) {
+                    timer += Time.deltaTime;
+                    float t = Mathf.Clamp01(timer / duration);
+
+                    noisyImage.color = new Color(noisyImage.color.r, noisyImage.color.g, noisyImage.color.b, Mathf.Lerp(0, 1, t));
+                    coldImage.color = new Color(coldImage.color.r, coldImage.color.g, coldImage.color.b, Mathf.Lerp(0, 1, t));
+
+                yield return null;
+                }
+                yield return null;
+
+        }
+    }
+    IEnumerator fadeObjectivesOut() {
+        if (!noisyObjective && !coldObjective) {
+            float timer = 0f;
+            float duration = 2f;
+
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
+
+                noisyImage.color = new Color(noisyImage.color.r, noisyImage.color.g, noisyImage.color.b, Mathf.Lerp(1, 0, t));
+                coldImage.color = new Color(coldImage.color.r, coldImage.color.g, coldImage.color.b, Mathf.Lerp(1, 0, t));
+                yield return null;
+            }
+            yield return null;
+        }
+        else if (!coldObjective) {
+            float timer = 0f;
+            float duration = 2f;
+
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
+
+                coldImage.color = new Color(coldImage.color.r, coldImage.color.g, coldImage.color.b, Mathf.Lerp(1, 0, t));
+
+                yield return null;
+            }
+            yield return null;
+        }
+        else if (!noisyObjective) {
+            float timer = 0f;
+            float duration = 2f;
+
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
+
+                noisyImage.color = new Color(noisyImage.color.r, noisyImage.color.g, noisyImage.color.b, Mathf.Lerp(1, 0, t));
+
+                yield return null;
+            }
+            yield return null;
+        }
+    }
     IEnumerator fadeImage() {
         float timer = 0f;
         float duration = 2f;
 
-        while (timer < duration) {
-            timer += Time.deltaTime;
-            float t = Mathf.Clamp01(timer / duration);
+        if (coldObjective && noisyObjective) {
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
 
-            canvasImage.color = new Color(canvasImage.color.r, canvasImage.color.g, canvasImage.color.b, Mathf.Lerp(0, 1, t));
+                canvasImage.color = new Color(canvasImage.color.r, canvasImage.color.g, canvasImage.color.b, Mathf.Lerp(0, 1, t));
 
+                yield return null;
+            }
             yield return null;
         }
-        yield return null;
+        else {
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
+
+                missingObjectives.color = new Color(missingObjectives.color.r, missingObjectives.color.g, missingObjectives.color.b, Mathf.Lerp(0, 1, t));
+
+                yield return null;
+            }
+        }
     }
 
     IEnumerator fadeImageOut() {
         float timer = 0f;
         float duration = 1f;
+        if (coldObjective && noisyObjective) {
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
 
-        while (timer < duration) {
-            timer += Time.deltaTime;
-            float t = Mathf.Clamp01(timer / duration);
+                canvasImage.color = new Color(canvasImage.color.r, canvasImage.color.g, canvasImage.color.b, Mathf.Lerp(1, 0, t));
 
-            canvasImage.color = new Color(canvasImage.color.r, canvasImage.color.g, canvasImage.color.b, Mathf.Lerp(1, 0, t));
-
+                yield return null;
+            }
             yield return null;
         }
-        yield return null;
+        else {
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                float t = Mathf.Clamp01(timer / duration);
+
+                missingObjectives.color = new Color(missingObjectives.color.r, missingObjectives.color.g, missingObjectives.color.b, Mathf.Lerp(1, 0, t));
+
+                yield return null;
+            }
+            yield return null;
+        }
     }
     IEnumerator fadeEnding() {
         float timer = 0f;

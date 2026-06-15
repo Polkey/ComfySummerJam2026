@@ -128,9 +128,11 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             interacted = false;
         }
         if (seated == true && interacted == true && Input.GetKeyDown(KeyCode.Mouse0)) {
-            BasicFPCC.fadeOut();
-            BasicFPCC.playEnding();
-            interacted = false;
+            if (BasicFPCC.coldObjective == true && BasicFPCC.noisyObjective == true) {
+                BasicFPCC.fadeOut();
+                BasicFPCC.playEnding();
+                interacted = false;
+            }
         }
     }
 }
