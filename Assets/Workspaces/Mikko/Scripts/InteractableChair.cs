@@ -95,7 +95,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
 
                 float t = Mathf.Clamp01(timer / duration);
                 //ADJUST MAGICAL NUMBERS HERE IF NEEDED, Y = L/R, X = U/D
-                float y = Mathf.LerpAngle(startY, 90, t);
+                float y = Mathf.LerpAngle(startY, 180, t);
                 //float x = Mathf.LerpAngle(startX, 0, t); 
 
                 player.transform.rotation = Quaternion.Euler(0f, y, 0f);
