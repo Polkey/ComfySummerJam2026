@@ -8,6 +8,6 @@ public class UIV_MainMenu_Settings : UIViewBase
 
     public override void Init()
     {
-        // slider onvaluechanged can be linked here or in UIC_MainMenu
+        // slider onvaluechanged can be linked here or in UIC_MainMenu.cs
     }
 }
