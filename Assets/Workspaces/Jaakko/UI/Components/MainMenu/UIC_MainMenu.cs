@@ -1,3 +1,6 @@
+using UnityEngine;
+using UnityEngine.InputSystem.iOS;
+
 public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
 {
     private enum MenuState
@@ -11,6 +14,7 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
     private UIV_MainMenu_Main m_main;
     private UIV_MainMenu_Settings m_settings;
     private MenuState m_state;
+    private BasicFPCC m_player;
     public UIC_MainMenu(UIG_MainMenu group) : base(group)
     {
         m_main = group.Get<UIV_MainMenu_Main>();
@@ -19,9 +23,16 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
     public override void Initialize()
     {
         base.Initialize();
-        
-        ChangeState(MenuState.Main);        
         InitializeButtons();
+
+        m_player = GameObject.FindAnyObjectByType<BasicFPCC>();
+        if (m_player == null)
+        {
+            Debug.LogWarning("UIC_MainMenu: No player found in the scene.");
+            return;
+        }
+
+        ChangeState(MenuState.Main);        
     }
     private void InitializeButtons()
     {
@@ -50,11 +61,12 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
         m_group.HideAll();
         switch (state)
         {
-            case MenuState.Main:
+            case MenuState.Main:                
                 m_main.View();
+                TogglePlayer(false);
                 break;
             case MenuState.Start:
-                
+                TogglePlayer(true);
                 break;
             case MenuState.Settings:
                 m_settings.View();
@@ -63,5 +75,13 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
                 
                 break;
         }
+    }
+    private void TogglePlayer(bool value)
+    {
+        if (m_player == null)
+            return;
+
+        m_player.useLocalInputs = value;
+        m_player.SetLockCursor(!value);
     }
 }
