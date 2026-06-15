@@ -411,7 +411,8 @@ public class BasicFPCC : MonoBehaviour {
         groundOffsetY = groundCheckY;
         ceilingOffsetY = ceilingCheckY;
 
-        RefreshCursor();
+        if (useLocalInputs)
+            RefreshCursor();
     }
 
     void ProcessInputs() {
