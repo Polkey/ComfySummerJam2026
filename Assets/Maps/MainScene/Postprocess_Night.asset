@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.LiftGammaGain
   active: 1
   lift:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0.0026012252}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.32331255}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.34789297}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.09075439}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.09642636}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,10 +106,10 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9406981, z: 0.9990475, w: 0.33465692}
+    m_Value: {x: 1, y: 0.9406981, z: 0.9990475, w: 0.65112156}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.0680658}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.1020987}
   highlights:
     m_OverrideState: 1
     m_Value: {x: 0.9508954, y: 0.9826081, z: 1, w: 0}
