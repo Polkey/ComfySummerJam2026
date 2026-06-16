@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 [CreateAssetMenu(menuName = "Effects/Volume Saturation")]
-public class SaturationEffect : EffectDefinition
+public class E_Saturation : EffectDefinition
 {
     [SerializeField] private float targetValue;
     [SerializeField] private float duration;
