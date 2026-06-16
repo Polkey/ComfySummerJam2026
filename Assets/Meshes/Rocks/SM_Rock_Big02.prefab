@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Rock_Big02
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 31d5dc73db0b61647b1393adfe0563b4, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.67843944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 31d5dc73db0b61647b1393adfe0563b4, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.30981517
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

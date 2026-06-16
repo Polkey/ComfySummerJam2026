@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Rock_Med02
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 9915d68dd6878ea41b1a34e9f302b07b, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.21657902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 9915d68dd6878ea41b1a34e9f302b07b, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.059519142
+      objectReference: {fileID: 0}
     - target: {fileID: 7228733102713695263, guid: 9915d68dd6878ea41b1a34e9f302b07b, type: 3}
       propertyPath: m_Enabled
       value: 0

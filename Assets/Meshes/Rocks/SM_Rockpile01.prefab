@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Rockpile01
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: faa517bb385d50c4f8aa76aa6235038e, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.23794293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: faa517bb385d50c4f8aa76aa6235038e, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.089191794
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

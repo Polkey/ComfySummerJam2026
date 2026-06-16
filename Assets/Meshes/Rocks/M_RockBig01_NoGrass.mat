@@ -203,7 +203,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Dir_UV_Scale: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Gradient_Tint: {r: 0.54901963, g: 0.4530043, b: 0.38156864, a: 1}
+    - _Gradient_Bounds: {r: 5, g: 110, b: 0, a: 0}
+    - _Gradient_Tint: {r: 0.88235295, g: 0.8156863, b: 0.6392157, a: 1}
     - _Rock_Cavities: {r: 0.6306938, g: 0.6320754, b: 0.48598254, a: 1}
     - _Rock_Edges: {r: 0.7921569, g: 0.7921569, b: 0.7921569, a: 1}
     - _Rock_Noise: {r: 0.31764707, g: 0.4952892, b: 0.59607846, a: 1}
