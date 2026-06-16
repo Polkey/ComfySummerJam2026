@@ -25,15 +25,9 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
     private EventInstance footstepsEventInstance;
-    private EventInstance ambienceEventInstance;
+    private EventInstance mainAmbienceEventInstance;
+    public EventInstance darkAmbienceEventInstance;
     private EventInstance musicEventInstance;
-
-    // for ui sliders
-    public float musicTargetVolume { get; private set; } = 1;
-    public void SetMusicTargetVolume(float value)
-    {
-        musicTargetVolume = value;
-    }
 
     void Awake()
     {
@@ -54,8 +48,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        InitializeAmbience(FMODEvents.instance.ambience);
-        InitializeMusic(FMODEvents.instance.music);
+        InitializeDarkAmbience(FMODEvents.instance.darkAmbience);
     }
 
     void Update()
@@ -65,13 +58,19 @@ public class AudioManager : MonoBehaviour
         sfxBus.setVolume(sfxVolume);
         ambienceBus.setVolume(ambienceVolume);
     }
-    private void InitializeAmbience(EventReference ambienceEventReference)
+    public void InitializeMainAmbience(EventReference ambienceEventReference)
     {
-        ambienceEventInstance = CreateInstance(ambienceEventReference);
-        ambienceEventInstance.start();
+        mainAmbienceEventInstance = CreateInstance(ambienceEventReference);
+        mainAmbienceEventInstance.start();
     }
 
-    private void InitializeMusic(EventReference musicEventReference)
+    public void InitializeDarkAmbience(EventReference ambienceEventReference)
+    {
+        darkAmbienceEventInstance = CreateInstance(ambienceEventReference);
+        darkAmbienceEventInstance.start();
+    }
+
+    public void InitializeMusic(EventReference musicEventReference)
     {
         musicEventInstance = CreateInstance(musicEventReference);
         musicEventInstance.start();
@@ -81,7 +80,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetAmbienceParameter(string parameterName, float parameterValue)
     {
-        ambienceEventInstance.setParameterByName(parameterName, parameterValue);
+        mainAmbienceEventInstance.setParameterByName(parameterName, parameterValue);
     }
 
     public void SetFootstepParameter(string parameterName, float parameterValue)

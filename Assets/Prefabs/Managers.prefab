@@ -44,13 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f2dc90fd88a664e92eba88304cf907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
-  <ambience>k__BackingField:
+  <mainAmbience>k__BackingField:
     Guid:
       Data1: 874398132
       Data2: 1079256610
       Data3: -1816819318
       Data4: 1059192900
     Path: event:/Ambience/BeachAmbience
+  <darkAmbience>k__BackingField:
+    Guid:
+      Data1: -1332465799
+      Data2: 1294471657
+      Data3: -662332773
+      Data4: 1680736902
+    Path: event:/Ambience/DarkAmbience
   <music>k__BackingField:
     Guid:
       Data1: -281438827

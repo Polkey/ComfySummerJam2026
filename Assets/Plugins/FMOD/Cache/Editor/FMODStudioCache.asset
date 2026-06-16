@@ -93,9 +93,36 @@ MonoBehaviour:
   Path: FMOD/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639171669504051025
+  lastModified: 639172461563415619
   FileSizes: []
   Exists: 1
+--- !u!114 &-3519488232895024846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/DarkAmbience
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience/DarkAmbience
+  Guid:
+    Data1: -1332465799
+    Data2: 1294471657
+    Data3: -662332773
+    Data4: 1680736902
+  Banks:
+  - {fileID: -5139146023696920446}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 51500
 --- !u!114 &-2407817323854396802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +183,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639171669502907591
+  lastModified: 639172460312995180
   FileSizes: []
   Exists: 1
 --- !u!114 &-862664974676489023
@@ -202,10 +229,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639171669502932646
+  lastModified: 639172460313000480
   FileSizes:
   - Name: 
-    Value: 1922
+    Value: 1964
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -239,13 +266,14 @@ MonoBehaviour:
   - {fileID: 7848674254744924411}
   - {fileID: 7518533839787829905}
   - {fileID: 5676473560200043554}
+  - {fileID: -3519488232895024846}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1006593616863828153}
   StringsBanks:
   - {fileID: -123171312339773225}
   cacheVersion: 131859
-  cacheTime: 639171773255884143
+  cacheTime: 639172463348979067
   SerializableEventsDict:
   - key: event:/Ambience/FoxSounds
     index: 0
@@ -271,6 +299,8 @@ MonoBehaviour:
     index: 10
   - key: snapshot:/CaveReverb
     index: 11
+  - key: event:/Ambience/DarkAmbience
+    index: 12
 --- !u!114 &1967340572269501573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +316,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639168718325381320
+  lastModified: 639172463348979067
   FileSizes: []
   Exists: 1
 --- !u!114 &2217242809656183337
