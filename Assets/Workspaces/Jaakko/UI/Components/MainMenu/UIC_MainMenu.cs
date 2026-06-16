@@ -71,14 +71,14 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
             case MenuState.Start:
                 TogglePlayer(true);
 
-                EffectController ec = EffectController.I;
-                if (ec == null) 
-                {
-                    Debug.LogWarning($"UIC_MainMenu: No EffectController found in the scene.");
-                    return;
-                }
-                ec.PlayEffect(ec.Get("V_CA_Saturation"));
-                ec.PlayEffect(ec.Get("A_MV_FadeIn"));
+                //EffectController ec = EffectController.I;
+                //if (ec == null) 
+                //{
+                //    Debug.LogWarning($"UIC_MainMenu: No EffectController found in the scene.");
+                //    return;
+                //}
+                //ec.PlayEffect(ec.Get("V_CA_Saturation"));
+                //ec.PlayEffect(ec.Get("A_MV_FadeIn"));
                 break;
             case MenuState.Settings:
                 m_settings.View();
