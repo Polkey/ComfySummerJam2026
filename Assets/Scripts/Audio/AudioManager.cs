@@ -28,6 +28,12 @@ public class AudioManager : MonoBehaviour
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
 
+    // for ui sliders
+    public float musicTargetVolume { get; private set; } = 1;
+    public void SetMusicTargetVolume(float value)
+    {
+        musicTargetVolume = value;
+    }
 
     void Awake()
     {
@@ -59,7 +65,6 @@ public class AudioManager : MonoBehaviour
         sfxBus.setVolume(sfxVolume);
         ambienceBus.setVolume(ambienceVolume);
     }
-
     private void InitializeAmbience(EventReference ambienceEventReference)
     {
         ambienceEventInstance = CreateInstance(ambienceEventReference);
