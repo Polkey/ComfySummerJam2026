@@ -73,6 +73,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
+
     public void SetAmbienceParameter(string parameterName, float parameterValue)
     {
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
@@ -86,6 +87,21 @@ public class AudioManager : MonoBehaviour
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
+    }
+
+    public void PlayOneShotWithParameters(EventReference eventReference, Vector3 worldPos, params (string name, float value)[] parameters)
+    {
+        EventInstance instance = RuntimeManager.CreateInstance(eventReference);
+
+        foreach (var param in parameters)
+        {
+            instance.setParameterByName(param.name, param.value);
+        }
+
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(worldPos));
+
+        instance.start();
+        instance.release();
     }
 
     public EventInstance CreateInstance(EventReference eventReference)

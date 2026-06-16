@@ -138,7 +138,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639171723659295279
+  lastModified: 639171773255884143
   FileSizes: []
   Exists: 1
 --- !u!114 &-1006593616863828153
@@ -245,7 +245,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -123171312339773225}
   cacheVersion: 131859
-  cacheTime: 639171723659295279
+  cacheTime: 639171773255884143
   SerializableEventsDict:
   - key: event:/Ambience/FoxSounds
     index: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 3
-  Default: 0
+  Default: 1
   ID:
     data1: 89654797
     data2: 1627086029

@@ -4,22 +4,37 @@ using UnityEngine;
 public class TerrainBasedInteractions : MonoBehaviour
 {
     BasicFPCC fpcc;
+    [Header("Parameter Change")]
+    [SerializeField] private string parameterName;
     [Range(0.01f, 1f)][SerializeField] private float footstepbuffer;
-    private int currentTerrain;
+    private int currentTerrain = 1;
 
     void Awake()
     {
         fpcc = GetComponent<BasicFPCC>();
     }
 
+    void Start()
+    {
+        StartCoroutine(Footsteps());
+    }
+
     private IEnumerator Footsteps()
     {
-        while (true && fpcc.isGrounded)
+        while (true)
         {
-            AudioManager.instance.SetFootstepParameter("Terrain", currentTerrain);
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerFootsteps, transform.position);
+            if (fpcc.isGrounded && fpcc.moving)
+            {
+                Debug.Log($"Stepping? on? {currentTerrain}");
+                    AudioManager.instance.PlayOneShotWithParameters(
+                    FMODEvents.instance.playerFootsteps, 
+                    transform.position, 
+                    (parameterName, currentTerrain)
+                );
+            }
+
+            yield return new WaitForSeconds(fpcc.running == false ? footstepbuffer : footstepbuffer / 2);
         }
-        return null;
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,20 +42,49 @@ public class TerrainBasedInteractions : MonoBehaviour
         switch (other.tag)
         {
             case "Grass":
-
+                currentTerrain = 0;
                 break;
 
             case "Rock":
-                
+                currentTerrain = 3;
                 break;
 
             case "WetSand":
-                
+                currentTerrain = 2;
                 break;
 
             default:
-                // sand
+                currentTerrain = 1;
                 break;
         }
     }
+
+    void OnTriggerStay(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Grass":
+                currentTerrain = 0;
+                break;
+
+            case "Rock":
+                currentTerrain = 3;
+                break;
+
+            case "WetSand":
+                currentTerrain = 2;
+                break;
+
+            default:
+                currentTerrain = 1;
+                break;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        currentTerrain = 1;
+    }
+
+
 }

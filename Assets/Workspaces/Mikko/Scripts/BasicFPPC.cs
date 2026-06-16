@@ -154,6 +154,9 @@ public class BasicFPCC : MonoBehaviour {
     [Space(5)]
     public bool cursorActive = false;                // cursor state
 
+    public bool moving;
+    public bool running;
+
 
     public bool coldObjective = false;
     public bool noisyObjective = false;
@@ -475,6 +478,9 @@ public class BasicFPCC : MonoBehaviour {
     }
 
     void ProcessMovement() {
+
+        moving = Mathf.Abs(inputMoveX) > 0.01f || Mathf.Abs(inputMoveY) > 0.01f;
+
         // - variables -
         float vScale = 1f; // for calculating GFX scale (optional)
         float h = defaultHeight;
@@ -499,7 +505,9 @@ public class BasicFPCC : MonoBehaviour {
         // if grounded, and not stuck on ceiling
         if (isGrounded && !isCeiling && inputKeyRun) {
             nextSpeed = runSpeed; // to run speed
+            running = true;
         }
+        else running = false;
 
         if (inputKeyCrouch) // crouch
         {

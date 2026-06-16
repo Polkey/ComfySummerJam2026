@@ -60,11 +60,11 @@ MonoBehaviour:
     Path: event:/Music/MainTheme
   <playerFootsteps>k__BackingField:
     Guid:
-      Data1: 294646194
-      Data2: 1152060613
-      Data3: -1269459057
-      Data4: -1663659233
-    Path: event:/TestEvents/SFX/Player/Footsteps
+      Data1: 2137420980
+      Data2: 1291304410
+      Data3: -2082739317
+      Data4: -819040755
+    Path: event:/Player/Footsteps
   <pickupSFX>k__BackingField:
     Guid:
       Data1: -1005835872
@@ -157,6 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   masterVolume: 1
-  musicVolume: 0
-  sfxVolume: 1
+  musicVolume: 0.6
+  sfxVolume: 0.7
   ambienceVolume: 1

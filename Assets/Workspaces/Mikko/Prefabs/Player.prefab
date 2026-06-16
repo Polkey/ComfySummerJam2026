@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 8002873755457958807}
   - component: {fileID: 7963268651996020283}
   - component: {fileID: 5107686746198699224}
+  - component: {fileID: 5747270431466305306}
   m_Layer: 6
   m_Name: Player
   m_TagString: MainCamera
@@ -630,6 +631,8 @@ MonoBehaviour:
   slideForward: {x: 0, y: 0, z: 0}
   isCeiling: 0
   cursorActive: 0
+  moving: 0
+  running: 0
   coldObjective: 0
   noisyObjective: 0
   canvasImage: {fileID: 1551359376945770869}
@@ -638,6 +641,20 @@ MonoBehaviour:
   noisyImage: {fileID: 795279758267319245}
   endingImage: {fileID: 7907119877251149399}
   endingImageThanks: {fileID: 4093982457535439284}
+--- !u!114 &5747270431466305306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855788375848795098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945b3cb19d609334f8eb39361567ebe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TerrainBasedInteractions
+  parameterName: Terrain
+  footstepbuffer: 0.6
 --- !u!1 &7226378834033871985
 GameObject:
   m_ObjectHideFlags: 0
