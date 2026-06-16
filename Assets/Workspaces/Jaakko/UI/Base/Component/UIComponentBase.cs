@@ -10,6 +10,7 @@ public abstract class UIComponentBase<TGroup> : IUIComponent
     {
         m_group = group;
     }
+    public virtual void OnInput(UIInput input) { }
     protected void ViewSelectablesChanged()
     {
         if (!IsVisible()) return;
