@@ -211,6 +211,7 @@ public class BasicFPCC : MonoBehaviour {
     }
 
     public void fadeOut() {
+        
         StartCoroutine(fadeImageOut());
         StartCoroutine(fadeObjectivesOut());
 
@@ -266,6 +267,8 @@ public class BasicFPCC : MonoBehaviour {
         }
     }
     IEnumerator fadeObjectivesOut() {
+        yield return new WaitForSeconds(1);
+        StopCoroutine(fadeObjectivesIn());
         if (!noisyObjective && !coldObjective) {
             float timer = 0f;
             float duration = 2f;
@@ -310,6 +313,7 @@ public class BasicFPCC : MonoBehaviour {
         }
     }
     IEnumerator fadeImage() {
+
         float timer = 0f;
         float duration = 2f;
 
@@ -337,6 +341,8 @@ public class BasicFPCC : MonoBehaviour {
     }
 
     IEnumerator fadeImageOut() {
+        yield return new WaitForSeconds(1);
+        StopCoroutine(fadeImage());
         float timer = 0f;
         float duration = 1f;
         if (coldObjective && noisyObjective) {
