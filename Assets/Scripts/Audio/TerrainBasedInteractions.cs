@@ -25,7 +25,6 @@ public class TerrainBasedInteractions : MonoBehaviour
         {
             if (fpcc.isGrounded && fpcc.moving)
             {
-                Debug.Log($"Stepping? on? {currentTerrain}");
                     AudioManager.instance.PlayOneShotWithParameters(
                     FMODEvents.instance.playerFootsteps, 
                     transform.position, 
