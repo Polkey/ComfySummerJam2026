@@ -602,6 +602,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4855788375848795098, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
   m_PrefabInstance: {fileID: 1185511213}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1185511215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2585484173439545672, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
+  m_PrefabInstance: {fileID: 1185511213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1395248391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -861,6 +866,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gameplay
       objectReference: {fileID: 0}
+    - target: {fileID: 5347487145490840016, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1185511214}
+    - target: {fileID: 5347487145490840016, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1185511215}
     - target: {fileID: 6897129129037148760, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.66989
