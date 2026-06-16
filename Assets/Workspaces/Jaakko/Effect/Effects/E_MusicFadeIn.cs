@@ -29,7 +29,7 @@ public class E_MusicFadeIn : EffectDefinition
             }
             m_start = 0f;
             m_duration = duration;
-            m_target = m_audio.musicTargetVolume;
+            m_target = m_audio.musicVolume;
             m_audio.musicVolume = m_start;
         }
         public void Tick(float dt)

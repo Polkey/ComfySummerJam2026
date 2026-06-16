@@ -23,6 +23,7 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
     {
         base.Initialize();
         InitializeButtons();
+        InitializeSliders();
 
         m_player = GameObject.FindAnyObjectByType<BasicFPCC>();
         if (m_player == null)
@@ -54,6 +55,42 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
             ChangeState(MenuState.Main);
         });
     }
+    private void InitializeSliders() 
+    {
+        AudioManager audioManager = AudioManager.instance;
+        if (audioManager == null) 
+        {
+            audioManager = GameObject.FindAnyObjectByType<AudioManager>();
+            if (audioManager == null)
+            {
+                Debug.LogWarning("UIC_MainMenu: No AudioManager found in the scene. Sliders will not function.");
+                return;
+            }
+        }
+        m_settings.s_music.minValue = 0f;
+        m_settings.s_music.maxValue = 1f;
+        m_settings.s_music.value = audioManager.musicVolume;
+        m_settings.s_music.onValueChanged.AddListener((value) =>
+        {
+            audioManager.musicVolume = Mathf.Clamp01(value);
+        });
+
+        m_settings.s_sfx.minValue = 0f;
+        m_settings.s_sfx.maxValue = 1f;
+        m_settings.s_sfx.value = audioManager.sfxVolume;
+        m_settings.s_sfx.onValueChanged.AddListener((value) =>
+        {
+            audioManager.sfxVolume = Mathf.Clamp01(value);
+        });
+
+        m_settings.s_master.minValue = 0f;
+        m_settings.s_master.maxValue = 1f;
+        m_settings.s_master.value = audioManager.masterVolume;
+        m_settings.s_master.onValueChanged.AddListener((value) =>
+        {
+            audioManager.masterVolume = Mathf.Clamp01(value);
+        });
+    }
     private void ChangeState(MenuState state)
     {
         if (m_state == state) return;        
@@ -65,20 +102,9 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
             case MenuState.Main:                
                 m_main.View();
                 TogglePlayer(false);
-                if (AudioManager.instance != null)
-                    AudioManager.instance.musicVolume = 0f;
                 break;
             case MenuState.Start:
                 TogglePlayer(true);
-
-                EffectController ec = EffectController.I;
-                if (ec == null) 
-                {
-                    Debug.LogWarning($"UIC_MainMenu: No EffectController found in the scene.");
-                    return;
-                }
-                ec.PlayEffect(ec.Get("V_CA_Saturation"));
-                ec.PlayEffect(ec.Get("A_MV_FadeIn"));
                 break;
             case MenuState.Settings:
                 m_settings.View();
