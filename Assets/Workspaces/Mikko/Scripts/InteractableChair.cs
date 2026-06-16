@@ -62,10 +62,11 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             player.transform.position = Vector3.Lerp(startPos, positionTarget.position, t * moveSpeed);
             yield return null;
         }
+        seated = true;
         BasicFPCC.movementLocked = true;
     }
     IEnumerator exitPlayer() {
-
+        //yield return new WaitForSeconds(0.7f);
         float timeToMove = 0.7f;
         float moveSpeed = 2;
         float timer = 0;
@@ -111,11 +112,6 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             interacted = false;
         }
     }
-    private void OnTriggerStay(Collider collision) {
-        if (collision.gameObject.name == "Player") {
-            seated = true;
-        }
-    }
 
     private void Start() {
         float startXTest = playerCamera.transform.eulerAngles.x;
@@ -123,12 +119,14 @@ public class InteractableChair : MonoBehaviour, IInteractable {
     private void Update() {
        
         if (seated == true && interacted == true && Input.GetKeyDown(KeyCode.Mouse1)) {
-            StartCoroutine(exitPlayer());
+            
             BasicFPCC.fadeOut();
+            StartCoroutine(exitPlayer());
             interacted = false;
         }
         if (seated == true && interacted == true && Input.GetKeyDown(KeyCode.Mouse0)) {
             if (BasicFPCC.coldObjective == true && BasicFPCC.noisyObjective == true) {
+                
                 BasicFPCC.fadeOut();
                 BasicFPCC.playEnding();
                 interacted = false;

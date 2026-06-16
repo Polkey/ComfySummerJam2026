@@ -553,6 +553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5107686746198699224, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
+      propertyPath: endCam
+      value: 
+      objectReference: {fileID: 1404766024}
     - target: {fileID: 6899837308782512493, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
       propertyPath: m_LocalPosition.x
       value: 63.6
@@ -607,6 +611,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2585484173439545672, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
   m_PrefabInstance: {fileID: 1185511213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1404766024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7425156726167060543, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
+  m_PrefabInstance: {fileID: 955260404922664759}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1588157578
 PrefabInstance:
