@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
 
 public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
 {
@@ -46,7 +45,9 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
         });
         m_main.b_quit.onClick.AddListener(() =>
         {
-            ChangeState(MenuState.Quit);
+#if !UNITY_EDITOR
+            ChangeState(MenuState.Quit);      
+#endif
         });
         m_settings.b_back.onClick.AddListener(() =>
         {
@@ -67,6 +68,14 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
                 break;
             case MenuState.Start:
                 TogglePlayer(true);
+
+                EffectController ec = EffectController.I;
+                if (ec == null) 
+                {
+                    Debug.LogWarning($"UIC_MainMenu: No EffectController found in the scene.");
+                    return;
+                }
+                ec.PlayEffect(ec.Get("V_CA_Saturation"));
                 break;
             case MenuState.Settings:
                 m_settings.View();
