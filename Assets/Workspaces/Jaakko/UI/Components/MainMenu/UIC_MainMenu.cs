@@ -65,6 +65,8 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
             case MenuState.Main:                
                 m_main.View();
                 TogglePlayer(false);
+                if (AudioManager.instance != null)
+                    AudioManager.instance.musicVolume = 0f;
                 break;
             case MenuState.Start:
                 TogglePlayer(true);

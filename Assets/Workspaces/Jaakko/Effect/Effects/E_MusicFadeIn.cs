@@ -1,16 +1,13 @@
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 
 [CreateAssetMenu(menuName = "Effects/Music Fade In")]
 public class E_MusicFadeIn : EffectDefinition
 {
-    [SerializeField] private float targetValue;
     [SerializeField] private float duration;
 
     public override IEffectInstance Create(EffectContext ctx)
     {
-        return new Instance(duration, targetValue);
+        return new Instance(duration);
     }
     private class Instance : IEffectInstance
     {
@@ -22,7 +19,7 @@ public class E_MusicFadeIn : EffectDefinition
 
         public bool IsFinished { get; private set; }
 
-        public Instance(float duration, float target)
+        public Instance(float duration)
         {
             m_audio = AudioManager.instance;
             if (m_audio == null) 
@@ -30,13 +27,14 @@ public class E_MusicFadeIn : EffectDefinition
                 Debug.LogError("E_MusicFadeIn: No AudioManager Instance Found");
                 return;
             }
-            m_start = m_audio.musicVolume;
+            m_start = 0f;
             m_duration = duration;
-            m_target = target;
+            m_target = m_audio.musicTargetVolume;
+            m_audio.musicVolume = m_start;
         }
         public void Tick(float dt)
         {
-            if (IsFinished) return;
+            if (IsFinished || m_audio == null) return;
 
             t += dt;
             float a = Mathf.Clamp01(t / m_duration);
