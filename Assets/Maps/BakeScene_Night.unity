@@ -23,9 +23,9 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.95
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.25605196, g: 0.29572394, b: 0.3962264, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 1f554254f46b3fb4186a78e3c18ddc07, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -176,7 +176,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f544009733499894fa2a4e64eaf6c595, type: 3}
---- !u!1 &356469121
+--- !u!1 &1303615889
 GameObject:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,8 +184,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 356469123}
-  - component: {fileID: 356469122}
+  - component: {fileID: 1303615891}
+  - component: {fileID: 1303615890}
   m_Layer: 0
   m_Name: ProbeVolumePerSceneData
   m_TagString: Untagged
@@ -193,13 +193,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &356469122
+--- !u!114 &1303615890
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356469121}
+  m_GameObject: {fileID: 1303615889}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a83d2f7ae04ab6f4f99b0d85377be998, type: 3}
@@ -211,13 +211,13 @@ MonoBehaviour:
   obsoleteCellSharedDataAsset: {fileID: 0}
   obsoleteCellSupportDataAsset: {fileID: 0}
   obsoleteSerializedScenarios: []
---- !u!4 &356469123
+--- !u!4 &1303615891
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356469121}
+  m_GameObject: {fileID: 1303615889}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -341,11 +341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3341472024094491759, guid: 6759bca823b2f04469e2fa819cedb1dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4793148825713498394, guid: 6759bca823b2f04469e2fa819cedb1dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5490259334722394962, guid: 6759bca823b2f04469e2fa819cedb1dc, type: 3}
       propertyPath: m_Name
@@ -353,14 +353,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7476803714446734689, guid: 6759bca823b2f04469e2fa819cedb1dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9098490850298288045, guid: 6759bca823b2f04469e2fa819cedb1dc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1643945010949324643, guid: 6759bca823b2f04469e2fa819cedb1dc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6759bca823b2f04469e2fa819cedb1dc, type: 3}
@@ -376,4 +377,4 @@ SceneRoots:
   - {fileID: 1469539177}
   - {fileID: 248263357}
   - {fileID: 1863829868}
-  - {fileID: 356469123}
+  - {fileID: 1303615891}
