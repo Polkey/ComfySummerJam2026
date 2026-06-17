@@ -4,6 +4,7 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     public float zoomSpeed = 2f;
+    public float targetFov = 30f;
     [SerializeField] private CinemachineCamera m_camera;
     private BasicFPCC m_player;
 
@@ -25,13 +26,12 @@ public class CameraZoom : MonoBehaviour
             return;
 
         float newFov = m_camera.Lens.FieldOfView;
-        const float minFov = 20;
 
         if (Input.GetMouseButton(1)) 
         {
             newFov = Mathf.MoveTowards(
                 newFov,
-                minFov,
+                targetFov,
                 zoomSpeed * Time.deltaTime);
         }
         else 

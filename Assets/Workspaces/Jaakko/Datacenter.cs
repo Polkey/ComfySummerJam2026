@@ -5,6 +5,12 @@ public class Datacenter : MonoBehaviour
 {
     public float time = 1f;
     public float delay = 0f;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            Destroy();
+    }
     public void Destroy()
     {
         StartCoroutine(DestroyCo());       
@@ -31,6 +37,7 @@ public class Datacenter : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / time;
 
+            transform.position += new Vector3(0f, 1.0f, 0f) * Time.deltaTime * 5f;
             transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
 
             yield return null;

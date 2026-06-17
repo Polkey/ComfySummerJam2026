@@ -668,7 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff629679ed3e614d83b15b0f5e4fb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
-  zoomSpeed: 30
+  zoomSpeed: 40
+  targetFov: 30
   m_camera: {fileID: 3006659714078634266}
 --- !u!1 &7226378834033871985
 GameObject:
