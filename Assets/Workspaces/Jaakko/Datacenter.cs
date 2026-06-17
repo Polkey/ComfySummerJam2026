@@ -4,12 +4,15 @@ using UnityEngine;
 public class Datacenter : MonoBehaviour
 {
     public float time = 1f;
+    public float delay = 0f;
     public void Destroy()
     {
         StartCoroutine(DestroyCo());       
     }
     IEnumerator DestroyCo() 
     {
+        yield return new WaitForSeconds(delay);
+
         Vector3 startScale = transform.localScale;
         float elapsed = 0f;
 
