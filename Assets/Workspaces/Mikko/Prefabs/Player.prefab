@@ -83,8 +83,8 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 7963268651996020283}
   - component: {fileID: 5107686746198699224}
   - component: {fileID: 5747270431466305306}
+  - component: {fileID: 2532839931898464343}
   m_Layer: 6
   m_Name: Player
   m_TagString: MainCamera
@@ -655,6 +656,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TerrainBasedInteractions
   parameterName: Terrain
   footstepbuffer: 0.6
+--- !u!114 &2532839931898464343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855788375848795098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff629679ed3e614d83b15b0f5e4fb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraZoom
+  m_camera: {fileID: 3006659714078634266}
 --- !u!1 &7226378834033871985
 GameObject:
   m_ObjectHideFlags: 0

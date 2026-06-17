@@ -3,27 +3,28 @@ using UnityEngine;
 
 public class Datacenter : MonoBehaviour
 {
-    public float speed = 1f;
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-            Destroy();
-    }
+    public float time = 1f;
+    public float delay = 0f;
     public void Destroy()
     {
         StartCoroutine(DestroyCo());       
     }
     IEnumerator DestroyCo() 
     {
-        while (true) 
+        yield return new WaitForSeconds(delay);
+
+        Vector3 startScale = transform.localScale;
+        float elapsed = 0f;
+
+        while (elapsed < time) 
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, speed * Time.deltaTime);
-            if (transform.localScale.magnitude <= Vector3.zero.magnitude) 
-            {
-                Destroy(gameObject);
-                yield break;
-            }                
+            elapsed += Time.deltaTime;
+            float t = elapsed / time;
+
+            transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
+
             yield return null;
         }
+        Destroy(gameObject);
     }
 }

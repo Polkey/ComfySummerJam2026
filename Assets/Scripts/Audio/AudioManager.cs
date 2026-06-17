@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
     private EventInstance footstepsEventInstance;
     private EventInstance mainAmbienceEventInstance;
     public EventInstance darkAmbienceEventInstance;
+    public EventInstance datacenterDestructEventInstance;
     private EventInstance musicEventInstance;
 
     void Awake()
@@ -76,6 +77,12 @@ public class AudioManager : MonoBehaviour
         musicEventInstance = CreateInstance(musicEventReference);
         musicEventInstance.start();
 
+    }
+
+    public void InitializeDatacenterDestruct(EventReference destructEventReference)
+    {
+        datacenterDestructEventInstance = CreateInstance(destructEventReference);
+        datacenterDestructEventInstance.start();
     }
 
 
