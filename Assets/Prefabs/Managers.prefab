@@ -86,6 +86,13 @@ MonoBehaviour:
       Data3: 1008470711
       Data4: 834064374
     Path: event:/TestEvents/SFX/Pickup/IdleHum
+  <datacenterDestructSFX>k__BackingField:
+    Guid:
+      Data1: -118675229
+      Data2: 1084255498
+      Data3: 1278669957
+      Data4: 1031077735
+    Path: event:/GeneralSFX/DatacenterDestruct
 --- !u!1 &7403176475841845813
 GameObject:
   m_ObjectHideFlags: 0

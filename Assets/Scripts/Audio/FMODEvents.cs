@@ -19,6 +19,9 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference pickupSFX { get; private set; }
     [field: SerializeField] public EventReference pickupIdle { get; private set; }
 
+    [field: Header("General SFX")]
+    [field: SerializeField] public EventReference datacenterDestructSFX { get; private set; }
+
     
 
     private void Awake()
