@@ -23,6 +23,9 @@ public class E_Saturation : EffectDefinition
 
         public bool IsFinished { get; private set; }
 
+        public void OnEnter() { }
+        public void OnExit() { }
+
         public Instance(Volume volume, float target, float duration) 
         {
             volume.profile.TryGet(out color);

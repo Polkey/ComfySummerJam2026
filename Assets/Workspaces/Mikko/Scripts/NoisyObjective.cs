@@ -6,6 +6,8 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
     private bool highlighted = false;
     ScoreManager scoreManager;
 
+    [SerializeField] private Datacenter datacenter;
+
     public Material mat;
     public int indexOfMat = 1;
     private void Awake() {
@@ -34,6 +36,8 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
         highlighted = false;
     }
     IEnumerator fade() {
+        datacenter?.Destroy();
+        EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
         float timeToFadeAway = 2;
         float fadeSpeed = 3;
         float timer = 0;

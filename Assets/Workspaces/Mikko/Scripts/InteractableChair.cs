@@ -52,6 +52,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
 
     IEnumerator movePlayer() {
 
+        BasicFPCC.SetState(PlayerState.Seated);
         float timeToMove = 1.5f;
         float moveSpeed = 2;
         float timer = 0;
@@ -63,7 +64,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             yield return null;
         }
         seated = true;
-        BasicFPCC.movementLocked = true;
+        BasicFPCC.movementLocked = true;        
     }
     IEnumerator exitPlayer() {
         //yield return new WaitForSeconds(0.7f);
@@ -78,6 +79,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             yield return null;
         }
         BasicFPCC.movementLocked = false;
+        BasicFPCC.SetState(PlayerState.Default);
         seated = false;
     }
     IEnumerator playerLook() {
