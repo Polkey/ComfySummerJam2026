@@ -1,6 +1,7 @@
 public enum UIInput 
 {
     Pause,
+    Debug
 }
 public interface IUIComponent
 {

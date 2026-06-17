@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        InitializeMainAmbience(FMODEvents.instance.mainAmbience);
         InitializeDarkAmbience(FMODEvents.instance.darkAmbience);
     }
 

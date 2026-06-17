@@ -29,11 +29,17 @@
 // GameObject -> 3D Object -> BasicFPCC
 
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+public enum PlayerState 
+{
+    Default,
+    Seated,
+    Paused
+}
 
 [RequireComponent(typeof(CharacterController))]
 public class BasicFPCC : MonoBehaviour {
@@ -172,9 +178,15 @@ public class BasicFPCC : MonoBehaviour {
         Initialize();
         DontDestroyOnLoad(this.gameObject);
     }
+    public PlayerState State {  get; private set; }
+    public void SetState(PlayerState state) 
+    {
+        State = state;
+    }
 
     void Update() {
         ProcessInputs();
+        if (State == PlayerState.Paused) return;
         if (movementLocked) {
             if (!yUpdated) {
 
@@ -193,6 +205,7 @@ public class BasicFPCC : MonoBehaviour {
                 //Debug.Log(yRotation+" "+clampLookXL+ " " +clampLookXR); AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
                 yUpdated = true;
+                
                 if (!coldObjective || !noisyObjective) {
                     StartCoroutine(fadeObjectivesIn());
                 }

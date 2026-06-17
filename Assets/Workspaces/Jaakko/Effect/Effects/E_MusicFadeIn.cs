@@ -19,6 +19,9 @@ public class E_MusicFadeIn : EffectDefinition
 
         public bool IsFinished { get; private set; }
 
+        public void OnEnter() { }
+        public void OnExit() { }
+
         public Instance(float duration)
         {
             m_audio = AudioManager.instance;

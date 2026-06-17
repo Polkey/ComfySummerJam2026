@@ -23,6 +23,19 @@ public class UIController : MonoBehaviour
         BuildModules();
         InitializeModules();
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            foreach (var comp in m_uiComponents)
+                comp.OnInput(UIInput.Pause);
+        }        
+        if (Input.GetKeyDown(KeyCode.Q)) 
+        {
+            foreach(var comp in m_uiComponents)
+                comp.OnInput(UIInput.Debug);
+        }
+    }
     public void Dispose()
     {
 

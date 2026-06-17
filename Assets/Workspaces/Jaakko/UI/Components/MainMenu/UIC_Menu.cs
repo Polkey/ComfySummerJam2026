@@ -1,6 +1,11 @@
 using UnityEngine;
-
-public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
+public enum GameState
+{
+    Starting = 0,
+    Playing = 1,
+    Paused = 2
+}
+public class UIC_Menu : UIComponentBase<UIG_Menu>
 {
     private enum MenuState
     {
@@ -8,20 +13,37 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
         Main = 1,
         Start = 2,
         Settings = 3,
-        Quit = 4
+        Quit = 4        
     }
-    private UIV_MainMenu_Main m_main;
-    private UIV_MainMenu_Settings m_settings;
+    public GameState m_gameState;
+    private UIV_Menu_Main m_main;
+    private UIV_Menu_Settings m_settings;
     private MenuState m_state;
     private BasicFPCC m_player;
-    public UIC_MainMenu(UIG_MainMenu group) : base(group)
+    public UIC_Menu(UIG_Menu group) : base(group)
     {
-        m_main = group.Get<UIV_MainMenu_Main>();
-        m_settings = group.Get<UIV_MainMenu_Settings>();
+        m_main = group.Get<UIV_Menu_Main>();
+        m_settings = group.Get<UIV_Menu_Settings>();
+    }
+    public override void OnInput(UIInput input)
+    {
+        switch (input) 
+        {
+            case UIInput.Pause:
+                if (m_state == MenuState.Start)
+                {
+                    ChangeState(MenuState.Main);
+                }
+                break;
+            case UIInput.Debug:
+                EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
+                break;
+        }
     }
     public override void Initialize()
     {
         base.Initialize();
+
         InitializeButtons();
         InitializeSliders();
 
@@ -67,6 +89,7 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
                 return;
             }
         }
+
         m_settings.s_music.minValue = 0f;
         m_settings.s_music.maxValue = 1f;
         m_settings.s_music.value = audioManager.musicVolume;
@@ -90,21 +113,39 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
         {
             audioManager.masterVolume = Mathf.Clamp01(value);
         });
+
+        m_settings.s_ambient.minValue = 0f;
+        m_settings.s_ambient.maxValue = 1f;
+        m_settings.s_ambient.value = audioManager.ambienceVolume;
+        m_settings.s_ambient.onValueChanged.AddListener((value) =>
+        {
+            audioManager.ambienceVolume = Mathf.Clamp01(value);
+        });
     }
     private void ChangeState(MenuState state)
     {
-        if (m_state == state) return;        
-        m_state = state;
+        if (m_state == state) return;
 
         m_group.HideAll();
         switch (state)
         {
-            case MenuState.Main:                
-                m_main.View();
+            case MenuState.Main:
+                if (m_player.State == PlayerState.Seated) return;
+
+                if (m_gameState == GameState.Starting) 
+                {
+                    m_main.SetText(m_main.b_start, "Start");
+                }
+                else
+                {
+                    m_main.SetText(m_main.b_start, "Continue");
+                }
+                m_main.View();                
                 TogglePlayer(false);
                 break;
             case MenuState.Start:
                 TogglePlayer(true);
+                m_gameState = GameState.Playing;
                 break;
             case MenuState.Settings:
                 m_settings.View();
@@ -113,6 +154,7 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
                 
                 break;
         }
+        m_state = state;
     }
     private void TogglePlayer(bool value)
     {
@@ -121,5 +163,8 @@ public class UIC_MainMenu : UIComponentBase<UIG_MainMenu>
 
         m_player.useLocalInputs = value;
         m_player.SetLockCursor(!value);
+        m_player.movementLocked = !value;
+
+        m_player.SetState(value ? PlayerState.Default : PlayerState.Paused);
     }
 }

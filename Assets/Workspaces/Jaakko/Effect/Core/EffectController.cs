@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 
 public class EffectController : MonoBehaviour 
 {
     public static EffectController I { get; private set; }
     private Volume GlobalVolume;
+    private CinemachineBrain CinemachineBrain;
 
     private readonly List<IEffectInstance> m_activeEffects = new();
 
@@ -24,6 +26,12 @@ public class EffectController : MonoBehaviour
         if (!RefreshVolume()) 
         {
             Debug.LogError($"EffectController: No global volume found in the scene! Effects will not work.");
+            return;
+        }
+        CinemachineBrain = FindAnyObjectByType<CinemachineBrain>();
+        if (CinemachineBrain == null)
+        {
+            Debug.LogError($"EffectController: No CinemachineBrain found in the scene! Effects will not work.");
             return;
         }
 
@@ -45,8 +53,11 @@ public class EffectController : MonoBehaviour
             var e = m_activeEffects[i];
             e.Tick(dt);
 
-            if (e.IsFinished)
-                m_activeEffects.RemoveAt(i);
+            if (e.IsFinished) 
+            {
+                m_activeEffects[i].OnExit();
+                m_activeEffects.RemoveAt(i);                
+            }                
         }
     }
     public EffectDefinition Get(string id)
@@ -64,8 +75,10 @@ public class EffectController : MonoBehaviour
             Debug.LogWarning("EffectController: Cannot play null effect.");
             return;
         }
-        var context = new EffectContext(GlobalVolume);
-        m_activeEffects.Add(def.Create(context));
+        var context = new EffectContext(GlobalVolume, CinemachineBrain.ActiveVirtualCamera as CinemachineCamera);
+        IEffectInstance instance = def.Create(context);
+        instance.OnEnter();
+        m_activeEffects.Add(instance);
     }
     // idk if this is needed but i was thinking that if the global volume gets changed
     // ie. Lighting_ object is changed then this can be called to update the reference
