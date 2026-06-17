@@ -24,7 +24,8 @@ public class AreaBlockerSignPickup : MonoBehaviour, IInteractable {
             scoreManager.addScore();
             StartCoroutine(fade());
             interacted = true;
-            
+
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.pickupSFX, transform.position);
         }
     }
     public void Highlight() {
@@ -40,8 +41,8 @@ public class AreaBlockerSignPickup : MonoBehaviour, IInteractable {
         highlighted = false;
     }
     IEnumerator fade() {
-        float timeToFadeAway = 2;
-        float fadeSpeed = 3;
+        float timeToFadeAway = 1;
+        float fadeSpeed = 4;
         float timer = 0;
         while (timer < timeToFadeAway) {
             timer += Time.deltaTime;

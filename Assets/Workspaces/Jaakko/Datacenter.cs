@@ -28,6 +28,7 @@ public class Datacenter : MonoBehaviour
             } 
         }  
         AudioManager.instance.datacenterDestructEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.pickupSFX, transform.position);
 
         Vector3 startScale = transform.localScale;
         float elapsed = 0f;
@@ -37,7 +38,7 @@ public class Datacenter : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / time;
 
-            transform.position += new Vector3(0f, 1.0f, 0f) * Time.deltaTime * 5f;
+            // transform.position += new Vector3(0f, 1.0f, 0f) * Time.deltaTime * 5f;
             transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
 
             yield return null;

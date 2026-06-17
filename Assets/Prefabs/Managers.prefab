@@ -72,20 +72,20 @@ MonoBehaviour:
       Data3: -2082739317
       Data4: -819040755
     Path: event:/Player/Footsteps
+  <sitDownSFX>k__BackingField:
+    Guid:
+      Data1: 1939911827
+      Data2: 1295350021
+      Data3: 1655812026
+      Data4: -1717809258
+    Path: event:/Player/SitDown
   <pickupSFX>k__BackingField:
     Guid:
-      Data1: -1005835872
-      Data2: 1197116170
-      Data3: -1009173602
-      Data4: -1962158374
-    Path: event:/TestEvents/SFX/Pickup/TestPickup
-  <pickupIdle>k__BackingField:
-    Guid:
-      Data1: -396886975
-      Data2: 1114346721
-      Data3: 1008470711
-      Data4: 834064374
-    Path: event:/TestEvents/SFX/Pickup/IdleHum
+      Data1: 1319060918
+      Data2: 1247764629
+      Data3: 716710280
+      Data4: -2039485732
+    Path: event:/Player/PickUp
   <datacenterDestructSFX>k__BackingField:
     Guid:
       Data1: -118675229

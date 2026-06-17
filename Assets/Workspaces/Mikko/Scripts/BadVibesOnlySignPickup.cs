@@ -31,6 +31,8 @@ public class BadVibesOnlySignPickup : MonoBehaviour, IInteractable {
                 return;
             }
             ec.PlayEffect(ec.Get("V_CA_Saturation"));
+
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.pickupSFX, transform.position);
             AudioManager.instance.InitializeMusic(FMODEvents.instance.music);
             AudioManager.instance.darkAmbienceEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
