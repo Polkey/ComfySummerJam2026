@@ -829,7 +829,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 983
+  m_VersionIndex: 1001
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1788,7 +1788,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3932
+  m_VersionIndex: 3950
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2235,7 +2235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6f9940be2965545a2912a8ff8f242b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Datacenter
-  speed: 1
+  time: 1
+  delay: 3
 --- !u!1001 &3959602028674753536
 PrefabInstance:
   m_ObjectHideFlags: 0

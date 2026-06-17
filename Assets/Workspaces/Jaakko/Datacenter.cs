@@ -13,6 +13,16 @@ public class Datacenter : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        EventEmitter[] emitters = FindObjectsByType<EventEmitter>();
+        foreach (var emitter in emitters)
+        {
+            if (emitter.gameObject.CompareTag("DatacenterEmitter"))
+            {
+                emitter.gameObject.SetActive(false);
+            } 
+        }  
+        AudioManager.instance.datacenterDestructEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         Vector3 startScale = transform.localScale;
         float elapsed = 0f;
 
@@ -25,6 +35,7 @@ public class Datacenter : MonoBehaviour
 
             yield return null;
         }
+        AudioManager.instance.SetMusicParameter("DatacenterDestruct", 0);
         Destroy(gameObject);
     }
 }

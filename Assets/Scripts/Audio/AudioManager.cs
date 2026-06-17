@@ -91,6 +91,11 @@ public class AudioManager : MonoBehaviour
         mainAmbienceEventInstance.setParameterByName(parameterName, parameterValue);
     }
 
+    public void SetMusicParameter(string parameterName, float parameterValue)
+    {
+        musicEventInstance.setParameterByName(parameterName, parameterValue);
+    }
+
     public void SetFootstepParameter(string parameterName, float parameterValue)
     {
         footstepsEventInstance.setParameterByName(parameterName, parameterValue);

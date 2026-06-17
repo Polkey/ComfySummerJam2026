@@ -37,6 +37,7 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
     }
     IEnumerator fade() {
         EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
+        AudioManager.instance.SetMusicParameter("DatacenterDestruct", 1);
         AudioManager.instance.InitializeDatacenterDestruct(FMODEvents.instance.datacenterDestructSFX);
         float timeToFadeAway = 2;
         float fadeSpeed = 3;
@@ -47,17 +48,6 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
             yield return null;
         }
         datacenter?.Destroy();
-
-        EventEmitter[] emitters = FindObjectsByType<EventEmitter>();
-        foreach (var emitter in emitters)
-        {
-            if (emitter.gameObject.CompareTag("DatacenterEmitter"))
-            {
-                emitter.gameObject.SetActive(false);
-            } 
-        }
-        
-        AudioManager.instance.datacenterDestructEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         Destroy(gameObject);
     }
