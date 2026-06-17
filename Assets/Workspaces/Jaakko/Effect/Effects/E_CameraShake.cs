@@ -23,11 +23,11 @@ public class E_CameraShake : EffectDefinition
 
         public void OnEnter() 
         {
-            m_originalPosition = m_camera.transform.position;
+            m_originalPosition = m_camera.transform.localPosition;
         }
         public void OnExit() 
         {
-            m_camera.transform.localPosition = Vector3.zero;
+            m_camera.transform.localPosition = m_originalPosition;
         }
 
         public Instance(CinemachineCamera camera, float duration, float radius)
@@ -50,8 +50,8 @@ public class E_CameraShake : EffectDefinition
             float decay = 1f - (m_elapsed / m_duration);
             float currentRadius = m_radius * decay;
 
-            m_camera.transform.position =
-                m_camera.transform.position + Random.insideUnitSphere * currentRadius;
+            m_camera.transform.localPosition =
+                m_originalPosition + Random.insideUnitSphere * currentRadius;
         }
     }
 }

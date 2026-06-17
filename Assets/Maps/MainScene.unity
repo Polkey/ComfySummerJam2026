@@ -1515,6 +1515,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2131352449}
+    - target: {fileID: 613394010697677992, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1229623224717216334, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: m_Name
       value: Gameplay

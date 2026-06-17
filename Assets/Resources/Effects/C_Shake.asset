@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: C_Shake
   m_EditorClassIdentifier: Assembly-CSharp::E_CameraShake
   shakeRadius: 0.5
-  duration: 0.75
+  duration: 2
