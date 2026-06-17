@@ -36,7 +36,6 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
         highlighted = false;
     }
     IEnumerator fade() {
-        datacenter?.Destroy();
         EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
         float timeToFadeAway = 2;
         float fadeSpeed = 3;
@@ -46,6 +45,7 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
             transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * 0, Time.deltaTime * fadeSpeed);
             yield return null;
         }
+        datacenter?.Destroy();
         Destroy(gameObject);
     }
 }
