@@ -273,7 +273,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -123171312339773225}
   cacheVersion: 131859
-  cacheTime: 639172463348979067
+  cacheTime: 639172617767268034
   SerializableEventsDict:
   - key: event:/Ambience/FoxSounds
     index: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639172463348979067
+  lastModified: 639172617767268034
   FileSizes: []
   Exists: 1
 --- !u!114 &2217242809656183337
@@ -469,7 +469,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 184500
+  Length: 183300
 --- !u!114 &6818016442730082365
 MonoBehaviour:
   m_ObjectHideFlags: 0
