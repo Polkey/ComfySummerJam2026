@@ -174,7 +174,30 @@ public class BasicFPCC : MonoBehaviour {
     public Image endingImage;
     public Image endingImageThanks;
 
+    private void Awake()
+    {
+        GameEvents.OnMenuStateChanged += MenuStateChanged;
+        MenuStateChanged(MenuState.Main);
+    }
+    private void MenuStateChanged(MenuState state) 
+    {
+        switch (state) 
+        {
+            case MenuState.Default:
+
+                break;
+            case MenuState.Start:
+                ToggleMovement(true);
+                SetState(PlayerState.Default);
+                break;
+            case MenuState.Main:
+                ToggleMovement(false);
+                SetState(PlayerState.Paused);
+                break;            
+        }
+    }
     void Start() {
+
         Initialize();
         DontDestroyOnLoad(this.gameObject);
     }
@@ -182,11 +205,21 @@ public class BasicFPCC : MonoBehaviour {
     public void SetState(PlayerState state) 
     {
         State = state;
+        GameEvents.RaisePlayerStateChanged(state);
+    }
+    private void ToggleMovement(bool value) 
+    {
+        useLocalInputs = value;
+        SetLockCursor(!value);
+        movementLocked = !value;
     }
 
+    private Coroutine imageFadeCoroutine;
+    private Coroutine objectivesFadeCoroutine;
     void Update() {
         ProcessInputs();
         if (State == PlayerState.Paused) return;
+
         if (movementLocked) {
             if (!yUpdated) {
 
@@ -207,9 +240,16 @@ public class BasicFPCC : MonoBehaviour {
                 yUpdated = true;
                 
                 if (!coldObjective || !noisyObjective) {
-                    StartCoroutine(fadeObjectivesIn());
+                    if (imageFadeCoroutine != null)
+                        StopCoroutine(imageFadeCoroutine);
+
+                    objectivesFadeCoroutine = StartCoroutine(fadeObjectivesIn());
                 }
-                StartCoroutine(fadeImage());
+
+                if (imageFadeCoroutine != null)
+                    StopCoroutine(imageFadeCoroutine);
+
+                imageFadeCoroutine = StartCoroutine(fadeImage());
             }
             ProcessLookLocked();
         }

@@ -6,7 +6,10 @@ public class CameraZoom : MonoBehaviour
     public float zoomSpeed = 2f;
     public float targetFov = 30f;
     [SerializeField] private CinemachineCamera m_camera;
-    private BasicFPCC m_player;
+    private PlayerState m_playerState;
+
+    public static float s_defaultFov;
+    public static float s_maxFov;
 
     private float m_defaultFOV;
     private void Awake()
@@ -15,14 +18,18 @@ public class CameraZoom : MonoBehaviour
         {
             m_defaultFOV = m_camera.Lens.FieldOfView;
         }
-        m_player = GetComponent<BasicFPCC>();
+        GameEvents.OnPlayerStateChanged += PlayerStateChanged;
+    }
+    private void PlayerStateChanged(PlayerState state) 
+    {
+        m_playerState = state;
     }
 
     private void Update()
     {
-        if (m_camera == null || m_player == null) return;
-        if (m_player.State == PlayerState.Seated ||
-            m_player.State == PlayerState.Paused)
+        if (m_camera == null) return;
+        if (m_playerState == PlayerState.Seated ||
+            m_playerState == PlayerState.Paused)
             return;
 
         float newFov = m_camera.Lens.FieldOfView;
