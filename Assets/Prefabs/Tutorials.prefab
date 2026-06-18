@@ -87,7 +87,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_text
-      value: press z to zoom
+      value: press rmb to zoom
       objectReference: {fileID: 0}
     - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_sprite
@@ -96,6 +96,10 @@ PrefabInstance:
     - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_duration
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
+      propertyPath: m_activateOnce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7745540161545030800, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_Name
@@ -169,15 +173,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_text
-      value: press lmb to interact
+      value: Interact with sign to continue
       objectReference: {fileID: 0}
     - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3d4b4ae46f13d2a4cacee92422fa37e6, type: 3}
+      objectReference: {fileID: 21300000, guid: d3e126857b2909c49acfe606205d6f75, type: 3}
     - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_duration
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6018906411919816102, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_activateOnce
@@ -190,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 7745540161545030800, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745540161545030800, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8331032921861032418, guid: c228d6d99ea01674e86d355ded91f979, type: 3}
       propertyPath: m_Size.x
