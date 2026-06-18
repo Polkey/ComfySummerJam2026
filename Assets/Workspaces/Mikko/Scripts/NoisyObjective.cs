@@ -20,7 +20,8 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
             StartCoroutine(fade());
             interacted = true;
             var player = FindAnyObjectByType<BasicFPCC>();
-            player.noisyObjective = true;
+            ObjectiveManager.CompleteObjective("t_noisyObjective");
+            //player.noisyObjective = true;
         }
     }
     public void Highlight() {

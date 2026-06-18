@@ -131,7 +131,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             interacted = false;
         }
         if (seated == true && interacted == true && Input.GetKeyDown(KeyCode.Mouse0)) {
-            if (BasicFPCC.coldObjective == true && BasicFPCC.noisyObjective == true) {
+            if (ObjectiveManager.HasObjective("t_coldObjective") == true && ObjectiveManager.HasObjective("t_noisyObjective")) {
                 
                 BasicFPCC.fadeOut();
                 BasicFPCC.playEnding();
