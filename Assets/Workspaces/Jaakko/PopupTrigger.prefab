@@ -67,3 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopupTrigger
   m_view: {fileID: 0}
+  m_duration: 5
+  m_text: press rmb to zoom
+  m_sprite: {fileID: 21300000, guid: 817d73170573e7b4cb7a0c55ff36feed, type: 3}
+  m_activateOnce: 0
