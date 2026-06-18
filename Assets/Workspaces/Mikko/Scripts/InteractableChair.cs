@@ -66,6 +66,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             yield return null;
         }
         AudioManager.instance.SetMusicParameter("MuteMusic", 1);
+        AudioManager.instance.InitializeSleepSnapshot(FMODEvents.instance.sleepFilterSnapshot);
         seated = true;
         BasicFPCC.movementLocked = true;        
     }
@@ -84,6 +85,8 @@ public class InteractableChair : MonoBehaviour, IInteractable {
         BasicFPCC.movementLocked = false;
         BasicFPCC.SetState(PlayerState.Default);
         AudioManager.instance.SetMusicParameter("MuteMusic", 0);
+        AudioManager.instance.sleepSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        
         seated = false;
     }
     IEnumerator playerLook() {
@@ -135,6 +138,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
                 
                 BasicFPCC.fadeOut();
                 BasicFPCC.playEnding();
+                AudioManager.instance.sleepSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 interacted = false;
             }
         }

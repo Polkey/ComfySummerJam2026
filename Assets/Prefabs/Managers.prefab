@@ -107,6 +107,20 @@ MonoBehaviour:
       Data3: -600204624
       Data4: 1433674905
     Path: event:/GeneralSFX/BushRustles
+  <reverbSnapshot>k__BackingField:
+    Guid:
+      Data1: -1610713450
+      Data2: 1117889447
+      Data3: -352949360
+      Data4: 455242697
+    Path: snapshot:/CaveReverb
+  <sleepFilterSnapshot>k__BackingField:
+    Guid:
+      Data1: -901726367
+      Data2: 1074820129
+      Data3: -716478018
+      Data4: 1606911652
+    Path: snapshot:/SleepFilter
 --- !u!1 &7403176475841845813
 GameObject:
   m_ObjectHideFlags: 0

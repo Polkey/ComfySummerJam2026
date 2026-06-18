@@ -25,6 +25,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference datacenterPopSFX { get; private set; }
     [field: SerializeField] public EventReference bushRustleSFX { get; private set; }
 
+    [field: Header("Snapshots")]
+    [field: SerializeField] public EventReference reverbSnapshot { get; private set; }
+    [field: SerializeField] public EventReference sleepFilterSnapshot { get; private set; }
+
     
 
     private void Awake()

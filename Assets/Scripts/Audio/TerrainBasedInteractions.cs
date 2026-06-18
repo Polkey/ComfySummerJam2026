@@ -64,6 +64,11 @@ public class TerrainBasedInteractions : MonoBehaviour
             StartCoroutine(BushBuffer());
             AudioManager.instance.PlayOneShot(FMODEvents.instance.bushRustleSFX, other.gameObject.transform.position);
         }
+
+        if (other.CompareTag("Cave"))
+        {
+            AudioManager.instance.InitializeReverbSnapshot(FMODEvents.instance.reverbSnapshot);
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -103,7 +108,12 @@ public class TerrainBasedInteractions : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        currentTerrain = 1;
+        if (!other.CompareTag("Cave") || !other.CompareTag("Bush")) currentTerrain = 1;
+
+        if (other.CompareTag("Cave"))
+        {
+            AudioManager.instance.reverbSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
     }
 
 

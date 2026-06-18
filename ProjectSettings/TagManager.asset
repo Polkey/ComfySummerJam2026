@@ -9,6 +9,7 @@ TagManager:
   - WetSand
   - DatacenterEmitter
   - Bush
+  - Cave
   layers:
   - Default
   - TransparentFX

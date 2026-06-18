@@ -27,6 +27,8 @@ public class AudioManager : MonoBehaviour
     private EventInstance footstepsEventInstance;
     private EventInstance mainAmbienceEventInstance;
     public EventInstance darkAmbienceEventInstance;
+    public EventInstance reverbSSEventInstance;
+    public EventInstance sleepSSEventInstance;
     public EventInstance datacenterDestructEventInstance;
     private EventInstance musicEventInstance;
 
@@ -83,6 +85,18 @@ public class AudioManager : MonoBehaviour
     {
         datacenterDestructEventInstance = CreateInstance(destructEventReference);
         datacenterDestructEventInstance.start();
+    }
+
+    public void InitializeReverbSnapshot(EventReference reverbEventReference)
+    {
+        reverbSSEventInstance = CreateInstance(reverbEventReference);
+        reverbSSEventInstance.start();
+    }
+
+    public void InitializeSleepSnapshot(EventReference sleepEventReference)
+    {
+        sleepSSEventInstance = CreateInstance(sleepEventReference);
+        sleepSSEventInstance.start();
     }
 
 
