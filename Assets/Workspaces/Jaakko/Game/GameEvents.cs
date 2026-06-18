@@ -1,4 +1,11 @@
 using System;
+
+public enum GameState
+{
+    Starting = 0,
+    Playing = 1,
+    Paused = 2
+}
 public static class GameEvents 
 {
     public static event Action<GameState> OnGameStateChanged;

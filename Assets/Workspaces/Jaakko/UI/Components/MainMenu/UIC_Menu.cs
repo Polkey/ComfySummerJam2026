@@ -1,10 +1,4 @@
 using UnityEngine;
-public enum GameState
-{
-    Starting = 0,
-    Playing = 1,
-    Paused = 2
-}
 public enum MenuState
 {
     Default = 0,
@@ -15,7 +9,6 @@ public enum MenuState
 }
 public class UIC_Menu : UIComponentBase<UIG_Menu>
 {
-    public GameState m_gameState;
     private UIV_Menu_Main m_main;
     private UIV_Menu_Settings m_settings;
 
@@ -57,14 +50,10 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
             return;
         }
 
+        firstStart = true;
         ChangeState(MenuState.Main);        
     }
-    public override void Dispose()
-    {
-        base.Dispose();
-
-
-    }
+    bool firstStart;
     private void InitializeButtons()
     {
         m_main.b_start.onClick.AddListener(() =>
@@ -134,30 +123,29 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
     private void ChangeState(MenuState state)
     {
         if (m_state == state) return;
+        if (m_player.State == PlayerState.Seated) return;
 
         m_group.HideAll();
         switch (state)
         {
             case MenuState.Main:
-                if (m_player.State == PlayerState.Seated) return;
-
-                if (m_gameState == GameState.Starting) 
+                m_main.View();
+                if (firstStart) 
                 {
-                    m_main.SetText(m_main.b_start, "Start");
+                    m_main.SetText(m_main.b_start, "Start");                    
                 }
-                else
+                else 
                 {
                     m_main.SetText(m_main.b_start, "Continue");
                 }
-                m_main.View();
-                //TogglePlayer(false);
-                break;
-            case MenuState.Start:   
-                if (m_gameState == GameState.Starting) 
+                    break;
+            case MenuState.Start:
+                if (firstStart) 
                 {
                     m_popup.Bind(PopupDatabase.T_Controls);
                     m_popup.Show();
                 }
+                firstStart = false;                
                 break;
             case MenuState.Settings:
                 m_settings.View();
