@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using System.Collections.Generic;
 using Unity.Cinemachine;
+using System.Linq;
 
 public class EffectController : MonoBehaviour 
 {
@@ -75,6 +76,13 @@ public class EffectController : MonoBehaviour
             Debug.LogWarning("EffectController: Cannot play null effect.");
             return;
         }
+        if (GlobalVolume == null) 
+        {
+            Debug.LogWarning($"EffectController: GlobalVolume == null");
+            return;
+        }
+
+
         var context = new EffectContext(GlobalVolume, CinemachineBrain.ActiveVirtualCamera as CinemachineCamera);
         IEffectInstance instance = def.Create(context);
         instance.OnEnter();
@@ -84,8 +92,7 @@ public class EffectController : MonoBehaviour
     // ie. Lighting_ object is changed then this can be called to update the reference
     public bool RefreshVolume() 
     {
-        GlobalVolume = FindAnyObjectByType<Volume>();
-
+        GlobalVolume = GameObject.FindObjectsByType<Volume>().FirstOrDefault(v => v.isGlobal);
         return GlobalVolume != null;
     }
     

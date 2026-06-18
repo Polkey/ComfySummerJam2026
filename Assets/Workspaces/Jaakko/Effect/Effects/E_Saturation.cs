@@ -9,7 +9,7 @@ public class E_Saturation : EffectDefinition
     [SerializeField] private float duration;
 
     public override IEffectInstance Create(EffectContext ctx)
-    {
+    {        
         return new Instance(ctx.GlobalVolume, targetValue, duration);
     }
     private class Instance : IEffectInstance 
@@ -28,7 +28,12 @@ public class E_Saturation : EffectDefinition
 
         public Instance(Volume volume, float target, float duration) 
         {
-            volume.profile.TryGet(out color);
+            if (volume != null)
+            if (!volume.profile.TryGet(out color)) 
+            {
+                Debug.LogError("E_Saturation: No color override on volume");
+                return;
+            }
 
             m_target = target;
             m_duration = duration;
@@ -37,6 +42,12 @@ public class E_Saturation : EffectDefinition
         }
         public void Tick(float dt) 
         {
+            if (color == null) 
+            {
+                Debug.LogError("E_Saturation: Color == null");
+                IsFinished = true;
+                return;
+            }
             if (IsFinished) return;
 
             t += dt;
