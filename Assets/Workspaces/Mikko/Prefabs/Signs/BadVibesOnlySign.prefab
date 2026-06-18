@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aef15843c44eb94db8f058a8175165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BadVibesOnlySignPickup
+  poster: {fileID: 0}
   mat: {fileID: 0}
   indexOfMat: 1
 --- !u!64 &5026371472161355922
