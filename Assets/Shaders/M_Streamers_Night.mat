@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3465728954270568685
+--- !u!114 &-379544583616782934
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,12 +20,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_AtlasTest
-  m_Shader: {fileID: -6465566751694194690, guid: ae86637444b86e44192fcc10d2c40d8a, type: 3}
+  m_Name: M_Streamers_Night
+  m_Shader: {fileID: -6465566751694194690, guid: 870cfeaaae7544c4295fa914fe81e9f9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _UV_SCALING_NO_SCALING
+  - _LIGHTING_SCENARIO_NIGHT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -38,18 +38,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Atlas_Color:
-        m_Texture: {fileID: 2800000, guid: 22ad5157dab6adb46b2ffe8e433b4583, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Atlas_Normal:
-        m_Texture: {fileID: 2800000, guid: 5a56312b2d15dc849b6ab638c3e6fdb8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Atlas_ORMH:
-        m_Texture: {fileID: 2800000, guid: bc1dc68a3b58f4d4dbfa6eac977cdee6, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -78,10 +66,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Mask:
-        m_Texture: {fileID: 2800000, guid: 5ebd94296cfe7804695e88792f5001e0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -94,8 +78,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SBGSampler_f83cdbbf3dc4494cb92b36fd80713149_Texture_3599385267_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 22ad5157dab6adb46b2ffe8e433b4583, type: 3}
+    - _SampleTexture2D_afe2224cbc3647e7ab00f6b1bcf7c7c2_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 948129e9f847e4a49a41e11e541fa609, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -131,9 +115,11 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Global_Brightness: 0.67
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _LIGHTING_SCENARIO: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -146,16 +132,16 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _USE_TRIPLANAR: 0
-    - _UV_SCALING: 0
+    - _Transparency: 0.28
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
-    - _Atlas_Coords: {r: 8.27, g: 13.73, b: 0, a: 0}
-    - _Atlas_Size: {r: 4, g: 4, b: 0, a: 0}
+    - White: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.55341, g: 0.63991165, b: 0.645, a: 1}
+    - _Color_1: {r: 0.24056596, g: 1, b: 0.5498082, a: 1}
+    - _Color_2: {r: 0.572549, g: 1, b: 0.38039213, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
