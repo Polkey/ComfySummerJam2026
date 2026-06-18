@@ -93,6 +93,20 @@ MonoBehaviour:
       Data3: 1278669957
       Data4: 1031077735
     Path: event:/GeneralSFX/DatacenterDestruct
+  <datacenterPopSFX>k__BackingField:
+    Guid:
+      Data1: -1753430308
+      Data2: 1341832993
+      Data3: 1001213065
+      Data4: 719726056
+    Path: event:/GeneralSFX/DatacenterPop
+  <bushRustleSFX>k__BackingField:
+    Guid:
+      Data1: -2002892697
+      Data2: 1101224420
+      Data3: -600204624
+      Data4: 1433674905
+    Path: event:/GeneralSFX/BushRustles
 --- !u!1 &7403176475841845813
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,4 +187,4 @@ MonoBehaviour:
   masterVolume: 1
   musicVolume: 0.6
   sfxVolume: 0.7
-  ambienceVolume: 1
+  ambienceVolume: 0.9

@@ -18,7 +18,7 @@ public class ColdObjective : MonoBehaviour, IInteractable {
             StartCoroutine(fade());
             interacted = true;
             var player = FindAnyObjectByType<BasicFPCC>();
-            player.coldObjective = true;
+            ObjectiveManager.CompleteObjective("t_coldObjective");
         }
     }
     public void Highlight() {

@@ -65,6 +65,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             player.transform.position = Vector3.Lerp(startPos, positionTarget.position, t * moveSpeed);
             yield return null;
         }
+        AudioManager.instance.SetMusicParameter("MuteMusic", 1);
         seated = true;
         BasicFPCC.movementLocked = true;        
     }
@@ -82,6 +83,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
         }
         BasicFPCC.movementLocked = false;
         BasicFPCC.SetState(PlayerState.Default);
+        AudioManager.instance.SetMusicParameter("MuteMusic", 0);
         seated = false;
     }
     IEnumerator playerLook() {
@@ -129,12 +131,13 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             interacted = false;
         }
         if (seated == true && interacted == true && Input.GetKeyDown(KeyCode.Mouse0)) {
-            if (BasicFPCC.coldObjective == true && BasicFPCC.noisyObjective == true) {
+            if (ObjectiveManager.HasObjective("t_coldObjective") == true && ObjectiveManager.HasObjective("t_noisyObjective")) {
                 
                 BasicFPCC.fadeOut();
                 BasicFPCC.playEnding();
                 interacted = false;
             }
         }
+
     }
 }

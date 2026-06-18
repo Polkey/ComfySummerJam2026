@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - WetSand
   - DatacenterEmitter
+  - Bush
   layers:
   - Default
   - TransparentFX

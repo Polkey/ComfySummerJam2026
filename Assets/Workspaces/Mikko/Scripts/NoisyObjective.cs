@@ -20,7 +20,8 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
             StartCoroutine(fade());
             interacted = true;
             var player = FindAnyObjectByType<BasicFPCC>();
-            player.noisyObjective = true;
+            ObjectiveManager.CompleteObjective("t_noisyObjective");
+            //player.noisyObjective = true;
         }
     }
     public void Highlight() {
@@ -37,7 +38,7 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
     }
     IEnumerator fade() {
         EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
-        AudioManager.instance.SetMusicParameter("DatacenterDestruct", 1);
+        AudioManager.instance.SetMusicParameter("MuteMusic", 1);
         AudioManager.instance.InitializeDatacenterDestruct(FMODEvents.instance.datacenterDestructSFX);
         float timeToFadeAway = 2;
         float fadeSpeed = 3;

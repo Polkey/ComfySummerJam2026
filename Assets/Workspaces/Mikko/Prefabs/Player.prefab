@@ -656,6 +656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TerrainBasedInteractions
   parameterName: Terrain
   footstepbuffer: 0.6
+  bushSoundBuffer: 0.9
 --- !u!114 &2532839931898464343
 MonoBehaviour:
   m_ObjectHideFlags: 0

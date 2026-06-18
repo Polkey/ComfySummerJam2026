@@ -164,8 +164,6 @@ public class BasicFPCC : MonoBehaviour {
     public bool running;
 
 
-    public bool coldObjective = false;
-    public bool noisyObjective = false;
     public Image canvasImage;
     public Image missingObjectives;
     public Image coldImage;
@@ -239,7 +237,7 @@ public class BasicFPCC : MonoBehaviour {
 
                 yUpdated = true;
                 
-                if (!coldObjective || !noisyObjective) {
+                if (!ObjectiveManager.HasObjective("t_coldObjective") || !ObjectiveManager.HasObjective("t_noisyObjective")) {
                     if (imageFadeCoroutine != null)
                         StopCoroutine(imageFadeCoroutine);
 
@@ -273,7 +271,7 @@ public class BasicFPCC : MonoBehaviour {
         StartCoroutine(fadeEnding());
     }
     IEnumerator fadeObjectivesIn() {
-        if (!coldObjective && noisyObjective) {
+        if (!ObjectiveManager.HasObjective("t_coldObjective") && ObjectiveManager.HasObjective("t_noisyObjective")) {
         float timer = 0f;
         float duration = 2f;
 
@@ -287,7 +285,7 @@ public class BasicFPCC : MonoBehaviour {
             }
             yield return null;
         }
-        if (!noisyObjective && coldObjective) {
+        if (!ObjectiveManager.HasObjective("t_noisyObjective") && ObjectiveManager.HasObjective("t_coldObjective")) {
             float timer = 0f;
             float duration = 2f;
 
@@ -301,7 +299,7 @@ public class BasicFPCC : MonoBehaviour {
             }
             yield return null;
         }
-        if (!noisyObjective && !coldObjective) {
+        if (!ObjectiveManager.HasObjective("t_noisyObjective") && !ObjectiveManager.HasObjective("t_coldObjective")) {
        
                 float timer = 0f;
                 float duration = 2f;
@@ -322,7 +320,7 @@ public class BasicFPCC : MonoBehaviour {
     IEnumerator fadeObjectivesOut() {
         yield return new WaitForSeconds(1);
         StopCoroutine(fadeObjectivesIn());
-        if (!noisyObjective && !coldObjective) {
+        if (!ObjectiveManager.HasObjective("t_noisyObjective") && !ObjectiveManager.HasObjective("t_coldObjective")) {
             float timer = 0f;
             float duration = 2f;
 
@@ -336,7 +334,7 @@ public class BasicFPCC : MonoBehaviour {
             }
             yield return null;
         }
-        else if (!coldObjective) {
+        else if (!ObjectiveManager.HasObjective("t_coldObjective")) {
             float timer = 0f;
             float duration = 2f;
 
@@ -350,7 +348,7 @@ public class BasicFPCC : MonoBehaviour {
             }
             yield return null;
         }
-        else if (!noisyObjective) {
+        else if (!ObjectiveManager.HasObjective("t_noisyObjective")) {
             float timer = 0f;
             float duration = 2f;
 
@@ -370,7 +368,7 @@ public class BasicFPCC : MonoBehaviour {
         float timer = 0f;
         float duration = 2f;
 
-        if (coldObjective && noisyObjective) {
+        if (ObjectiveManager.HasObjective("t_coldObjective") && ObjectiveManager.HasObjective("t_noisyObjective")) {
             while (timer < duration) {
                 timer += Time.deltaTime;
                 float t = Mathf.Clamp01(timer / duration);
@@ -398,7 +396,7 @@ public class BasicFPCC : MonoBehaviour {
         StopCoroutine(fadeImage());
         float timer = 0f;
         float duration = 1f;
-        if (coldObjective && noisyObjective) {
+        if (ObjectiveManager.HasObjective("t_coldObjective") && ObjectiveManager.HasObjective("t_noisyObjective")) {
             while (timer < duration) {
                 timer += Time.deltaTime;
                 float t = Mathf.Clamp01(timer / duration);

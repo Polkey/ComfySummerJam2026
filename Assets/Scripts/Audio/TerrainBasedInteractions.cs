@@ -7,6 +7,8 @@ public class TerrainBasedInteractions : MonoBehaviour
     [Header("Parameter Change")]
     [SerializeField] private string parameterName;
     [Range(0.01f, 1f)][SerializeField] private float footstepbuffer;
+    [Range(0.01f, 2f)][SerializeField] private float bushSoundBuffer;
+    private bool bushBuffer;
     private int currentTerrain = 1;
 
     void Awake()
@@ -25,11 +27,11 @@ public class TerrainBasedInteractions : MonoBehaviour
         {
             if (fpcc.isGrounded && fpcc.moving)
             {
-                    AudioManager.instance.PlayOneShotWithParameters(
-                    FMODEvents.instance.playerFootsteps, 
-                    transform.position, 
-                    (parameterName, currentTerrain)
-                );
+                AudioManager.instance.PlayOneShotWithParameters(
+                FMODEvents.instance.playerFootsteps,
+                transform.position,
+                (parameterName, currentTerrain)
+            );
             }
 
             yield return new WaitForSeconds(fpcc.running == false ? footstepbuffer : footstepbuffer / 2);
@@ -56,6 +58,12 @@ public class TerrainBasedInteractions : MonoBehaviour
                 currentTerrain = 1;
                 break;
         }
+
+        if (other.CompareTag("Bush") && fpcc.moving && (!bushBuffer))
+        {
+            StartCoroutine(BushBuffer());
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.bushRustleSFX, other.gameObject.transform.position);
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -78,6 +86,19 @@ public class TerrainBasedInteractions : MonoBehaviour
                 currentTerrain = 1;
                 break;
         }
+
+        if (other.CompareTag("Bush") && fpcc.moving && (!bushBuffer))
+        {
+            StartCoroutine(BushBuffer());
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.bushRustleSFX, other.gameObject.transform.position);
+        }
+    }
+
+    private IEnumerator BushBuffer()
+    {
+        bushBuffer = true;
+        yield return new WaitForSeconds(bushSoundBuffer);
+        bushBuffer = false;
     }
 
     void OnTriggerExit(Collider other)

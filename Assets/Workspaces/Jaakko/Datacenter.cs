@@ -28,7 +28,7 @@ public class Datacenter : MonoBehaviour
             } 
         }  
         AudioManager.instance.datacenterDestructEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.pickupSFX, transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.datacenterPopSFX, transform.position);
 
         Vector3 startScale = transform.localScale;
         float elapsed = 0f;
@@ -43,7 +43,7 @@ public class Datacenter : MonoBehaviour
 
             yield return null;
         }
-        AudioManager.instance.SetMusicParameter("DatacenterDestruct", 0);
+        AudioManager.instance.SetMusicParameter("MuteMusic", 0);
         Destroy(gameObject);
     }
 }
