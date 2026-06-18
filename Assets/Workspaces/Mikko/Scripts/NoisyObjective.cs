@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
     ScoreManager scoreManager;
 
     [SerializeField] private Datacenter datacenter;
+
+    [SerializeField] private SequenceTrigger m_trigger;
 
     public Material mat;
     public int indexOfMat = 1;
@@ -21,6 +24,8 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
             interacted = true;
             var player = FindAnyObjectByType<BasicFPCC>();
             ObjectiveManager.CompleteObjective("t_noisyObjective");
+            if (m_trigger)
+                m_trigger.Play();
             //player.noisyObjective = true;
         }
     }
@@ -37,7 +42,9 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
         highlighted = false;
     }
     IEnumerator fade() {
-        EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
+
+        if (EffectController.I != null)
+            EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
         AudioManager.instance.SetMusicParameter("MuteMusic", 1);
         AudioManager.instance.InitializeDatacenterDestruct(FMODEvents.instance.datacenterDestructSFX);
         float timeToFadeAway = 2;

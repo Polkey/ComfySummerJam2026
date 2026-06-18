@@ -82,8 +82,9 @@ public class EffectController : MonoBehaviour
             return;
         }
 
+        CinemachineCamera camera = CinemachineBrain.ActiveVirtualCamera as CinemachineCamera;
 
-        var context = new EffectContext(GlobalVolume, CinemachineBrain.ActiveVirtualCamera as CinemachineCamera);
+        var context = new EffectContext(GlobalVolume, camera, camera.transform);
         IEffectInstance instance = def.Create(context);
         instance.OnEnter();
         m_activeEffects.Add(instance);

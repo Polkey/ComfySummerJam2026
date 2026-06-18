@@ -4561,6 +4561,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2585484173439545672, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
   m_PrefabInstance: {fileID: 1185511213}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1185511220 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5107686746198699224, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
+  m_PrefabInstance: {fileID: 1185511213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185511214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f91d3566fbedf441bb58b54a16aa20a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicFPCC
 --- !u!1 &1216268881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 411515312023562905, guid: ecab685208ab4194e8f2311a38cd03ef, type: 3}
@@ -5675,6 +5686,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -33.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2594779338131380207, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 1185511220}
     - target: {fileID: 2734086430410907497, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: poster
       value: 
