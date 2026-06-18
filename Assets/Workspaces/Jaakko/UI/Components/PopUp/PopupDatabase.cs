@@ -20,4 +20,10 @@ public static class PopupDatabase
         text = "",
         duration = 3f
     };
+    public static TutorialPopupData T_Default = new TutorialPopupData()
+    {
+        sprite = Resources.Load<Sprite>("Sprites/s_test"),
+        text = "",
+        duration = 1f
+    };
 }
