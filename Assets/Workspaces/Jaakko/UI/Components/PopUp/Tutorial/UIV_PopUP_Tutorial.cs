@@ -23,7 +23,8 @@ public class UIV_PopUP_Tutorial : UIV_PopUP<TutorialPopupData>
         if (fadeIn) 
         {
             m_image.color = Color.Lerp(m_image.color, m_imageColor, speed * Time.deltaTime);
-            m_text.color = Color.Lerp(m_text.color, m_textColor, speed * Time.deltaTime);
+            if (m_text != null)
+                m_text.color = Color.Lerp(m_text.color, m_textColor, speed * Time.deltaTime);
 
             if (m_elapsed >= m_duraion) 
             {
@@ -39,7 +40,8 @@ public class UIV_PopUP_Tutorial : UIV_PopUP<TutorialPopupData>
                 return;
             }
             m_image.color = Color.Lerp(m_image.color, new Color(0f, 0f, 0f, 0f), speed * Time.deltaTime);
-            m_text.color = Color.Lerp(m_text.color, new Color(0f, 0f, 0f, 0f), speed * Time.deltaTime);
+            if (m_text != null)
+                m_text.color = Color.Lerp(m_text.color, new Color(0f, 0f, 0f, 0f), speed * Time.deltaTime);
         }
         m_elapsed += Time.deltaTime;
     }
@@ -47,7 +49,6 @@ public class UIV_PopUP_Tutorial : UIV_PopUP<TutorialPopupData>
     protected override void BindTyped(TutorialPopupData data)
     {
         m_image.sprite = data.sprite;
-        m_text.text = data.text;
         m_duraion = data.Duration;
         m_fadeOutDuration = data.Duration == 0 ? 0 : data.Duration / 4;
     }
@@ -58,7 +59,8 @@ public class UIV_PopUP_Tutorial : UIV_PopUP<TutorialPopupData>
         fadeOut = false;
 
         m_image.color = new Color(0f, 0f, 0f, 0f);
-        m_text.color = new Color(0f, 0f, 0f, 0f);
+        if (m_text != null)
+            m_text.color = new Color(0f, 0f, 0f, 0f);
 
         base.Show();
     }
@@ -70,6 +72,7 @@ public class UIV_PopUP_Tutorial : UIV_PopUP<TutorialPopupData>
         base.Close();
 
         m_image.color = m_imageColor;
-        m_text.color = m_textColor;
+        if (m_text != null)
+            m_text.color = m_textColor;
     }
 }

@@ -5,6 +5,7 @@ public class BadVibesOnlySignPickup : MonoBehaviour, IInteractable {
     private bool interacted = false;
     private bool highlighted = false;
     private DestroyWallOnSignPickup[] walls;
+    public GameObject poster;
     ScoreManager scoreManager;
 
     public Material mat;

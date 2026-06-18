@@ -152,7 +152,12 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 m_main.View();
                 //TogglePlayer(false);
                 break;
-            case MenuState.Start:               
+            case MenuState.Start:   
+                if (m_gameState == GameState.Starting) 
+                {
+                    m_popup.Bind(PopupDatabase.T_Controls);
+                    m_popup.Show();
+                }
                 break;
             case MenuState.Settings:
                 m_settings.View();

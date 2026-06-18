@@ -14,4 +14,16 @@ public static class PopupDatabase
         text = "press rmb to zoom",
         duration = 5f
     };
+    public static TutorialPopupData T_Controls = new TutorialPopupData()
+    {
+        sprite = Resources.Load<Sprite>("Sprites/s_controls"),
+        text = "",
+        duration = 3f
+    };
+    public static TutorialPopupData T_Default = new TutorialPopupData()
+    {
+        sprite = Resources.Load<Sprite>("Sprites/s_test"),
+        text = "",
+        duration = 1f
+    };
 }

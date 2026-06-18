@@ -455,7 +455,13 @@ public class BasicFPCC : MonoBehaviour {
 
             yield return null;
         }
-        SetLockCursor(false);
+        SetLockCursor(false);               
+
+        // example for objective tag usage
+        if (ObjectiveManager.HasObjective("t_cave")) 
+        {
+            Debug.Log("Cave Ending");
+        }
         yield return null;
     }
 
