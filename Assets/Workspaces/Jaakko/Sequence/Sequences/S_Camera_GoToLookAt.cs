@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class S_Camera_GoToLookAt : Sequence
 {
-    private CinemachineCamera m_camera;
+    private Transform m_camera;
     private BasicFPCC m_player;
     private Vector3 m_lookAt;
     private Vector3 m_target;
     private float m_duration;
+    private Vector3 m_endLocalPos;
 
     private float m_elapsed;
     private Vector3 m_cameraLocal;
@@ -17,22 +18,22 @@ public class S_Camera_GoToLookAt : Sequence
     private Transform m_cameraRoot;
 
     public override bool IsStackable => false;
-    public S_Camera_GoToLookAt(BasicFPCC player, CinemachineCamera camera,
-        Vector3 targetPos, Vector3 lookAt, Transform cameraRoot, float duration
-        )
+    public S_Camera_GoToLookAt(SequenceContext ctx, Vector3 target, Vector3 lookAt, float duration
+        , Vector3 endLocalPos)
     {
-        m_cameraRoot = cameraRoot;
-        m_player = player;
-        m_camera = camera;
+        m_cameraRoot = ctx.CameraRoot;
+        m_player = ctx.Player;
+        m_camera = ctx.Camera;
         m_lookAt = lookAt;
-        m_target = targetPos;
+        m_target = target;
         m_duration = duration;
+        m_endLocalPos = endLocalPos;
     }
     public override void _Start()
     {
         base._Start();
         m_elapsed = 0f;
-        m_player.SetState(PlayerState.Paused);
+        m_player.SetState(PlayerState.Sequence);
         m_cameraLocal = m_cameraRoot.localPosition;
         m_startPos = m_cameraRoot.position;
         m_startRot = m_cameraRoot.rotation;
@@ -40,12 +41,12 @@ public class S_Camera_GoToLookAt : Sequence
     public override void _Stop()
     {
         IsFinished = true;
-        m_cameraRoot.localPosition = m_cameraLocal;
         m_player.SetState(PlayerState.Default);
     }
     public override void _Tick()
     {
         base._Tick();
+
         m_elapsed += Time.deltaTime;
 
         float t = Mathf.Clamp01(m_elapsed / m_duration);

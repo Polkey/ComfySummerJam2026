@@ -123,7 +123,9 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
     private void ChangeState(MenuState state)
     {
         if (m_state == state) return;
-        if (m_player.State == PlayerState.Seated) return;
+        if (m_player.State == PlayerState.Seated 
+            || m_player.State == PlayerState.Sequence) return;
+        GameEvents.RaiseMenuStateChanged(state);
 
         m_group.HideAll();
         switch (state)
@@ -142,6 +144,8 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
             case MenuState.Start:
                 if (firstStart) 
                 {
+                    Sequencer.I.Play<SD_Camera_GoToLookAt>();
+
                     m_popup.Bind(PopupDatabase.T_Controls);
                     m_popup.Show();
                 }
@@ -154,7 +158,6 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 
                 break;
         }
-        GameEvents.RaiseMenuStateChanged(state);
         m_state = state;
     }
 }

@@ -1,4 +1,3 @@
-using FMOD.Studio;
 using System.Collections;
 using UnityEngine;
 
@@ -24,8 +23,6 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
             interacted = true;
             var player = FindAnyObjectByType<BasicFPCC>();
             ObjectiveManager.CompleteObjective("t_noisyObjective");
-            if (m_trigger)
-                m_trigger.Play();
             //player.noisyObjective = true;
         }
     }

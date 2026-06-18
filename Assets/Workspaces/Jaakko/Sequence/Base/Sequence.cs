@@ -1,5 +1,13 @@
 using System;
+using UnityEngine;
 
+public class SequenceContext 
+{
+    public BasicFPCC Player;
+    public Transform CameraRoot;
+    public Transform Camera;
+    public EffectController EffectController;
+}
 public interface ISequence 
 {
     event Action<Sequence> OnFinish;

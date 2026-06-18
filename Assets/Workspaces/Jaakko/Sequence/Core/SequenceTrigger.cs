@@ -25,38 +25,20 @@ public class SequenceTrigger : MonoBehaviour
         {
             m_collider.enabled = false;
         }
-
-
+    }
+    protected virtual void Initialize() 
+    {
         m_sequencer = FindAnyObjectByType<Sequencer>();
-        if (m_player == null) 
+        if (m_player == null)
         {
             Debug.LogWarning($"PlayerReference NULL on {name}");
             return;
-        }        
+        }
         m_camera = m_player.GetComponentInChildren<CinemachineCamera>();
-        if (m_camera == null) 
+        if (m_camera == null)
         {
             Debug.LogWarning($"CameraReference NULL on {name}");
             return;
-        }                    
-    }
-    public void Play() 
-    {
-        Play(new S_Camera_GoToLookAt(m_player, m_camera, target.position, lookAt.position, m_camera.transform.parent,duration));
-    }
-    public void Play(Sequence sequence) 
-    {
-        if (m_sequencer == null)
-        {
-            Debug.LogWarning($"sequencer is NULL on {this}");
-            return;
         }
-        m_sequencer.Play(sequence);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("MainCamera")) return;
-
-        Play(new S_Camera_GoToLookAt(m_player, m_camera, target.position, lookAt.position, m_camera.transform.parent, duration));
     }
 }

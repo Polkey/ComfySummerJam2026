@@ -4346,7 +4346,7 @@ Transform:
   m_GameObject: {fileID: 1066183697}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000008344649}
-  m_LocalPosition: {x: 63.6, y: 19.41, z: 95.3}
+  m_LocalPosition: {x: 60.58999, y: 19.41, z: 88.97001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4494,6 +4494,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1201690450360751433, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2532839931898464343, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
       propertyPath: zoomSpeed
       value: 40
@@ -5373,6 +5377,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8822545247835067508, guid: 1f0d295d05b8b594abf644bd2e2bf31f, type: 3}
+--- !u!4 &1987152303 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1598256005433418920, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
+  m_PrefabInstance: {fileID: 1185511213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2020363219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5852805866289451973, guid: ecab685208ab4194e8f2311a38cd03ef, type: 3}
@@ -5617,6 +5626,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2131352449}
+    - target: {fileID: 558999055943827807, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
+      propertyPath: m_target
+      value: 
+      objectReference: {fileID: 1987152303}
     - target: {fileID: 1229623224717216334, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: m_Name
       value: Gameplay

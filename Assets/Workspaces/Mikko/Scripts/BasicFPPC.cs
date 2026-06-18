@@ -38,7 +38,8 @@ public enum PlayerState
 {
     Default,
     Seated,
-    Paused
+    Paused,
+    Sequence
 }
 
 [RequireComponent(typeof(CharacterController))]
@@ -191,7 +192,7 @@ public class BasicFPCC : MonoBehaviour {
             case MenuState.Main:
                 ToggleMovement(false);
                 SetState(PlayerState.Paused);
-                break;            
+                break;                   
         }
     }
     void Start() {
@@ -216,7 +217,7 @@ public class BasicFPCC : MonoBehaviour {
     private Coroutine objectivesFadeCoroutine;
     void Update() {
         ProcessInputs();
-        if (State == PlayerState.Paused) return;
+        if (State == PlayerState.Paused || State == PlayerState.Sequence) return;
 
         if (movementLocked) {
             if (!yUpdated) {
