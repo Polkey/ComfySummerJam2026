@@ -829,7 +829,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 989
+  m_VersionIndex: 1061
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1788,7 +1788,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3938
+  m_VersionIndex: 4010
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2441,6 +2441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6897129129037148760}
     m_Modifications:
+    - target: {fileID: 1921932732071167722, guid: 0ddef63a7b2256443aa98aa60a5acf17, type: 3}
+      propertyPath: poster
+      value: 
+      objectReference: {fileID: 6118837153729062678}
     - target: {fileID: 2342060936853906335, guid: 0ddef63a7b2256443aa98aa60a5acf17, type: 3}
       propertyPath: m_Name
       value: BadVibesOnlySign
@@ -2493,6 +2497,11 @@ PrefabInstance:
 --- !u!4 &5534031264810936243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8327624794826735152, guid: 0ddef63a7b2256443aa98aa60a5acf17, type: 3}
+  m_PrefabInstance: {fileID: 4565944945098611075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6118837153729062678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7761680474101808789, guid: 0ddef63a7b2256443aa98aa60a5acf17, type: 3}
   m_PrefabInstance: {fileID: 4565944945098611075}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5021154927840483301

@@ -22,6 +22,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("General SFX")]
     [field: SerializeField] public EventReference datacenterDestructSFX { get; private set; }
+    [field: SerializeField] public EventReference datacenterPopSFX { get; private set; }
+    [field: SerializeField] public EventReference bushRustleSFX { get; private set; }
 
     
 
