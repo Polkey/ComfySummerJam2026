@@ -138,7 +138,6 @@ public class InteractableChair : MonoBehaviour, IInteractable {
                 
                 BasicFPCC.fadeOut();
                 BasicFPCC.playEnding();
-                AudioManager.instance.sleepSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 interacted = false;
             }
         }

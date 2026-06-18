@@ -108,12 +108,13 @@ public class TerrainBasedInteractions : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Cave") || !other.CompareTag("Bush")) currentTerrain = 1;
 
         if (other.CompareTag("Cave"))
         {
             AudioManager.instance.reverbSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+        
+        currentTerrain = 1;
     }
 
 

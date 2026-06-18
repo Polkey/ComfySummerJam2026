@@ -440,6 +440,8 @@ public class BasicFPCC : MonoBehaviour {
         yield return null;
     }
     IEnumerator fadeEndingOut() {
+        AudioManager.instance.sleepSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        
         yield return new WaitForSeconds(2);
         float timer = 0f;
         float duration = 2f;
