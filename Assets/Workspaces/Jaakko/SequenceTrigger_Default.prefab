@@ -96,7 +96,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3856785440170497354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb393d21594e52446b70acc1720fe362, type: 3}
+  m_Script: {fileID: 11500000, guid: eccd17aa36f6eef458821f220c753b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SequenceTrigger
   duration: 6

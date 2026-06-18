@@ -42,7 +42,7 @@ public class SequenceTrigger : MonoBehaviour
     }
     public void Play() 
     {
-        Play(new S_GameEnd_Default(m_player, m_camera, target.position, lookAt.position, m_camera.transform.parent,duration));
+        Play(new S_Camera_GoToLookAt(m_player, m_camera, target.position, lookAt.position, m_camera.transform.parent,duration));
     }
     public void Play(Sequence sequence) 
     {
@@ -57,6 +57,6 @@ public class SequenceTrigger : MonoBehaviour
     {
         if (!other.CompareTag("MainCamera")) return;
 
-        Play(new S_GameEnd_Default(m_player, m_camera, target.position, lookAt.position, m_camera.transform.parent, duration));
+        Play(new S_Camera_GoToLookAt(m_player, m_camera, target.position, lookAt.position, m_camera.transform.parent, duration));
     }
 }

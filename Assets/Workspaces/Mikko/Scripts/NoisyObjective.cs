@@ -9,7 +9,7 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
 
     [SerializeField] private Datacenter datacenter;
 
-    [SerializeField] private SequenceTrigger m_trigger;
+    public SequenceTrigger m_trigger;
 
     public Material mat;
     public int indexOfMat = 1;
