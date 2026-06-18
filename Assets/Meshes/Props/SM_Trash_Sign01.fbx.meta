@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sign_01_lp
-    second: {fileID: 2100000, guid: ba249770a0e4d714e9099da099acccd5, type: 2}
+    second: {fileID: 2100000, guid: c4a8424f8c519cf469d5139accdb000e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
