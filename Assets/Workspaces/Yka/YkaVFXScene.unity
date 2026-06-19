@@ -768,6 +768,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7726117735379665588, guid: b511ab686584a6c419b6a0bd484959a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -70.736885
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726117735379665588, guid: b511ab686584a6c419b6a0bd484959a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0342045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726117735379665588, guid: b511ab686584a6c419b6a0bd484959a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.7822
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726117735379665588, guid: b511ab686584a6c419b6a0bd484959a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7492097
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726117735379665588, guid: b511ab686584a6c419b6a0bd484959a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.015998026
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726117735379665588, guid: b511ab686584a6c419b6a0bd484959a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6619888
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726117735379665588, guid: b511ab686584a6c419b6a0bd484959a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.01413558
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -784,6 +812,18 @@ PrefabInstance:
     - target: {fileID: 1982173719784164177, guid: dcccbe23070ab482fa0c60dd1b5f12fa, type: 3}
       propertyPath: m_Name
       value: BonfireVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251421407218595573, guid: dcccbe23070ab482fa0c60dd1b5f12fa, type: 3}
+      propertyPath: percent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251421407218595573, guid: dcccbe23070ab482fa0c60dd1b5f12fa, type: 3}
+      propertyPath: bonfireStage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649084218042174761, guid: dcccbe23070ab482fa0c60dd1b5f12fa, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7235000438425919345, guid: dcccbe23070ab482fa0c60dd1b5f12fa, type: 3}
       propertyPath: m_LocalPosition.x

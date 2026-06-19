@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class EndingController : MonoBehaviour
 {
+    // to use from anywhere: FindAnyObjectByType<EndingController>().RunEndingTimeline();
     [SerializeField] private PlayableDirector director;
     [Header("Exposed for debug, will be found by script")]
     [SerializeField] private CinemachineBrain brain;
