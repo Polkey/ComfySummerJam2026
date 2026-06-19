@@ -89,9 +89,10 @@ public class AudioManager : MonoBehaviour
         datacenterDestructEventInstance.start();
     }
 
-    public void InitializeFireSFX(EventReference fireEventReference)
+    public void InitializeFireSFX(EventReference fireEventReference, GameObject obj)
     {
         fireEventInstance = CreateInstance(fireEventReference);
+        RuntimeManager.AttachInstanceToGameObject(fireEventInstance, obj);
         fireEventInstance.start();
     }
 
