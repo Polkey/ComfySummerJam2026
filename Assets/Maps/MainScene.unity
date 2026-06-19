@@ -4992,14 +4992,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1201690450360751433, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2532839931898464343, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
-      propertyPath: zoomSpeed
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 4855788375848795098, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5008,10 +5000,6 @@ PrefabInstance:
       propertyPath: endCam
       value: 
       objectReference: {fileID: 1404766024}
-    - target: {fileID: 5107686746198699224, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6899837308782512493, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
       propertyPath: m_LocalPosition.x
       value: 64.284
@@ -6344,7 +6332,7 @@ PrefabInstance:
       objectReference: {fileID: 2131352449}
     - target: {fileID: 1555288930029476954, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: m_VersionIndex
-      value: 4415
+      value: 4421
       objectReference: {fileID: 0}
     - target: {fileID: 1993811194492658829, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: m_Mesh
@@ -6436,7 +6424,7 @@ PrefabInstance:
       objectReference: {fileID: 145987259}
     - target: {fileID: 8864297635978306480, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: m_VersionIndex
-      value: 1466
+      value: 1472
       objectReference: {fileID: 0}
     - target: {fileID: 9164618495340233841, guid: 41df78279c0a99f4bb0ed771ea6f2c4a, type: 3}
       propertyPath: m_Enabled

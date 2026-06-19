@@ -231,7 +231,7 @@ public class BasicFPCC : MonoBehaviour {
                 AudioManager.instance.pausedSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 break;
             case PlayerState.Ending:
-                
+                ToggleMovement(true);
                 break;
         }
         GameEvents.RaisePlayerStateChanged(state);
