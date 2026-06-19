@@ -216,6 +216,8 @@ public class BasicFPCC : MonoBehaviour {
                 {
                     return;
                 }
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 AudioManager.instance.InitializePauseSnapshot(FMODEvents.instance.pauseFilterSnapshot);
                 break;
             case PlayerState.Default:
@@ -226,9 +228,7 @@ public class BasicFPCC : MonoBehaviour {
                 }
                 AudioManager.instance.pausedSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 break;
-            case PlayerState.Ending:
-                ToggleMovement(false);
-                SetLockCursor(false);                
+            case PlayerState.Ending:                
                 enabled = false;
                 break;
         }
