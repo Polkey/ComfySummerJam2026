@@ -188,14 +188,20 @@ public class BasicFPCC : MonoBehaviour {
 
                 break;
             case MenuState.Start:                
-                ToggleMovement(true);
-                SetState(PlayerState.Default);
+                if (State != PlayerState.Ending) 
+                {
+                    ToggleMovement(true);
+                    SetState(PlayerState.Default);
+                }                
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 break;
             case MenuState.Main:
-                ToggleMovement(false);
-                SetState(PlayerState.Paused);
+                if (State != PlayerState.Ending) 
+                {
+                    ToggleMovement(false);
+                    SetState(PlayerState.Paused);
+                }                
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 break;
@@ -233,6 +239,8 @@ public class BasicFPCC : MonoBehaviour {
                 break;
             case PlayerState.Ending:
                 ended = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 break;
         }
         GameEvents.RaisePlayerStateChanged(state);
@@ -248,8 +256,9 @@ public class BasicFPCC : MonoBehaviour {
     private Coroutine objectivesFadeCoroutine;
     void Update() {
 
-        ProcessInputs();
         if (State == PlayerState.Paused || State == PlayerState.Sequence) return;
+
+        ProcessInputs();
 
         if (movementLocked) {
             if (!yUpdated) {
@@ -455,6 +464,7 @@ public class BasicFPCC : MonoBehaviour {
         }
     }
     IEnumerator fadeEnding() {
+        SetState(PlayerState.Sequence);
         float timer = 0f;
         float duration = 2f;
 
