@@ -214,24 +214,22 @@ public class BasicFPCC : MonoBehaviour {
             case PlayerState.Paused:
                 if (firstStart) 
                 {
-                    Debug.Log("Dont Do lpf enter");
                     return;
                 }
                 AudioManager.instance.InitializePauseSnapshot(FMODEvents.instance.pauseFilterSnapshot);
-                Debug.Log("Do normal lpf enter");
                 break;
             case PlayerState.Default:
                 if (firstStart) 
                 {
-                    Debug.Log("Dont do lpf exit");
                     firstStart = false;
                     return;
                 }
-                Debug.Log("Do normal lpf exit");
                 AudioManager.instance.pausedSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 break;
             case PlayerState.Ending:
-                ToggleMovement(true);
+                ToggleMovement(false);
+                SetLockCursor(false);                
+                enabled = false;
                 break;
         }
         GameEvents.RaisePlayerStateChanged(state);
