@@ -82,10 +82,12 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
         m_main.b_credits.onClick.AddListener(() =>
         {
             ChangeState(MenuState.Credits);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.forwardBlipSFX);
         });
         m_credits.b_back.onClick.AddListener(() =>
         {
             ChangeState(MenuState.Main);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.backwardBlipSFX);
         });
     }
     private void InitializeSliders() 
