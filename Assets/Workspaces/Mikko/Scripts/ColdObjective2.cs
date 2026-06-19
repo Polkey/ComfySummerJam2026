@@ -33,10 +33,11 @@ public class ColdObjective2 : MonoBehaviour, IInteractable {
             interacted = true;
             var player = FindAnyObjectByType<BasicFPCC>();
             ObjectiveManager.CompleteObjective("t_coldObjective");
+            Unhighlight();
         }
     }
     public void Highlight() {
-        if (!highlighted) {
+        if (!highlighted && !interacted) {
             foreach (var mat in materials) {
                 mat.SetFloat("_showOutline", 1);
             }
