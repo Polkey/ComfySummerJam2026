@@ -24,12 +24,17 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference datacenterDestructSFX { get; private set; }
     [field: SerializeField] public EventReference datacenterPopSFX { get; private set; }
     [field: SerializeField] public EventReference bushRustleSFX { get; private set; }
+    [field: SerializeField] public EventReference fireSFX { get; private set; }
+
+    [field: Header("UI SFX")]
+    [field: SerializeField] public EventReference forwardBlipSFX { get; private set; }
+    [field: SerializeField] public EventReference backwardBlipSFX { get; private set; }
 
     [field: Header("Snapshots")]
     [field: SerializeField] public EventReference reverbSnapshot { get; private set; }
     [field: SerializeField] public EventReference sleepFilterSnapshot { get; private set; }
+    [field: SerializeField] public EventReference pauseFilterSnapshot { get; private set; }
 
-    
 
     private void Awake()
     {

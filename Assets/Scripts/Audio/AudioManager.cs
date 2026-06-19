@@ -29,7 +29,9 @@ public class AudioManager : MonoBehaviour
     public EventInstance darkAmbienceEventInstance;
     public EventInstance reverbSSEventInstance;
     public EventInstance sleepSSEventInstance;
+    public EventInstance pausedSSEventInstance;
     public EventInstance datacenterDestructEventInstance;
+    public EventInstance fireEventInstance;
     private EventInstance musicEventInstance;
 
     void Awake()
@@ -87,6 +89,12 @@ public class AudioManager : MonoBehaviour
         datacenterDestructEventInstance.start();
     }
 
+    public void InitializeFireSFX(EventReference fireEventReference)
+    {
+        fireEventInstance = CreateInstance(fireEventReference);
+        fireEventInstance.start();
+    }
+
     public void InitializeReverbSnapshot(EventReference reverbEventReference)
     {
         reverbSSEventInstance = CreateInstance(reverbEventReference);
@@ -97,6 +105,12 @@ public class AudioManager : MonoBehaviour
     {
         sleepSSEventInstance = CreateInstance(sleepEventReference);
         sleepSSEventInstance.start();
+    }
+
+    public void InitializePauseSnapshot(EventReference pausedEventReference)
+    {
+        pausedSSEventInstance = CreateInstance(pausedEventReference);
+        pausedSSEventInstance.start();
     }
 
 
@@ -115,10 +129,15 @@ public class AudioManager : MonoBehaviour
         footstepsEventInstance.setParameterByName(parameterName, parameterValue);
     }
 
-    public void PlayOneShot(EventReference sound, Vector3 worldPos)
+    public void PlayOneShotWithPos(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
+    public void PlayOneShot(EventReference sound)
+    {
+        RuntimeManager.PlayOneShot(sound);
+    }
+
 
     public void PlayOneShotWithParameters(EventReference eventReference, Vector3 worldPos, params (string name, float value)[] parameters)
     {

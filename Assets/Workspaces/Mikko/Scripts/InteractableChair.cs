@@ -34,7 +34,7 @@ public class InteractableChair : MonoBehaviour, IInteractable {
             StartCoroutine(movePlayer());
             StartCoroutine(playerLook());
 
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.sitDownSFX, transform.position);
+            AudioManager.instance.PlayOneShotWithPos(FMODEvents.instance.sitDownSFX, transform.position);
         }
     }
 

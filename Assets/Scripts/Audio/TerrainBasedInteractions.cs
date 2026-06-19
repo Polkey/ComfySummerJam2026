@@ -62,7 +62,7 @@ public class TerrainBasedInteractions : MonoBehaviour
         if (other.CompareTag("Bush") && fpcc.moving && (!bushBuffer))
         {
             StartCoroutine(BushBuffer());
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.bushRustleSFX, other.gameObject.transform.position);
+            AudioManager.instance.PlayOneShotWithPos(FMODEvents.instance.bushRustleSFX, other.gameObject.transform.position);
         }
 
         if (other.CompareTag("Cave"))
@@ -95,7 +95,7 @@ public class TerrainBasedInteractions : MonoBehaviour
         if (other.CompareTag("Bush") && fpcc.moving && (!bushBuffer))
         {
             StartCoroutine(BushBuffer());
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.bushRustleSFX, other.gameObject.transform.position);
+            AudioManager.instance.PlayOneShotWithPos(FMODEvents.instance.bushRustleSFX, other.gameObject.transform.position);
         }
     }
 

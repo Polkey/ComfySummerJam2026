@@ -28,7 +28,7 @@ public class Datacenter : MonoBehaviour
             } 
         }  
         AudioManager.instance.datacenterDestructEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.datacenterPopSFX, transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.datacenterPopSFX);
 
         Vector3 startScale = transform.localScale;
         float elapsed = 0f;

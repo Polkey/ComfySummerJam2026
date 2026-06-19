@@ -18,7 +18,7 @@ public class TrashPickup : MonoBehaviour, IInteractable {
             StartCoroutine(fade());
             interacted = true;
 
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.pickupSFX, transform.position);
+            AudioManager.instance.PlayOneShotWithPos(FMODEvents.instance.pickupSFX, transform.position);
         }
     }
     public void Highlight() {

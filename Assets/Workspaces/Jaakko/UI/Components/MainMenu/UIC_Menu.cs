@@ -63,6 +63,7 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
         m_main.b_settings.onClick.AddListener(() =>
         {
             ChangeState(MenuState.Settings);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.forwardBlipSFX);
         });
         m_main.b_quit.onClick.AddListener(() =>
         {
@@ -73,6 +74,7 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
         m_settings.b_back.onClick.AddListener(() =>
         {
             ChangeState(MenuState.Main);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.backwardBlipSFX);
         });
     }
     private void InitializeSliders() 

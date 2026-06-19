@@ -14,6 +14,9 @@ public class ColdObjective : MonoBehaviour, IInteractable {
     }
     public void Interact() {
         if (!interacted) {
+            AudioManager.instance.PlayOneShotWithPos(FMODEvents.instance.fireSFX, transform.position);
+            AudioManager.instance.InitializeFireSFX(FMODEvents.instance.fireSFX);
+
             scoreManager.addScore();
             StartCoroutine(fade());
             interacted = true;
