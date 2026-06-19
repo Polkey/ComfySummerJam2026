@@ -107,6 +107,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5857301832936995067, guid: 9a5778b25b68e19489563df595ff390b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8878156041348832707}
+    - targetCorrespondingSourceObject: {fileID: 5857301832936995067, guid: 9a5778b25b68e19489563df595ff390b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8365706599073831992}
   m_SourcePrefab: {fileID: 100100000, guid: 9a5778b25b68e19489563df595ff390b, type: 3}
 --- !u!1 &4731754272057392853 stripped
 GameObject:
@@ -135,6 +138,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7870360907434880029, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
+--- !u!114 &8365706599073831992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4731754272057392853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c72536ec16efdf4eadffd476d188a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashPickup
+  mat: {fileID: 0}
+  indexOfMat: 1
 --- !u!4 &6609560139109308146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5429685725881684188, guid: 9a5778b25b68e19489563df595ff390b, type: 3}
