@@ -463,12 +463,13 @@ public class BasicFPCC : MonoBehaviour {
         //GAME ENDING LOGIC HERE LOTS OF STUFF HAPPENS
         var cam = GetComponentInChildren<CinemachineCamera>();
         cam.enabled = false;
-        endCam.SetActive(true);
+        //endCam.SetActive(true);
         SceneManager.LoadScene("BakeScene_Dawn", LoadSceneMode.Single);
         StartCoroutine(fadeEndingOut());
         yield return null;
     }
     IEnumerator fadeEndingOut() {
+        FindAnyObjectByType<EndingController>().RunEndingTimeline();
         AudioManager.instance.sleepSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         
         yield return new WaitForSeconds(2);
