@@ -23,7 +23,7 @@ public static class PopupDatabase
     public static TutorialPopupData T_Default = new TutorialPopupData()
     {
         sprite = Resources.Load<Sprite>("Sprites/s_test"),
-        text = "",
-        duration = 1f
+        text = "easter egg oh yeah",
+        duration = 3f
     };
 }

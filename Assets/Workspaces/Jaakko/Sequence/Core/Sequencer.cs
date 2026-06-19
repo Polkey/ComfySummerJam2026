@@ -54,7 +54,8 @@ public class Sequencer : MonoBehaviour
             Player = player,
             Camera = camera.transform,
             CameraRoot = camera.transform.parent,
-            EffectController = EffectController.I
+            EffectController = EffectController.I,
+            CameraPos = new Vector3(0f, 1.7f, 0f)
         };
 
     }
@@ -68,6 +69,10 @@ public class Sequencer : MonoBehaviour
 
         Play(definition.Create(m_context));
     }
+    public void Play(SequenceDefinition def) 
+    {
+        Play(def.Create(m_context));
+    }
     public void Play(Sequence sequence) 
     {
         var type = sequence.GetType();
@@ -80,6 +85,7 @@ public class Sequencer : MonoBehaviour
                 return;
             }
         }
+        Debug.Log("Play " + sequence);
         m_active.Add(sequence);
         sequence._Start();
     } 

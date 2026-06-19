@@ -23,6 +23,7 @@ public class EffectController : MonoBehaviour
             return;                
         }
         I = this;
+        DontDestroyOnLoad(gameObject);
 
         if (!RefreshVolume()) 
         {
