@@ -1,44 +1,32 @@
-using Unity.Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
 public class SequenceTrigger : MonoBehaviour 
 {
-    private BoxCollider m_collider;
-    private Sequencer m_sequencer;
-
-    [SerializeField] private float duration;
-    [SerializeField] private Transform target;
-    [SerializeField] private Transform lookAt;
-    [SerializeField] private BasicFPCC m_player;
-
-    private CinemachineCamera m_camera;
-
+    [SerializeField] private bool m_activateOnce;
     [SerializeField] private bool m_disableTrigger;
+    [SerializeField] private SequenceDefinition m_sequence;
+
+    private BoxCollider m_collider;
+
+    bool activated = false;
 
     private void Awake()
     {
         m_collider = GetComponent<BoxCollider>();
         m_collider.isTrigger = true;
 
-        if (m_disableTrigger) 
-        {
-            m_collider.enabled = false;
-        }
+        m_collider.enabled = !m_disableTrigger;        
     }
-    protected virtual void Initialize() 
+    private void OnTriggerEnter(Collider other)
     {
-        m_sequencer = FindAnyObjectByType<Sequencer>();
-        if (m_player == null)
+        if (!other.CompareTag("MainCamera")) return;
+        if (m_activateOnce && activated) return;
+
+        if (m_sequence) 
         {
-            Debug.LogWarning($"PlayerReference NULL on {name}");
-            return;
-        }
-        m_camera = m_player.GetComponentInChildren<CinemachineCamera>();
-        if (m_camera == null)
-        {
-            Debug.LogWarning($"CameraReference NULL on {name}");
-            return;
-        }
+            activated = true;
+            Sequencer.I.Play(m_sequence);
+        }            
     }
 }

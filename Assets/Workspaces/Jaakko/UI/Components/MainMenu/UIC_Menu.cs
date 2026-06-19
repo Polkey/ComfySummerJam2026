@@ -84,6 +84,10 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
         {
             ChangeState(MenuState.Credits);
         });
+        m_main.b_restart.onClick.AddListener(() =>
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        });
         m_credits.b_back.onClick.AddListener(() =>
         {
             ChangeState(MenuState.Main);
@@ -149,10 +153,12 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 if (firstStart) 
                 {
                     m_main.SetText(m_main.b_start, "Start");
+                    m_main.b_restart.gameObject.SetActive(false);
                 }
                 else 
                 {
                     m_main.SetText(m_main.b_start, "Continue");
+                    m_main.b_restart.gameObject.SetActive(true);
                 }
                     break;
             case MenuState.Start:
@@ -169,7 +175,7 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 m_settings.View();
                 break;
             case MenuState.Quit:
-                
+                Application.Quit();
                 break;
             case MenuState.Credits:
                 m_credits.View();

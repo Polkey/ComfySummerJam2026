@@ -7,6 +7,7 @@ public class SequenceContext
     public Transform CameraRoot;
     public Transform Camera;
     public EffectController EffectController;
+    public Vector3 CameraPos;
 }
 public interface ISequence 
 {
