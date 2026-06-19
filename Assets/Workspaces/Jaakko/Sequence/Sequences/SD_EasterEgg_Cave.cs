@@ -9,6 +9,6 @@ public class SD_EasterEgg_Cave : SequenceDefinition
 
     public override Sequence Create(SequenceContext ctx)
     {
-        return new S_EasterEgg_Cave(ctx, m_target, m_endPos, m_duration, m_stopDelay, m_popUP);
+        return new S_EasterEgg_Cave(ctx, m_target, m_endPos, m_duration, m_stopDelay, m_popUP, true);
     }
 }
