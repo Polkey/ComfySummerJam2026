@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1098768797420215712}
   - component: {fileID: 3801210844952689654}
   - component: {fileID: 7689848738404871621}
-  - component: {fileID: 1712208270498076280}
+  - component: {fileID: 8781331387257009344}
   m_Layer: 0
   m_Name: sign_lp
   m_TagString: Untagged
@@ -207,7 +207,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5814898274067533374, guid: 2a3b5b58838418d4184f60802d0bd4f7, type: 3}
---- !u!114 &1712208270498076280
+--- !u!114 &8781331387257009344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,9 +216,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2904954500865577811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18aaa522ba963864693edcbb6cd6613c, type: 3}
+  m_Script: {fileID: 11500000, guid: 799cab6e33ae4534b8d24383dc8a9783, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DestroyWallOnSignPickup
+  m_EditorClassIdentifier: Assembly-CSharp::AreaBlockerSignPickup
+  mat: {fileID: 0}
+  indexOfMat: 1
 --- !u!1 &3214860725468914920
 GameObject:
   m_ObjectHideFlags: 0

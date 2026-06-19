@@ -6,7 +6,7 @@ public static class PopupDatabase
     {
         sprite = Resources.Load<Sprite>("Sprites/s_movement"),
         text = "use wasd to move around",
-        duration = 2f
+        duration = 5f
     };
     public static TutorialPopupData T_Zoom = new TutorialPopupData()
     {
