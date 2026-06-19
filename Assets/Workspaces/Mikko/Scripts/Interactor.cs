@@ -6,7 +6,16 @@ public class Interactor : MonoBehaviour
     public Transform InteractorSource;
     public float InteractRange;
     private IInteractable currentlyHighlighted;
+
+    private BasicFPCC m_player;
+
+    private void Awake()
+    {
+        m_player = GetComponent<BasicFPCC>();   
+    }
     void Update() {
+        if (m_player == null || m_player.State == PlayerState.Sequence || m_player.State == PlayerState.Paused) return;
+
         Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
 
         if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange) &&
