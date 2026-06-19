@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public enum MenuState
 {
@@ -5,12 +6,14 @@ public enum MenuState
     Main = 1,
     Start = 2,
     Settings = 3,
-    Quit = 4
+    Quit = 4,
+    Credits = 5
 }
 public class UIC_Menu : UIComponentBase<UIG_Menu>
 {
     private UIV_Menu_Main m_main;
     private UIV_Menu_Settings m_settings;
+    private UIV_Menu_Credits m_credits;
 
     private UIV_PopUP_Tutorial m_popup;
     private MenuState m_state;
@@ -20,6 +23,7 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
         m_main = group.Get<UIV_Menu_Main>();
         m_settings = group.Get<UIV_Menu_Settings>();
         m_popup = group.Get<UIV_PopUP_Tutorial>();
+        m_credits = group.Get<UIV_Menu_Credits>();
     }
     public override void OnInput(UIInput input)
     {
@@ -75,6 +79,14 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
         {
             ChangeState(MenuState.Main);
             AudioManager.instance.PlayOneShot(FMODEvents.instance.backwardBlipSFX);
+        });
+        m_main.b_credits.onClick.AddListener(() =>
+        {
+            ChangeState(MenuState.Credits);
+        });
+        m_credits.b_back.onClick.AddListener(() =>
+        {
+            ChangeState(MenuState.Main);
         });
     }
     private void InitializeSliders() 
@@ -136,7 +148,7 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 m_main.View();
                 if (firstStart) 
                 {
-                    m_main.SetText(m_main.b_start, "Start");                    
+                    m_main.SetText(m_main.b_start, "Start");
                 }
                 else 
                 {
@@ -158,6 +170,9 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 break;
             case MenuState.Quit:
                 
+                break;
+            case MenuState.Credits:
+                m_credits.View();
                 break;
         }
         m_state = state;

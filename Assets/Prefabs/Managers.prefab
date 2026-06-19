@@ -107,6 +107,27 @@ MonoBehaviour:
       Data3: -600204624
       Data4: 1433674905
     Path: event:/GeneralSFX/BushRustles
+  <fireSFX>k__BackingField:
+    Guid:
+      Data1: 2063420593
+      Data2: 1298858371
+      Data3: 1568426393
+      Data4: 559903445
+    Path: event:/GeneralSFX/Fire
+  <forwardBlipSFX>k__BackingField:
+    Guid:
+      Data1: 1591412381
+      Data2: 1104799300
+      Data3: 1236159104
+      Data4: -2055525883
+    Path: event:/UI/ForwardClick
+  <backwardBlipSFX>k__BackingField:
+    Guid:
+      Data1: -480649387
+      Data2: 1148111083
+      Data3: -1648122225
+      Data4: -1246149120
+    Path: event:/UI/BackwardClick
   <reverbSnapshot>k__BackingField:
     Guid:
       Data1: -1610713450
@@ -121,6 +142,13 @@ MonoBehaviour:
       Data3: -716478018
       Data4: 1606911652
     Path: snapshot:/SleepFilter
+  <pauseFilterSnapshot>k__BackingField:
+    Guid:
+      Data1: -2065856154
+      Data2: 1084842060
+      Data3: -674482522
+      Data4: 97613313
+    Path: snapshot:/PausedFilter
 --- !u!1 &7403176475841845813
 GameObject:
   m_ObjectHideFlags: 0
