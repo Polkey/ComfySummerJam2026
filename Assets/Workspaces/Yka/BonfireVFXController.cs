@@ -4,7 +4,8 @@ using UnityEngine.VFX;
 
 public class BonfireVFXController : MonoBehaviour {
     [SerializeField] private int bonfireStage;
-    [SerializeField] private int maxStage = 3;
+    [SerializeField] private int maxStage = 4;
+    [SerializeField] private AnimationCurve flameEffectCurve;
     [SerializeField] private AnimationCurve lightCurve;
     [SerializeField] private float maxLightIntensity;
     [SerializeField] private float wobbleSpeedFactor = 4;
@@ -29,8 +30,9 @@ public class BonfireVFXController : MonoBehaviour {
 
     void SetBonfirePercent(float percent) {
         this.percent = percent;
+        var adjustedPercent = Mathf.Clamp01(flameEffectCurve.Evaluate(percent));
         foreach (var effect in vfx) {
-            effect.SetFloat("PercentActive", percent);
+            effect.SetFloat("PercentActive", adjustedPercent);
         }
         currentIntensityLevel = lightCurve.Evaluate(percent) * maxLightIntensity;
     }
@@ -51,6 +53,9 @@ public class BonfireVFXController : MonoBehaviour {
         }
         if (Keyboard.current.digit4Key.wasPressedThisFrame) {
             SetBonfireStage(3);
+        }
+        if (Keyboard.current.digit5Key.wasPressedThisFrame) {
+            SetBonfireStage(4);
         }
     }
 
