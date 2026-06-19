@@ -120,14 +120,14 @@ MonoBehaviour:
       Data2: 1104799300
       Data3: 1236159104
       Data4: -2055525883
-    Path: event:/UI/ForwardBlip
+    Path: event:/UI/ForwardClick
   <backwardBlipSFX>k__BackingField:
     Guid:
       Data1: -480649387
       Data2: 1148111083
       Data3: -1648122225
       Data4: -1246149120
-    Path: event:/UI/BackwardBlip
+    Path: event:/UI/BackwardClick
   <reverbSnapshot>k__BackingField:
     Guid:
       Data1: -1610713450
