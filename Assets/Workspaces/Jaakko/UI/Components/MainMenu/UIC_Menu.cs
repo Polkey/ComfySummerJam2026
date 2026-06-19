@@ -150,10 +150,14 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 if (firstStart) 
                 {
                     m_main.SetText(m_main.b_start, "Start");
-                }
+                }                
                 else 
                 {
                     m_main.SetText(m_main.b_start, "Continue");
+                }
+                if (m_player.State == PlayerState.Ending) 
+                {
+                    m_main.b_start.gameObject.SetActive(false);
                 }
                     break;
             case MenuState.Start:
