@@ -7,9 +7,11 @@ public class BonfireStages : MonoBehaviour
     [SerializeField] public ScoreManager scoreManager;
     [SerializeField] private int currentStage;
 
+    BonfireVFXController vfxController;
 
     private void Awake() {
         scoreManager = FindAnyObjectByType<ScoreManager>();
+        vfxController = GetComponentInChildren<BonfireVFXController>();
     }
     
     public void checkStage() {
@@ -18,6 +20,7 @@ public class BonfireStages : MonoBehaviour
                 bonfireStages[currentStage].SetActive(false);
                 currentStage++;
                 bonfireStages[currentStage].SetActive(true);
+                vfxController.SetBonfireStage(currentStage);
             }
         }
     }
