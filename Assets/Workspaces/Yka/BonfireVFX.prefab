@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7235000438425919345}
   - component: {fileID: 6649084218042174761}
   - component: {fileID: 5186050593486979275}
+  - component: {fileID: 2251421407218595573}
   m_Layer: 0
   m_Name: BonfireVFX
   m_TagString: Untagged
@@ -124,3 +125,15 @@ VFXRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
+--- !u!114 &2251421407218595573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982173719784164177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d324c80589a71774e88d72133db0da71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BonfireVFXController
