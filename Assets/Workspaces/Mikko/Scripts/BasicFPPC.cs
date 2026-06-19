@@ -179,6 +179,7 @@ public class BasicFPCC : MonoBehaviour {
         GameEvents.OnMenuStateChanged += MenuStateChanged;
         MenuStateChanged(MenuState.Main);
     }
+    bool ended = false;
     private void MenuStateChanged(MenuState state) 
     {
         switch (state) 
@@ -189,11 +190,15 @@ public class BasicFPCC : MonoBehaviour {
             case MenuState.Start:                
                 ToggleMovement(true);
                 SetState(PlayerState.Default);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 break;
             case MenuState.Main:
                 ToggleMovement(false);
                 SetState(PlayerState.Paused);
-                break;                   
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                break;
         }
     }
     void Start() {
@@ -216,8 +221,6 @@ public class BasicFPCC : MonoBehaviour {
                 {
                     return;
                 }
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                 AudioManager.instance.InitializePauseSnapshot(FMODEvents.instance.pauseFilterSnapshot);
                 break;
             case PlayerState.Default:
@@ -228,8 +231,8 @@ public class BasicFPCC : MonoBehaviour {
                 }
                 AudioManager.instance.pausedSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 break;
-            case PlayerState.Ending:                
-                enabled = false;
+            case PlayerState.Ending:
+                ended = true;
                 break;
         }
         GameEvents.RaisePlayerStateChanged(state);
@@ -244,6 +247,7 @@ public class BasicFPCC : MonoBehaviour {
     private Coroutine imageFadeCoroutine;
     private Coroutine objectivesFadeCoroutine;
     void Update() {
+
         ProcessInputs();
         if (State == PlayerState.Paused || State == PlayerState.Sequence) return;
 
@@ -517,6 +521,8 @@ public class BasicFPCC : MonoBehaviour {
     }
 
     void ProcessInputs() {
+        if (ended) return;
+
         if (useLocalInputs) {
             inputLookX = Input.GetAxis(axisLookHorzizontal);
             inputLookY = Input.GetAxis(axisLookVertical);
