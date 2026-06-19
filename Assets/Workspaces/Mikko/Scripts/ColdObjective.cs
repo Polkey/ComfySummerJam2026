@@ -14,6 +14,13 @@ public class ColdObjective : MonoBehaviour, IInteractable {
     }
     public void Interact() {
         if (!interacted) {
+            var bonfire = FindAnyObjectByType<BonfireStages>();
+            bool couldLightUp = bonfire.LightUp();
+            if (!couldLightUp) {
+                // couldn't yet light up the fire
+                // TODO: audio/visual feedback
+                return;
+            }
             AudioManager.instance.InitializeFireSFX(FMODEvents.instance.fireSFX, gameObject);
 
             scoreManager.addScore();

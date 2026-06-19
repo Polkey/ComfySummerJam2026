@@ -6,6 +6,7 @@ public class BonfireStages : MonoBehaviour
     [SerializeField] public int[] stageThreshold;
     [SerializeField] public ScoreManager scoreManager;
     [SerializeField] private int currentStage;
+    bool lit = false;
 
     BonfireVFXController vfxController;
 
@@ -14,13 +15,24 @@ public class BonfireStages : MonoBehaviour
         vfxController = GetComponentInChildren<BonfireVFXController>();
     }
     
+    public bool LightUp() { // returns true if lit now or earlier
+        if (currentStage <= 0) {
+            return false;
+        }
+        lit = true;
+        vfxController.SetBonfireStage(currentStage);
+        return true;
+    }
+
     public void checkStage() {
         if (currentStage < stageThreshold[stageThreshold.Length-1]) {
             if (bonfireStages[currentStage+1] != null && scoreManager.score >= stageThreshold[currentStage]) {
                 bonfireStages[currentStage].SetActive(false);
                 currentStage++;
                 bonfireStages[currentStage].SetActive(true);
-                vfxController.SetBonfireStage(currentStage);
+                if (lit) {
+                    vfxController.SetBonfireStage(currentStage);
+                }
             }
         }
     }
