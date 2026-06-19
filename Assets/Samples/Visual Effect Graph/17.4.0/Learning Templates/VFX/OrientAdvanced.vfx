@@ -67,16 +67,7 @@ MonoBehaviour:
     - model: {fileID: 8926484042661615931}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661616383}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661615937}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616386}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616535}
       id: 0
       isStickyNote: 0
     - model: {fileID: 0}
@@ -96,15 +87,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661616150}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661616153}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616202}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616520}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661616184}
       id: 2
       isStickyNote: 0
@@ -112,21 +94,6 @@ MonoBehaviour:
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661616135}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616101}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616305}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616104}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616114}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616389}
       id: 0
       isStickyNote: 0
     - model: {fileID: 0}
@@ -1075,6 +1042,7 @@ MonoBehaviour:
   sortingPriority: 0
   m_SubOutputs:
   - {fileID: 8926484042661616138}
+  - {fileID: 8926484042661616565}
   useBaseColorMap: 3
   colorMapping: 0
   uvMode: 0
@@ -1197,14 +1165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081ffb0090424ba4cb05370a42ead6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  opaqueRenderQueue: 0
-  transparentRenderQueue: 1
 --- !u!114 &8926484042661616149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5822,3 +5782,21 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots: []
+--- !u!114 &8926484042661616565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388ad3b1dc9c6ae45b630f914fab638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.VFX.URP.VFXURPSubOutput
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0

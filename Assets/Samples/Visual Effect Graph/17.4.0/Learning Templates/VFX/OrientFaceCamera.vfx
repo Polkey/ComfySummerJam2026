@@ -128,40 +128,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614555}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614861}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614558}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615227}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615234}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661615362}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661615364}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661616119}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616120}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616123}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616129}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616132}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616139}
       id: 0
       isStickyNote: 0
     - model: {fileID: 0}
@@ -184,19 +157,7 @@ MonoBehaviour:
     - model: {fileID: 8926484042661615255}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661615494}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615501}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661616096}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616097}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661616103}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661616027}
@@ -211,16 +172,7 @@ MonoBehaviour:
     - model: {fileID: 8926484042661615238}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661615262}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661615240}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615765}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661615379}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661615992}
@@ -8327,6 +8279,7 @@ MonoBehaviour:
   sortingPriority: 0
   m_SubOutputs:
   - {fileID: 8926484042661616118}
+  - {fileID: 8926484042661616250}
   useBaseColorMap: 3
   colorMapping: 0
   uvMode: 0
@@ -8572,14 +8525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081ffb0090424ba4cb05370a42ead6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  opaqueRenderQueue: 0
-  transparentRenderQueue: 1
 --- !u!114 &8926484042661616119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8629,6 +8574,7 @@ MonoBehaviour:
   sortingPriority: 0
   m_SubOutputs:
   - {fileID: 8926484042661616151}
+  - {fileID: 8926484042661616251}
   useBaseColorMap: 3
   colorMapping: 0
   uvMode: 0
@@ -9095,14 +9041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081ffb0090424ba4cb05370a42ead6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  opaqueRenderQueue: 0
-  transparentRenderQueue: 1
 --- !u!114 &8926484042661616152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11968,3 +11906,39 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots: []
+--- !u!114 &8926484042661616250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388ad3b1dc9c6ae45b630f914fab638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.VFX.URP.VFXURPSubOutput
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+--- !u!114 &8926484042661616251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388ad3b1dc9c6ae45b630f914fab638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.VFX.URP.VFXURPSubOutput
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0

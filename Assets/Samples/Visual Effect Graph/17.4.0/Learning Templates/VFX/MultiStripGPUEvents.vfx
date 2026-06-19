@@ -328,12 +328,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661618433}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661618437}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618440}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661618608}
       id: 0
       isStickyNote: 0
@@ -354,9 +348,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661620850}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661620852}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 0}
       id: 0
       isStickyNote: 1
@@ -369,33 +360,6 @@ MonoBehaviour:
       height: 1474
     contents:
     - model: {fileID: 8926484042661618444}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618459}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618461}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661620406}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618788}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618758}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618777}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661620770}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661620472}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661621158}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661618597}
@@ -479,18 +443,6 @@ MonoBehaviour:
     - model: {fileID: 8926484042661618519}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661618540}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618544}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618550}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661618557}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661618638}
       id: 0
       isStickyNote: 0
@@ -515,30 +467,6 @@ MonoBehaviour:
       height: 1027
     contents:
     - model: {fileID: 8926484042661619791}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619806}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619808}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619810}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619844}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619846}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619848}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619850}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661619838}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661619883}
@@ -585,34 +513,7 @@ MonoBehaviour:
       width: 1221
       height: 913
     contents:
-    - model: {fileID: 0}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 0}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 0}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 0}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 0}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661621130}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661621136}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661621138}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661621141}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661621144}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661620455}
@@ -2648,6 +2549,7 @@ MonoBehaviour:
   m_SubOutputs:
   - {fileID: 8926484042661618543}
   - {fileID: 8926484042661621169}
+  - {fileID: 8926484042661621176}
   useBaseColorMap: 3
   colorMapping: 0
   uvMode: 0
@@ -21776,7 +21678,6 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots:
-  - {fileID: 0}
   - {fileID: 8926484042661621139}
 --- !u!114 &8926484042661620461
 MonoBehaviour:
@@ -32718,6 +32619,7 @@ MonoBehaviour:
   m_SubOutputs:
   - {fileID: 8926484042661621135}
   - {fileID: 8926484042661621172}
+  - {fileID: 8926484042661621177}
   useBaseColorMap: 0
   colorMapping: 0
   uvMode: 0
@@ -33730,6 +33632,42 @@ MonoBehaviour:
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
 --- !u!114 &8926484042661621175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388ad3b1dc9c6ae45b630f914fab638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.VFX.URP.VFXURPSubOutput
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+--- !u!114 &8926484042661621176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388ad3b1dc9c6ae45b630f914fab638f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.VFX.URP.VFXURPSubOutput
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+--- !u!114 &8926484042661621177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
