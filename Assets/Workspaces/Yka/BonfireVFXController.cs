@@ -1,36 +1,51 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 
-public class BonfireVFXController : MonoBehaviour
-{
+public class BonfireVFXController : MonoBehaviour {
     [SerializeField] private int bonfireStage;
     [SerializeField] private int maxStage = 3;
     [Header("Debug display only")]
     [SerializeField] private float percent;
 
-    private VisualEffect vfx;
+    private VisualEffect[] vfx;
 
-    void Awake()
-    {
-        vfx = GetComponent<VisualEffect>();
+    void Awake() {
+        vfx = GetComponentsInChildren<VisualEffect>();
+        SetBonfireStage(0);
     }
-    public void SetBonfireStage(int stage)
-    {
+    public void SetBonfireStage(int stage) {
+        bonfireStage = stage;
         float per = (float)stage / maxStage;
         SetBonfirePercent(per);
     }
 
-    void SetBonfirePercent(float percent)
-    {
+    void SetBonfirePercent(float percent) {
         this.percent = percent;
-        vfx.SetFloat("PercentActive", percent);
+        foreach (var effect in vfx) {
+            effect.SetFloat("PercentActive", percent);
+        }
     }
 
-    private void OnValidate()
-    {
-        if (!vfx)
-            vfx = GetComponent<VisualEffect>();
-        SetBonfireStage(bonfireStage);
+    private void Update() {
+        if (Keyboard.current.digit1Key.wasPressedThisFrame) {
+            SetBonfireStage(0);
+        }
+        if (Keyboard.current.digit2Key.wasPressedThisFrame) {
+            SetBonfireStage(1);
+        }
+        if (Keyboard.current.digit3Key.wasPressedThisFrame) {
+            SetBonfireStage(2);
+        }
+        if (Keyboard.current.digit4Key.wasPressedThisFrame) {
+            SetBonfireStage(3);
+        }
     }
+
+    //private void OnValidate() {
+    //    if (vfx == null || vfx.Length == 0)
+    //        vfx = GetComponentsInChildren<VisualEffect>();
+    //    SetBonfireStage(bonfireStage);
+    //}
 }
