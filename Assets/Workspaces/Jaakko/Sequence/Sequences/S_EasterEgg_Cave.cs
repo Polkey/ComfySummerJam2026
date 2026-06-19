@@ -31,15 +31,18 @@ public class S_EasterEgg_Cave : Sequence
 
     private State m_state;
     private UIV_PopUP m_popUp;
+    private bool m_return;
     public S_EasterEgg_Cave(
         SequenceContext ctx,
         Transform target,
         Transform endPos,
         float duration,
         float stopDelay,
-        UIV_PopUP popUp
+        UIV_PopUP popUp,
+        bool returnToOrigin = true
     )
     {
+        m_return = returnToOrigin;
         m_context = ctx;
 
         m_cameraRoot = ctx.CameraRoot;
@@ -100,8 +103,12 @@ public class S_EasterEgg_Cave : Sequence
                         m_timer = 0f;
                         m_state = State.Waiting;
 
-                        m_popUp.Bind(PopupDatabase.T_Default);
-                        m_popUp.Show();
+                        if (m_popUp != null) 
+                        {
+                            m_popUp.Bind(PopupDatabase.T_Default);
+                            m_popUp.Show();
+                        }
+                        
                     }
                     break;
                 }
@@ -125,6 +132,10 @@ public class S_EasterEgg_Cave : Sequence
 
             case State.Returning:
                 {
+                    if (!m_return) 
+                    {
+                        _Stop();
+                    }
                     float r = Mathf.Clamp01(m_timer / m_duration);
 
                     Vector3 targetLocalPos = new Vector3(0f, 1.7f, 0f);

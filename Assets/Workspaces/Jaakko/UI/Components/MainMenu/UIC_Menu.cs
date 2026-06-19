@@ -164,7 +164,7 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
             case MenuState.Start:
                 if (firstStart) 
                 {
-                    Sequencer.I.Play<SD_Camera_GoToLookAt>();
+                    Sequencer.I.Play<SD_GameStart>();
 
                     m_popup.Bind(PopupDatabase.T_Controls);
                     m_popup.Show();
