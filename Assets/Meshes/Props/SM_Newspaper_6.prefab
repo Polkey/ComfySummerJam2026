@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
       propertyPath: m_Name
-      value: newspaper_6
+      value: SM_Newspaper_6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -70,6 +70,7 @@ PrefabInstance:
     - {fileID: -2408884271156639189, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
     - {fileID: -6404564249306470100, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
     - {fileID: 3803711996872514964, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
+    - {fileID: 2133008443435814860, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}

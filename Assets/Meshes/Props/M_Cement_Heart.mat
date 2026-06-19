@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Newspaper
+  m_Name: M_Cement_Heart
   m_Shader: {fileID: -6465566751694194690, guid: 5d22b99cf8c390041abbd7386c5a591f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -30,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Base_Color:
-        m_Texture: {fileID: 2800000, guid: e35e86449d6f93e4aab284702c35dca5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0051538f5293a4443b14dee5420da298, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -74,11 +74,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 5405e3146d8360a49b9a9c9f71630dc4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 55a00280563c7c34b8049839bf748675, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ORMH:
-        m_Texture: {fileID: 2800000, guid: a6803db325a05334b81bf1f09dabb1da, type: 3}
+        m_Texture: {fileID: 2800000, guid: d5085eab0df6c994fa2a6cede97b91e3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
