@@ -149,7 +149,7 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                     m_popup.Bind(PopupDatabase.T_Controls);
                     m_popup.Show();
                 }
-                firstStart = false;                
+                firstStart = false;
                 break;
             case MenuState.Settings:
                 m_settings.View();

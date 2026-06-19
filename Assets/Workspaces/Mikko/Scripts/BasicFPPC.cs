@@ -185,7 +185,7 @@ public class BasicFPCC : MonoBehaviour {
             case MenuState.Default:
 
                 break;
-            case MenuState.Start:
+            case MenuState.Start:                
                 ToggleMovement(true);
                 SetState(PlayerState.Default);
                 break;
@@ -201,11 +201,35 @@ public class BasicFPCC : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
     }
     public PlayerState State {  get; private set; }
+    bool firstStart = true;
     public void SetState(PlayerState state) 
     {
+        if (state == State) return;
+
         State = state;
+        Debug.Log($"PlayerState {state}");
+        switch (state) 
+        {
+            case PlayerState.Paused:
+                if (firstStart) 
+                {
+                    Debug.Log("Dont Do lpf enter");
+                    return;
+                }
+                Debug.Log("Do normal lpf enter");
+                break;
+            case PlayerState.Default:
+                if (firstStart) 
+                {
+                    Debug.Log("Dont do lpf exit");
+                    firstStart = false;
+                    return;
+                }
+                Debug.Log("Do normal lpf exit");
+                break;
+        }
         GameEvents.RaisePlayerStateChanged(state);
-    }
+    }    
     private void ToggleMovement(bool value) 
     {
         useLocalInputs = value;
