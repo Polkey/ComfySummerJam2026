@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 6029254856656270235}
   - component: {fileID: 1804670619187474513}
   - component: {fileID: 7774342014378292051}
-  - component: {fileID: 8318991498631600886}
   - component: {fileID: 7410487910980944860}
+  - component: {fileID: 7819020184054549436}
   m_Layer: 0
   m_Name: sign_lp
   m_TagString: Untagged
@@ -66,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9074157765415786603}
+  - {fileID: 3436601129709988640}
   m_Father: {fileID: 2546918991228271898}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!33 &1804670619187474513
@@ -126,21 +127,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8318991498631600886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2335071570342341311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aef15843c44eb94db8f058a8175165a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BadVibesOnlySignPickup
-  poster: {fileID: 9132017258394889627}
-  mat: {fileID: 0}
-  indexOfMat: 1
 --- !u!64 &7410487910980944860
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -163,6 +149,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5814898274067533374, guid: 2a3b5b58838418d4184f60802d0bd4f7, type: 3}
+--- !u!114 &7819020184054549436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2335071570342341311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799cab6e33ae4534b8d24383dc8a9783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AreaBlockerSignPickup
+  mat: {fileID: 0}
+  indexOfMat: 1
 --- !u!1 &3067145279132320520
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,12 +223,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6901074571304481108}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000020787118, y: 0.7071068, z: 0.7071067, w: -0.0000020787118}
-  m_LocalPosition: {x: -0.000044849956, y: -0.0062972168, z: 0.04507888}
-  m_LocalScale: {x: 0.14301676, y: 0.13742945, z: 0.008509757}
+  m_LocalRotation: {x: 0.0000030696385, y: 1, z: -0.00000017881385, w: 0.00000010223648}
+  m_LocalPosition: {x: -0.0052697835, y: 3.251005, z: 0.6229973}
+  m_LocalScale: {x: 16.806208, y: 8.484396, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9074157765415786603}
+  m_Father: {fileID: 6029254856656270235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8102505806082372177
 MeshFilter:
@@ -350,8 +350,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.4679966, z: -0.116999984}
   m_LocalScale: {x: 117.51215, y: 117.51216, z: 61.736374}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3436601129709988640}
+  m_Children: []
   m_Father: {fileID: 6029254856656270235}
   m_LocalEulerAnglesHint: {x: -180, y: -180, z: 0}
 --- !u!33 &495708925997926422

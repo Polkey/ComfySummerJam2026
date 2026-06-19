@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
       propertyPath: m_Name
-      value: newspaper_2
+      value: SM_Newspaper_2
       objectReference: {fileID: 0}
     - target: {fileID: 3887592326235247438, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -66,6 +66,7 @@ PrefabInstance:
     - {fileID: 5692037260551407757, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
     - {fileID: -8936280099222727145, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
     - {fileID: -7568400656848386306, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
+    - {fileID: 2133008443435814860, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e413fd4c0e2703049aac2ea98ee3bd94, type: 3}
