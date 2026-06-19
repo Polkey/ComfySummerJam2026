@@ -5321,6 +5321,14 @@ PrefabInstance:
       propertyPath: endCam
       value: 
       objectReference: {fileID: 1404766024}
+    - target: {fileID: 5107686746198699224, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
+      propertyPath: mouseSensitivityX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107686746198699224, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
+      propertyPath: mouseSensitivityY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6899837308782512493, guid: 0b693f29f53d68d4da173ec9c013ea23, type: 3}
       propertyPath: m_LocalPosition.x
       value: 64.284
