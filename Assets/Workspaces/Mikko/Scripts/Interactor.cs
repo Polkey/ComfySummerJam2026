@@ -14,7 +14,9 @@ public class Interactor : MonoBehaviour
         m_player = GetComponent<BasicFPCC>();   
     }
     void Update() {
-        if (m_player == null || m_player.State == PlayerState.Sequence || m_player.State == PlayerState.Paused) return;
+        if (m_player == null || m_player.State == PlayerState.Sequence 
+            || m_player.State == PlayerState.Paused 
+            || m_player.State == PlayerState.Seated) return;
 
         Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
 
