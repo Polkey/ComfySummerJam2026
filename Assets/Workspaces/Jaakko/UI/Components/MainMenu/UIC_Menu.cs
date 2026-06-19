@@ -82,14 +82,12 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
         m_main.b_credits.onClick.AddListener(() =>
         {
             ChangeState(MenuState.Credits);
-        });
-        m_main.b_restart.onClick.AddListener(() =>
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.forwardBlipSFX);
         });
         m_credits.b_back.onClick.AddListener(() =>
         {
             ChangeState(MenuState.Main);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.backwardBlipSFX);
         });
     }
     private void InitializeSliders() 
@@ -152,12 +150,14 @@ public class UIC_Menu : UIComponentBase<UIG_Menu>
                 if (firstStart) 
                 {
                     m_main.SetText(m_main.b_start, "Start");
-                    m_main.b_restart.gameObject.SetActive(false);
-                }
+                }                
                 else 
                 {
                     m_main.SetText(m_main.b_start, "Continue");
-                    m_main.b_restart.gameObject.SetActive(true);
+                }
+                if (m_player.State == PlayerState.Ending) 
+                {
+                    m_main.b_start.gameObject.SetActive(false);
                 }
                     break;
             case MenuState.Start:

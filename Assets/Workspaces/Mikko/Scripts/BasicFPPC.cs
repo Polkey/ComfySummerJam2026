@@ -39,7 +39,8 @@ public enum PlayerState
     Default,
     Seated,
     Paused,
-    Sequence
+    Sequence,
+    Ending
 }
 
 [RequireComponent(typeof(CharacterController))]
@@ -228,6 +229,9 @@ public class BasicFPCC : MonoBehaviour {
                 }
                 Debug.Log("Do normal lpf exit");
                 AudioManager.instance.pausedSSEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                break;
+            case PlayerState.Ending:
+                ToggleMovement(true);
                 break;
         }
         GameEvents.RaisePlayerStateChanged(state);
@@ -476,6 +480,7 @@ public class BasicFPCC : MonoBehaviour {
         float timer = 0f;
         float duration = 2f;
 
+        SetState(PlayerState.Ending);
         while (timer < duration) {
             timer += Time.deltaTime;
             float t = Mathf.Clamp01(timer / duration);
