@@ -5,18 +5,20 @@ public class Datacenter : MonoBehaviour
 {
     public float time = 1f;
     public float delay = 0f;
+    [SerializeField] private Transform m_shakeRoot;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            Destroy();
-    }
+    private bool shaking;
+
     public void Destroy()
     {
-        StartCoroutine(DestroyCo());       
+        StartCoroutine(DestroyCo());
     }
-    IEnumerator DestroyCo() 
+
+    IEnumerator DestroyCo()
     {
+        shaking = true;
+        StartCoroutine(Shake());
+
         yield return new WaitForSeconds(delay);
 
         EventEmitter[] emitters = FindObjectsByType<EventEmitter>();
@@ -25,25 +27,41 @@ public class Datacenter : MonoBehaviour
             if (emitter.gameObject.CompareTag("DatacenterEmitter"))
             {
                 emitter.gameObject.SetActive(false);
-            } 
-        }  
+            }
+        }
+
         AudioManager.instance.datacenterDestructEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.datacenterPopSFX);
 
         Vector3 startScale = transform.localScale;
         float elapsed = 0f;
 
-        while (elapsed < time) 
+        while (elapsed < time)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / time;
 
-            // transform.position += new Vector3(0f, 1.0f, 0f) * Time.deltaTime * 5f;
             transform.localScale = Vector3.Lerp(startScale, Vector3.zero, t);
 
             yield return null;
         }
+
+        shaking = false;
+        m_shakeRoot.localPosition = Vector3.zero;
+
         AudioManager.instance.SetMusicParameter("MuteMusic", 0);
         Destroy(gameObject);
+    }
+
+    IEnumerator Shake()
+    {
+        while (shaking)
+        {
+            float strength = 1f; // shake amount
+
+            m_shakeRoot.localPosition = Random.insideUnitSphere * strength;
+
+            yield return null;
+        }
     }
 }

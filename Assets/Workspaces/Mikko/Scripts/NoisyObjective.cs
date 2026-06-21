@@ -40,8 +40,8 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
     }
     IEnumerator fade() {
 
-        if (EffectController.I != null)
-            EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
+        //if (EffectController.I != null)
+        //    EffectController.I.PlayEffect(EffectController.I.Get("C_Shake"));
         AudioManager.instance.SetMusicParameter("MuteMusic", 1);
         AudioManager.instance.InitializeDatacenterDestruct(FMODEvents.instance.datacenterDestructSFX);
         float timeToFadeAway = 2;
