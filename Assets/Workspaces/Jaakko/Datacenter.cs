@@ -35,10 +35,11 @@ public class Datacenter : MonoBehaviour
         }
 
         AudioManager.instance.datacenterDestructEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.datacenterPopSFX);
 
         Vector3 startScale = transform.localScale;
         float elapsed = 0f;
+
+        StartCoroutine(PlayPopSound());
 
         while (elapsed < time)
         {
@@ -57,6 +58,11 @@ public class Datacenter : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator PlayPopSound() {
+        yield return new WaitForSeconds(0.7f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.datacenterPopSFX);
+        yield return null;
+    }
     IEnumerator Shake()
     {
         while (shaking)
