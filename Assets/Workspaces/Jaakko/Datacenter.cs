@@ -9,16 +9,20 @@ public class Datacenter : MonoBehaviour
 
     private bool shaking;
 
-    public void Destroy()
-    {
-        StartCoroutine(DestroyCo());
-    }
-
-    IEnumerator DestroyCo()
+    public void _Shake() 
     {
         shaking = true;
         StartCoroutine(Shake());
 
+    }
+    public void Destroy()
+    {        
+
+        StartCoroutine(DestroyCo());
+    }
+
+    IEnumerator DestroyCo()
+    {  
         yield return new WaitForSeconds(delay);
 
         EventEmitter[] emitters = FindObjectsByType<EventEmitter>();

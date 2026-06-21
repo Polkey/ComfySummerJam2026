@@ -47,6 +47,7 @@ public class NoisyObjective : MonoBehaviour, IInteractable {
         float timeToFadeAway = 2;
         float fadeSpeed = 3;
         float timer = 0;
+        datacenter?._Shake();
         while (timer < timeToFadeAway) {
             timer += Time.deltaTime;
             transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * 0, Time.deltaTime * fadeSpeed);
